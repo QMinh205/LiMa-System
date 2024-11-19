@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<ScrollPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.SettingController">
+   <content>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1700.0">
+              <top>
+                  <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                      <children>
+                          <Label prefHeight="36.0" prefWidth="160.0" text="NAME - ID">
+                              <font>
+                                  <Font name="Trebuchet MS Bold" size="30.0" />
+                              </font>
+                          </Label>
+                          <Pane prefHeight="100.0" prefWidth="548.0" />
+                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/logo.png" />
+                              </image>
+                          </ImageView>
+                          <Pane prefHeight="150.0" prefWidth="459.0" />
+                          <TextField alignment="CENTER" prefHeight="31.0" prefWidth="269.0" promptText="Search" />
+                          <ImageView fitHeight="30.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/search.png" />
+                              </image>
+                          </ImageView>
+                          <Pane prefHeight="150.0" prefWidth="19.0" />
+                          <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/thongbao.jpg" />
+                              </image>
+                          </ImageView>
+                      </children>
+                  </HBox>
+              </top>
+              <bottom>
+                  <HBox prefHeight="56.0" prefWidth="361.0" BorderPane.alignment="CENTER">
+                      <children>
+                          <Pane prefHeight="60.0" prefWidth="277.0" />
+                          <JFXButton text="Home">
+                              <graphic>
+                                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/home.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                              <font>
+                                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                              </font>
+                          </JFXButton>
+                          <Pane prefHeight="100.0" prefWidth="78.0" />
+                          <JFXButton text="Request">
+                              <graphic>
+                                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/yeucau.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                              <font>
+                                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                              </font>
+                          </JFXButton>
+                          <Pane prefHeight="100.0" prefWidth="78.0" />
+                          <JFXButton text="Information">
+                              <graphic>
+                                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/thongtin.jpg" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                              <font>
+                                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                              </font>
+                          </JFXButton>
+                          <Pane prefHeight="100.0" prefWidth="78.0" />
+                          <JFXButton text="Game">
+                              <graphic>
+                                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/game.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                              <font>
+                                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                              </font>
+                          </JFXButton>
+                          <Pane prefHeight="100.0" prefWidth="78.0" />
+                          <JFXButton text="Setting">
+                              <graphic>
+                                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/caidat.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                              <font>
+                                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                              </font>
+                          </JFXButton>
+                          <Pane prefHeight="100.0" prefWidth="78.0" />
+                          <JFXButton text="Home">
+                              <graphic>
+                                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/home.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                              <font>
+                                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                              </font>
+                          </JFXButton>
+                      </children>
+            </HBox>
+              </bottom>
+              <center>
+                  <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                      <children>
+                          <Label text="HOT">
+                              <font>
+                                  <Font name="Berlin Sans FB Bold" size="22.0" />
+                              </font>
+                              <padding>
+                                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                              </padding>
+                          </Label>
+                          <ScrollPane prefHeight="250.0" prefWidth="1700.0">
+                              <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="1900.0">
+                                      <children>
+                                          <HBox layoutY="68.0" prefHeight="100.0" prefWidth="200.0" />
+                                      </children>
+                                  </AnchorPane>
+                              </content>
+                          </ScrollPane>
+                          <Label text="RECOMMEND FOR YOU">
+                              <font>
+                                  <Font name="Berlin Sans FB Bold" size="18.0" />
+                              </font>
+                              <padding>
+                                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                              </padding>
+                          </Label>
+                          <ScrollPane prefHeight="250.0" prefWidth="1700.0">
+                              <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="1900.0">
+                                      <children>
+                                          <HBox layoutX="14.0" layoutY="50.0" prefHeight="100.0" prefWidth="200.0" />
+                                      </children>
+                                  </AnchorPane>
+                              </content>
+                          </ScrollPane>
+                      </children>
+                  </VBox>
+              </center>
+          </BorderPane>
+   </content>
+</ScrollPane>

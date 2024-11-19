@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.UserHome">
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Pane prefHeight="100.0" prefWidth="548.0" />
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="file:/D:/Library_Management/JavaFxDemo/assets/logo.png" />
+                    </image>
+                </ImageView>
+                <Pane prefHeight="150.0" prefWidth="459.0" />
+                <TextField alignment="CENTER" prefHeight="38.0" prefWidth="210.0" promptText="Search" />
+                <JFXButton fx:id="searchButton" onAction="#initialize" text=" ">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/search.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <Pane prefHeight="150.0" prefWidth="19.0" />
+                <JFXButton text=" ">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/thongbao.jpg" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox prefHeight="33.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="60.0" prefWidth="150.0" />
+                <JFXButton fx:id="homeButton" buttonType="RAISED" onAction="#initialize" prefHeight="59.0" prefWidth="123.0" style="-fx-background-color: #CCCCCC;" text="Home">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/home.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="requestButton" buttonType="RAISED" onAction="#initialize" text="Request">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/yeucau.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="informationButton" buttonType="RAISED" text="Information">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/thongtin.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="favouriteButton" buttonType="RAISED" text="Favourite">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/favouritebook.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="gameButton" buttonType="RAISED" text="Game">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/game.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="settingButton" buttonType="RAISED" text="Setting">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/caidat.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+            </children></HBox>
+    </bottom>
+    <left>
+        <ScrollPane prefHeight="567.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
+            <content>
+                <VBox prefHeight="1500.0" prefWidth="1740.0">
+                    <children>
+                        <Label text="HOT">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Recommend">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Tiếu Thuyết">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Tài Liệu">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Truyện Tranh">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Lãng Mạn">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Sách Giáo Khoa">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </left>
+</BorderPane>
