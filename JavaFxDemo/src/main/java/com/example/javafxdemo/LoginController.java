@@ -55,9 +55,9 @@ public class LoginController {
 
 
     // kết nối tới cơ sở dữ liệu
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/dtb";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/user_db";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Phong416ct5x2";
+    private static final String DB_PASSWORD = "bisql69";
 
     @FXML
     protected void onLoginConfirmButton() {

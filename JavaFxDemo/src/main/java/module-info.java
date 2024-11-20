@@ -9,6 +9,7 @@ module com.example.javafxdemo {
     requires com.google.api.client;
     requires com.google.gson;
     requires javafx.controls;
+    requires java.desktop;
 
     opens com.example.javafxdemo to javafx.fxml;
     exports com.example.javafxdemo;

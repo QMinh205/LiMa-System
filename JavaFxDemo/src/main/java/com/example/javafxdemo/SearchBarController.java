@@ -17,21 +17,28 @@ import java.io.IOException;
 
 public class SearchBarController {
 
+    //@FXML
+    //private ImageView tagImage;  // ImageView for the tag
     @FXML
-    private StackPane rootPane;
+    private StackPane rootPane; // StackPane as container for JFXDialog
     @FXML
     private JFXButton searchButton;
 
     @FXML
-    private TextField bookTitleField;
+    private TextField bookTitleField; // Define the book title field
     @FXML
-    private TextField authorField;
+    private TextField authorField; // Define the author field
     @FXML
-    private TextField publisherField;
+    private TextField publisherField; // Define the publisher field
 
     @FXML
     public void initialize() {
+        //if (tagImage == null) {
+        //    System.out.println("Error: tagImage is null");
+        //    return;
+        //}
 
+        // Create CheckBoxes for genres
         CheckBox genre1 = new CheckBox("Fiction");
         CheckBox genre2 = new CheckBox("Non-Fiction");
         CheckBox genre3 = new CheckBox("Science");
@@ -39,6 +46,7 @@ public class SearchBarController {
         CheckBox genre5 = new CheckBox("Biology");
         CheckBox genre6 = new CheckBox("Math");
 
+        // Add CheckBoxes to VBox
         VBox vbox = new VBox(10);
         vbox.getChildren().addAll(genre1, genre2, genre3, genre4, genre5, genre6);
         vbox.setStyle("-fx-background-color: white; -fx-padding: 10px;");
@@ -46,7 +54,7 @@ public class SearchBarController {
         vbox.setPrefWidth(300);
         vbox.setPrefHeight(200);
 
-        // hiện dialog
+        // Set up JFXDialog
         JFXDialogLayout content = new JFXDialogLayout();
         content.setHeading(new javafx.scene.control.Label("Select Genres"));
         content.setBody(vbox);
@@ -55,53 +63,43 @@ public class SearchBarController {
         dialog.setDialogContainer(rootPane);
         dialog.setContent(content);
 
+        // Show dialog when tagImage is clicked
+        //tagImage.setOnMouseClicked(event -> dialog.show());
     }
 
     @FXML
     protected void onSearchButton() {
         try {
-            // các field nhập ttin
-            String title = bookTitleField.getText().replace(" ", "+");
-            String author = authorField.getText().replace(" ", "+");
-            String publisher = publisherField.getText().replace(" ", "+");
+            // Get the search input from the user
+            String title = bookTitleField.getText() != null ? bookTitleField.getText().trim() : null;
+            String author = authorField.getText() != null ? authorField.getText().trim() : null;
+            String publisher = publisherField.getText() != null ? publisherField.getText().trim() : null;
 
-            StringBuilder queryBuilder = new StringBuilder();
-
-            if (!title.isEmpty()) {
-                queryBuilder.append("intitle:").append(title).append("+");
-            }
-            if (!author.isEmpty()) {
-                queryBuilder.append("inauthor:").append(author).append("+");
-            }
-            if (!publisher.isEmpty()) {
-                queryBuilder.append("inpublisher:").append(publisher).append("+");
+            // Ensure at least one search field is provided
+            if ((title == null || title.isEmpty()) &&
+                    (author == null || author.isEmpty()) &&
+                    (publisher == null || publisher.isEmpty())) {
+                System.out.println("No search criteria provided");
+                return;
             }
 
-            if (queryBuilder.length() > 0 && queryBuilder.charAt(queryBuilder.length() - 1) == '+') {
-                queryBuilder.deleteCharAt(queryBuilder.length() - 1);
-            }
+            // Load SearchResult.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchResult.fxml"));
+            Parent root = loader.load();
 
-            String query = queryBuilder.toString();
+            // Get the controller of SearchResult.fxml
+            SearchResultController resultController = loader.getController();
 
-            if (!query.isEmpty()) {
-                // chuyển đến result nếu ko empty
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchResult.fxml"));
-                Parent root = loader.load();
+            // Pass the search parameters to the controller
+            resultController.setSearchQuery(title, author, publisher);
 
-                SearchResultController resultController = loader.getController();
-                resultController.setSearchQuery(query);
-
-                Stage stage = (Stage) searchButton.getScene().getWindow();
-                stage.setScene(new Scene(root, 1500, 750));
-                stage.setTitle("Search Results");
-                stage.show();
-            } else {
-                System.out.println("No search available");
-            }
+            // Show the new scene
+            Stage stage = (Stage) searchButton.getScene().getWindow();
+            stage.setScene(new Scene(root, 1500, 750));
+            stage.setTitle("Search Results");
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 }

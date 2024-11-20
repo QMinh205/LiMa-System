@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+
+<?import javafx.scene.text.TextFlow?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.BookDetailController">
+    <children>
+        <!-- Back Button positioned with anchor constraints -->
+        <Button fx:id="backButton" text="Back" onAction="#onBackButtonClicked"
+                AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" />
+
+        <!-- VBox to hold book details, positioned below the back button -->
+        <VBox fx:id="detailsBox" spacing="10" alignment="TOP_LEFT"
+              AnchorPane.topAnchor="50" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+            <ImageView fx:id="bookImageView" fitWidth="150" fitHeight="200" />
+            <Label fx:id="bookTitleLabel" text="Title" />
+            <Label fx:id="bookAuthorLabel" text="Author" />
+            <Label fx:id="bookPublisherLabel" text="Publisher" />
+            <Label fx:id="bookPublishedDateLabel" text="Published Date" />
+            <Label fx:id="bookPageCountLabel" text="Pages" />
+            <Label fx:id="bookCategoriesLabel" text="Categories" />
+            <Label fx:id="bookAverageRatingLabel" text="Rating" />
+            <Label fx:id="bookDescriptionLabel" wrapText="true" text="Description" />
+            <TextFlow fx:id="bookDescriptionFlow" prefWidth="400" />
+            <Hyperlink fx:id="previewLink" text="Preview Link" />
+        </VBox>
+    </children>
+</AnchorPane>
