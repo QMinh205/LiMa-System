@@ -8,7 +8,7 @@
 <?import javafx.scene.control.Hyperlink?>
 
 <?import javafx.scene.text.TextFlow?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.BookDetailController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.BookDetailController">
     <children>
         <!-- Back Button positioned with anchor constraints -->
         <Button fx:id="backButton" text="Back" onAction="#onBackButtonClicked"

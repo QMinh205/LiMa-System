@@ -1,10 +1,13 @@
-package com.example.javafxdemo;
+package app;
 
+import com.jfoenix.controls.JFXBadge;
 import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -12,7 +15,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class InformationController {
+public class UserHome {
     @FXML
     private BorderPane mainBorderPane;
 
@@ -93,7 +96,7 @@ public class InformationController {
 
     private void loadScene(String fxmlFile, String title, JFXButton button) {
         try {
-            // load fxml
+            // load file FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = loader.load();
 

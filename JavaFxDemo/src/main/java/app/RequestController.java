@@ -1,4 +1,4 @@
-package com.example.javafxdemo;
+package app;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;

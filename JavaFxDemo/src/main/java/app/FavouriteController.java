@@ -1,4 +1,4 @@
-package com.example.javafxdemo;
+package app;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
@@ -57,7 +57,7 @@ public class FavouriteController {
     }
     private void setupHomeButton() {
         homeButton.setOnAction(event -> {
-            loadScene("Home.fxml", "Home", homeButton);
+            loadScene("User-Home.fxml", "Home", homeButton);
         });
     }
 

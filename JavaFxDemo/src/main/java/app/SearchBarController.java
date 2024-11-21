@@ -1,13 +1,12 @@
-package com.example.javafxdemo;
+package app;
 
 import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.VBox;
@@ -30,6 +29,8 @@ public class SearchBarController {
     private TextField authorField; // Define the author field
     @FXML
     private TextField publisherField; // Define the publisher field
+    @FXML
+    private Button backButton;
 
     @FXML
     public void initialize() {
@@ -98,6 +99,22 @@ public class SearchBarController {
             stage.setScene(new Scene(root, 1500, 750));
             stage.setTitle("Search Results");
             stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onBackButtonClicked() {
+        try {
+            // Load the UserHome.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("User-Home.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root, 1500, 750)); // Adjust the window size here
+            stage.setTitle("User Home");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,4 +1,4 @@
-package com.example.javafxdemo;
+package app;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -69,7 +68,7 @@ public class LoginController {
         if (isValidLogin(username, password)) {
             try {
                 // nếu thành công thì chuyển màn
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/javafxdemo/User-Home.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/User-Home.fxml"));
                 Parent root = fxmlLoader.load();
 
                 // lấy stage hiện tại

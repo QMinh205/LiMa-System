@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -13,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.FavouriteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.UserHome">
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
@@ -53,10 +52,10 @@
         </HBox>
     </top>
     <bottom>
-        <HBox prefHeight="33.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <HBox prefHeight="33.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
             <children>
                 <Pane prefHeight="60.0" prefWidth="150.0" />
-                <JFXButton fx:id="homeButton" buttonType="RAISED" onAction="#initialize" prefHeight="59.0" prefWidth="126.0" text="Home">
+                <JFXButton fx:id="homeButton" buttonType="RAISED" onAction="#initialize" prefHeight="59.0" prefWidth="123.0" style="-fx-background-color: #CCCCCC;" text="Home">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -82,7 +81,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="informationButton" buttonType="RAISED" onAction="#initialize" text="Information">
+                <JFXButton fx:id="informationButton" buttonType="RAISED" text="Information">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -95,7 +94,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" style="-fx-background-color: #CCCCCC;" text="Favourite">
+                <JFXButton fx:id="favouriteButton" buttonType="RAISED" text="Favourite">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -108,7 +107,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="gameButton" buttonType="RAISED" onAction="#initialize" text="Game">
+                <JFXButton fx:id="gameButton" buttonType="RAISED" text="Game">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -121,7 +120,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="settingButton" buttonType="RAISED" onAction="#initialize" text="Setting">
+                <JFXButton fx:id="settingButton" buttonType="RAISED" text="Setting">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -133,21 +132,61 @@
                         <Font name="System Bold" size="17.0" />
                     </font>
                 </JFXButton>
-            </children>
-        </HBox>
+            </children></HBox>
     </bottom>
-    <center>
-        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+    <left>
+        <ScrollPane prefHeight="567.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
             <content>
-                <VBox prefHeight="693.0" prefWidth="1791.0">
+                <VBox prefHeight="1500.0" prefWidth="1740.0">
                     <children>
-                        <Label text="LIST 1" />
-                        <JFXListView prefHeight="147.0" prefWidth="1791.0" />
-                        <Label text="LIST 2" />
-                        <JFXListView prefHeight="147.0" prefWidth="1791.0" />
+                        <Label text="Fiction">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Education">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Computers">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Psychology">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
+                        <Label text="Art">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
+                  <ScrollPane>
+                     <content>
+                              <HBox prefHeight="200.0" prefWidth="2000.0" />
+                     </content>
+                  </ScrollPane>
                     </children>
                 </VBox>
             </content>
         </ScrollPane>
-    </center>
+    </left>
 </BorderPane>

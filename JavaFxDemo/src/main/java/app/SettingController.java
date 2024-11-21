@@ -1,4 +1,4 @@
-package com.example.javafxdemo;
+package app;
 
 public class SettingController {
 }

@@ -2,17 +2,15 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.UserHome">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.InformationController">
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
@@ -28,7 +26,7 @@
                     </image>
                 </ImageView>
                 <Pane prefHeight="150.0" prefWidth="459.0" />
-                <TextField alignment="CENTER" prefHeight="38.0" prefWidth="210.0" promptText="Search" />
+                <TextField alignment="CENTER" prefHeight="38.0" prefWidth="197.0" promptText="Search" />
                 <JFXButton fx:id="searchButton" onAction="#initialize" text=" ">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -55,7 +53,7 @@
         <HBox prefHeight="33.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
             <children>
                 <Pane prefHeight="60.0" prefWidth="150.0" />
-                <JFXButton fx:id="homeButton" buttonType="RAISED" onAction="#initialize" prefHeight="59.0" prefWidth="123.0" style="-fx-background-color: #CCCCCC;" text="Home">
+                <JFXButton fx:id="homeButton" buttonType="RAISED" onAction="#initialize" prefHeight="59.0" prefWidth="124.0" text="Home">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -81,7 +79,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="informationButton" buttonType="RAISED" text="Information">
+                <JFXButton fx:id="informationButton" buttonType="RAISED" onAction="#initialize" style="-fx-background-color: #CCCCCC;" text="Information">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -94,7 +92,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" buttonType="RAISED" text="Favourite">
+                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" text="Favourite">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -107,20 +105,20 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="gameButton" buttonType="RAISED" text="Game">
-                    <graphic>
+                <JFXButton fx:id="gameButton" buttonType="RAISED" onAction="#initialize" prefHeight="58.0" prefWidth="134.0" text="Game">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+               <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="file:/D:/Library_Management/JavaFxDemo/assets/game.png" />
                             </image>
                         </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="17.0" />
-                    </font>
+               </graphic>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="settingButton" buttonType="RAISED" text="Setting">
+                <JFXButton fx:id="settingButton" buttonType="RAISED" onAction="#initialize" text="Setting">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -132,79 +130,49 @@
                         <Font name="System Bold" size="17.0" />
                     </font>
                 </JFXButton>
-            </children></HBox>
+            </children>
+        </HBox>
     </bottom>
-    <left>
-        <ScrollPane prefHeight="567.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
-            <content>
-                <VBox prefHeight="1500.0" prefWidth="1740.0">
-                    <children>
-                        <Label text="HOT">
-                     <font>
-                        <Font name="System Bold" size="26.0" />
-                     </font></Label>
-                  <ScrollPane>
-                     <content>
-                              <HBox prefHeight="200.0" prefWidth="2000.0" />
-                     </content>
-                  </ScrollPane>
-                        <Label text="Recommend">
-                     <font>
-                        <Font name="System Bold" size="26.0" />
-                     </font></Label>
-                  <ScrollPane>
-                     <content>
-                              <HBox prefHeight="200.0" prefWidth="2000.0" />
-                     </content>
-                  </ScrollPane>
-                        <Label text="Tiếu Thuyết">
-                     <font>
-                        <Font name="System Bold" size="26.0" />
-                     </font></Label>
-                  <ScrollPane>
-                     <content>
-                              <HBox prefHeight="200.0" prefWidth="2000.0" />
-                     </content>
-                  </ScrollPane>
-                        <Label text="Tài Liệu">
-                     <font>
-                        <Font name="System Bold" size="26.0" />
-                     </font></Label>
-                  <ScrollPane>
-                     <content>
-                              <HBox prefHeight="200.0" prefWidth="2000.0" />
-                     </content>
-                  </ScrollPane>
-                        <Label text="Truyện Tranh">
-                     <font>
-                        <Font name="System Bold" size="26.0" />
-                     </font></Label>
-                  <ScrollPane>
-                     <content>
-                              <HBox prefHeight="200.0" prefWidth="2000.0" />
-                     </content>
-                  </ScrollPane>
-                        <Label text="Lãng Mạn">
-                     <font>
-                        <Font name="System Bold" size="26.0" />
-                     </font></Label>
-                  <ScrollPane>
-                     <content>
-                              <HBox prefHeight="200.0" prefWidth="2000.0" />
-                     </content>
-                  </ScrollPane>
-                        <Label text="Sách Giáo Khoa">
-                     <font>
-                        <Font name="System Bold" size="26.0" />
-                     </font></Label>
-                  <ScrollPane>
-                     <content>
-                              <HBox prefHeight="200.0" prefWidth="2000.0" />
-                     </content>
-                  </ScrollPane>
-                    </children>
-                </VBox>
-            </content>
-        </ScrollPane>
-    </left>
+    <center>
+        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="331.0" layoutY="184.0" text="READ">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/dadoc.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="662.0" layoutY="184.0" text="READING">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/dangdoc.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="1046.0" layoutY="184.0" text="OVERDUE">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/outdate.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </Pane>
+    </center>
 </BorderPane>

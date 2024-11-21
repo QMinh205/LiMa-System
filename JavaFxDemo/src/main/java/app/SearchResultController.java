@@ -1,4 +1,4 @@
-package com.example.javafxdemo;
+package app;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -16,7 +17,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
@@ -25,8 +25,6 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class SearchResultController implements Initializable {
@@ -37,6 +35,8 @@ public class SearchResultController implements Initializable {
     private ListView<String> resultsListView; // ListView to display search results
     @FXML
     private VBox resultsVBox; // VBox to organize results
+    @FXML
+    private Button backButton;
 
     private static final String API_KEY = ""; // Replace with your actual API key
     private ObservableList<Book> booksList = FXCollections.observableArrayList();
@@ -199,21 +199,19 @@ public class SearchResultController implements Initializable {
         }
     }
 
-
-
     @FXML
     private void onBackButtonClicked() {
         try {
-            // Go back to SearchBar.fxml
+            // Load SearchBar.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchBar.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) resultsListView.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Search Books");
-            stage.show();
+
+            // Switch the scene back to SearchBar.fxml
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root, 1500, 750)); // Set preferred size
+            stage.setTitle("Search Bar");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }
