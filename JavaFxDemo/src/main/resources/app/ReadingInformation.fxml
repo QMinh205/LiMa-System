@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.UserHome">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.InformationController">
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
@@ -21,7 +22,7 @@
                         <Font name="Trebuchet MS Bold" size="30.0" />
                     </font>
                 </Label>
-                <Pane prefHeight="150.0" prefWidth="470.0" />
+                <Pane prefHeight="100.0" prefWidth="470.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
@@ -54,7 +55,7 @@
         <HBox prefHeight="33.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
             <children>
                 <Pane prefHeight="60.0" prefWidth="150.0" />
-                <JFXButton fx:id="homeButton" buttonType="RAISED" onAction="#initialize" prefHeight="41.0" prefWidth="120.0" styleClass="selectedunder-border" text="Home" textFill="WHITE">
+                <JFXButton fx:id="homeButton" onAction="#initialize" prefHeight="41.0" prefWidth="120.0" text="Home" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -67,7 +68,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="requestButton" buttonType="RAISED" onAction="#initialize" text="Request" textFill="WHITE">
+                <JFXButton fx:id="requestButton" onAction="#initialize" text="Request" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -80,7 +81,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="informationButton" buttonType="RAISED" onAction="#initialize" text="Information" textFill="WHITE">
+                <JFXButton fx:id="informationButton" onAction="#initialize" styleClass="selectedunder-border" text="Information" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -93,7 +94,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" text="Favourite" textFill="WHITE">
+                <JFXButton fx:id="favouriteButton" onAction="#initialize" text="Favourite" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -106,7 +107,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="gameButton" buttonType="RAISED" onAction="#initialize" text="Game" textFill="WHITE">
+                <JFXButton fx:id="gameButton" onAction="#initialize" text="Game" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -119,7 +120,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="settingButton" buttonType="RAISED" onAction="#initialize" text="Setting" textFill="WHITE">
+                <JFXButton fx:id="settingButton" onAction="#initialize" text="Setting" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -131,100 +132,35 @@
                         <Font name="Berlin Sans FB Demi Bold" size="17.0" />
                     </font>
                 </JFXButton>
-            </children></HBox>
+            </children>
+        </HBox>
     </bottom>
-    <left>
-        <ScrollPane prefHeight="567.0" prefWidth="1500.0" styleClass="primary-color" BorderPane.alignment="CENTER">
-            <content>
-                <VBox prefHeight="1500.0" prefWidth="1740.0" styleClass="secondary-color">
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="92.0" prefWidth="1500.0">
                     <children>
-                        <Label text="HOT" textFill="WHITE">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="629.0" layoutY="22.0" text="READING BOOKS" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color" />
-                            </content>
-                        </ScrollPane>
-                        <Label text="Recommend" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color" />
-                            </content>
-                        </ScrollPane>
-                        <Label text="Tiểu Thuyết" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color" />
-                            </content>
-                        </ScrollPane>
-                        <Label text="Tài Liệu" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" />
-                            </content>
-                        </ScrollPane>
-                        <Label text="Truyện Tranh" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" />
-                            </content>
-                        </ScrollPane>
-                        <Label text="Lãng Mạn" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" />
-                            </content>
-                        </ScrollPane>
-                        <Label text="Sách Giáo Khoa" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" />
-                            </content>
-                        </ScrollPane>
+                                <Font name="System Bold" size="30.0" />
+                            </font></Label>
                     </children>
-                </VBox>
-            </content>
-        </ScrollPane>
-    </left>
+                </Pane>
+                <ScrollPane prefHeight="453.0" prefWidth="1500.0">
+                    <content>
+                        <Pane prefHeight="700.0" prefWidth="1500.0">
+                            <children>
+                                <JFXListView prefHeight="700.0" prefWidth="750.0">
+                                    <styleClass>
+                                        <String fx:value="gray-color" />
+                                        <String fx:value="selected-border" />
+                                    </styleClass></JFXListView>
+                                <JFXListView layoutX="750.0" prefHeight="700.0" prefWidth="750.0" styleClass="gray-color" />
+                            </children>
+                        </Pane>
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </center>
 </BorderPane>

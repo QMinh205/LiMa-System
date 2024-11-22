@@ -12,10 +12,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SettingController">
     <left>
         <VBox prefHeight="750.0" prefWidth="431.0" styleClass="primary-color" BorderPane.alignment="CENTER">
             <children>
+            <JFXButton prefHeight="40.0" prefWidth="99.0" styleClass="setting-button" text="Return" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </JFXButton>
                 <VBox alignment="CENTER" prefHeight="207.0" prefWidth="431.0">
                     <opaqueInsets>
                         <Insets />
@@ -26,7 +31,7 @@
                     <children>
                         <ImageView fitHeight="117.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/avatar.png" />
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/avatar.png" />
                             </image>
                         </ImageView>
                         <Label text="Tùng béo wibu" textFill="WHITE">
@@ -34,7 +39,7 @@
                                 <Font name="System Bold" size="20.0" />
                             </font>
                         </Label>
-                        <JFXButton styleClass="setting-button" text="Edit Profile" textFill="WHITE">
+                        <JFXButton buttonType="RAISED" styleClass="setting-button" text="Edit Profile" textFill="WHITE">
                             <font>
                                 <Font size="15.0" />
                             </font>
@@ -47,7 +52,7 @@
                             <children>
                                 <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="file:/D:/Library_Management/JavaFxDemo/assets/user.png" />
+                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/user.png" />
                                     </image>
                                 </ImageView>
                                 <Label prefHeight="32.0" prefWidth="191.0" text="Profile" textFill="WHITE">
@@ -67,7 +72,7 @@
                             <children>
                                 <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="file:/D:/Library_Management/JavaFxDemo/assets/notification.png" />
+                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
                                     </image>
                                 </ImageView>
                                 <Label prefHeight="32.0" prefWidth="191.0" text="Notifications" textFill="WHITE">
@@ -83,11 +88,11 @@
                                 <Insets bottom="20.0" />
                             </padding>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected-border" stylesheets="@style.css">
+                        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected">
                             <children>
                                 <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="file:/D:/Library_Management/JavaFxDemo/assets/password.png" />
+                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/password.png" />
                                     </image>
                                 </ImageView>
                                 <Label prefHeight="32.0" prefWidth="191.0" text="Password" textFill="WHITE">
@@ -107,7 +112,7 @@
                             <children>
                                 <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="file:/D:/Library_Management/JavaFxDemo/assets/setting.png" />
+                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/setting.png" />
                                     </image>
                                 </ImageView>
                                 <Label prefHeight="32.0" prefWidth="191.0" text="Settings" textFill="WHITE">
@@ -127,7 +132,7 @@
                             <children>
                                 <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="file:/D:/Library_Management/JavaFxDemo/assets/privacy.png" />
+                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/privacy.png" />
                                     </image>
                                 </ImageView>
                                 <Label prefHeight="32.0" prefWidth="191.0" text="Privacy Policy" textFill="WHITE">
@@ -151,7 +156,7 @@
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" styleClass="secondary-color" BorderPane.alignment="CENTER">
             <children>
-                <Label prefHeight="53.0" prefWidth="1069.0" stylesheets="@style.css" text="Profile Setting" textFill="WHITE">
+                <Label prefHeight="53.0" prefWidth="1069.0" text="Profile Setting" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="28.0" />
                     </font>
@@ -159,7 +164,7 @@
                         <Insets />
                     </VBox.margin>
                 </Label>
-                <VBox prefHeight="200.0" prefWidth="941.0" spacing="50.0" stylesheets="@style.css">
+                <VBox prefHeight="200.0" prefWidth="941.0" spacing="50.0">
                     <children>
                         <Label prefHeight="53.0" prefWidth="169.0" text="Profile Details" textFill="WHITE">
                             <font>
@@ -201,7 +206,7 @@
                         </HBox>
                     </children>
                 </VBox>
-                <VBox prefHeight="280.0" prefWidth="969.0" spacing="50.0" stylesheets="@style.css">
+                <VBox prefHeight="280.0" prefWidth="969.0" spacing="50.0">
                     <children>
                         <Label prefHeight="53.0" prefWidth="169.0" text="Contact infor" textFill="WHITE">
                             <font>
@@ -242,10 +247,10 @@
                         </HBox>
                     </children>
                 </VBox>
-                <HBox prefHeight="49.0" prefWidth="969.0" stylesheets="@style.css">
+                <HBox prefHeight="49.0" prefWidth="969.0">
                     <children>
                         <Pane prefHeight="32.0" prefWidth="463.0" />
-                        <JFXButton alignment="CENTER" prefHeight="50.0" prefWidth="150.0" styleClass="setting-button" text="Save change" textFill="WHITE">
+                        <JFXButton alignment="CENTER" buttonType="RAISED" prefHeight="50.0" prefWidth="150.0" styleClass="setting-button" text="Save change" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="15.0" />
                             </font>

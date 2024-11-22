@@ -14,7 +14,25 @@
     -fx-background-color: #0000CD;
     -fx-text-fill: white;
     -fx-border-color: #00008B;
-    -fx-border-radius: 15; /* Giữ bo góc */
+    -fx-border-radius: 15; /* Giữ border-radius */
+}
+.login2-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: #0000CD;
+    -fx-border-width: 1px;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-padding: 8 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.5, 0, 0);
+    -fx-transition: all 0.4s ease;
+}
+
+.login2-button:hover {
+    -fx-background-color: #0000CD;
+    -fx-text-fill: white;
+    -fx-border-color: #00008B;
+    -fx-border-radius: 15; /* Giữ border-radius */
 }
 
 .rounded-pane {
@@ -24,7 +42,7 @@
     -fx-border-radius: 15px;
     -fx-background-radius: 15px;
 }
-.label1 {
+.label-login {
     -fx-text-fill: black;
 }
 .primary-color {
@@ -32,6 +50,18 @@
 }
 .secondary-color {
     -fx-background-color: #00002C;
+}
+.third-color {
+    -fx-background-color: #B0E0E6;
+}
+.fourth-color {
+    -fx-background-color: #63B8FF
+}
+.gray-color {
+     -fx-background-color: #D3D3D3;
+ }
+.gray2-color {
+    -fx-background-color: #242551;
 }
 .setting-button {
     -fx-background-color: #242551;
@@ -47,6 +77,10 @@
     -fx-border-color: #fff;
     -fx-border-width: 0 3 0 0;
 }
+.selectedunder-border {
+    -fx-border-color: #fff;
+    -fx-border-width: 0 0 3 0;
+}
 .selected:hover {
-    -fx-background-color: #3C3D5B;
+-fx-background-color: #3C3D5B;
 }

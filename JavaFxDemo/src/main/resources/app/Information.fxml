@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,28 +10,170 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.InformationController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.InformationController">
+    <bottom>
+        <HBox prefHeight="33.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="60.0" prefWidth="150.0" />
+                <JFXButton fx:id="homeButton" onAction="#initialize" prefHeight="41.0" prefWidth="120.0" text="Home" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/home.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="requestButton" onAction="#initialize" text="Request" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/yeucau.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="informationButton" onAction="#initialize" styleClass="selectedunder-border" text="Information" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/thongtin.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="favouriteButton" onAction="#initialize" text="Favourite" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="gameButton" onAction="#initialize" text="Game" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets//game.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+                <Pane prefHeight="100.0" prefWidth="78.0" />
+                <JFXButton fx:id="settingButton" onAction="#initialize" text="Setting" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/caidat.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <JFXButton contentDisplay="TOP" layoutX="276.0" layoutY="167.0" text="READ" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/dadoc.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="login2-button" />
+                        <String fx:value="gray2-color" />
+                    </styleClass>
+                </JFXButton>
+                <JFXButton contentDisplay="TOP" layoutX="659.0" layoutY="167.0" text="READING" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/dangdoc.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="login2-button" />
+                        <String fx:value="gray2-color" />
+                    </styleClass>
+                </JFXButton>
+                <JFXButton contentDisplay="TOP" layoutX="1046.0" layoutY="167.0" text="OVERDUE" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/outdate.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="login2-button" />
+                        <String fx:value="gray2-color" />
+                    </styleClass>
+                </JFXButton>
+                <Label layoutX="643.0" layoutY="33.0" text="INFORMATION" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </center>
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID">
+                <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID" textFill="WHITE">
                     <font>
                         <Font name="Trebuchet MS Bold" size="30.0" />
                     </font>
                 </Label>
-                <Pane prefHeight="100.0" prefWidth="548.0" />
+                <Pane prefHeight="100.0" prefWidth="470.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="file:/D:/Library_Management/JavaFxDemo/assets/logo.png" />
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
                     </image>
                 </ImageView>
-                <Pane prefHeight="150.0" prefWidth="459.0" />
-                <TextField alignment="CENTER" prefHeight="38.0" prefWidth="197.0" promptText="Search" />
+                <Pane prefHeight="150.0" prefWidth="550.0" />
                 <JFXButton fx:id="searchButton" onAction="#initialize" text=" ">
                     <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/search.png" />
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/search.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -41,7 +183,7 @@
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/thongbao.jpg" />
+                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -49,130 +191,4 @@
             </children>
         </HBox>
     </top>
-    <bottom>
-        <HBox prefHeight="33.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
-            <children>
-                <Pane prefHeight="60.0" prefWidth="150.0" />
-                <JFXButton fx:id="homeButton" buttonType="RAISED" onAction="#initialize" prefHeight="59.0" prefWidth="124.0" text="Home">
-                    <graphic>
-                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/home.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="17.0" />
-                    </font>
-                </JFXButton>
-                <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="requestButton" buttonType="RAISED" onAction="#initialize" text="Request">
-                    <graphic>
-                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/yeucau.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="17.0" />
-                    </font>
-                </JFXButton>
-                <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="informationButton" buttonType="RAISED" onAction="#initialize" style="-fx-background-color: #CCCCCC;" text="Information">
-                    <graphic>
-                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/thongtin.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="17.0" />
-                    </font>
-                </JFXButton>
-                <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" text="Favourite">
-                    <graphic>
-                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/favouritebook.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="17.0" />
-                    </font>
-                </JFXButton>
-                <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="gameButton" buttonType="RAISED" onAction="#initialize" prefHeight="58.0" prefWidth="134.0" text="Game">
-                    <font>
-                        <Font name="System Bold" size="17.0" />
-                    </font>
-               <graphic>
-                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/game.png" />
-                            </image>
-                        </ImageView>
-               </graphic>
-                </JFXButton>
-                <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="settingButton" buttonType="RAISED" onAction="#initialize" text="Setting">
-                    <graphic>
-                        <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/caidat.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="17.0" />
-                    </font>
-                </JFXButton>
-            </children>
-        </HBox>
-    </bottom>
-    <center>
-        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="331.0" layoutY="184.0" text="READ">
-                    <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/dadoc.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="662.0" layoutY="184.0" text="READING">
-                    <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/dangdoc.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="1046.0" layoutY="184.0" text="OVERDUE">
-                    <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/Library_Management/JavaFxDemo/assets/outdate.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </JFXButton>
-            </children>
-        </Pane>
-    </center>
 </BorderPane>
