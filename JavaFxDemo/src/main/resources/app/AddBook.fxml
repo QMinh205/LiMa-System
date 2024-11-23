@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.AddBookController">
+    <ScrollPane fitToWidth="true" fitToHeight="true" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+        <VBox spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+            <Label text="Add New Book" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+            <!-- Title -->
+            <Label text="Title"/>
+            <TextField fx:id="titleField" promptText="Enter the title of the book"/>
+
+            <!-- Author -->
+            <Label text="Author"/>
+            <TextField fx:id="authorField" promptText="Enter the author of the book"/>
+
+            <!-- Publisher -->
+            <Label text="Publisher"/>
+            <TextField fx:id="publisherField" promptText="Enter the publisher of the book"/>
+
+            <!-- Description -->
+            <Label text="Description"/>
+            <TextField fx:id="descriptionField" promptText="Enter the description of the book"/>
+
+            <!-- Image URL -->
+            <Label text="Image URL"/>
+            <TextField fx:id="imageUrlField" promptText="Enter the URL for the book cover image"/>
+
+            <!-- Published Date -->
+            <Label text="Published Date"/>
+            <TextField fx:id="publishedDateField" promptText="Enter the published date"/>
+
+            <!-- Page Count -->
+            <Label text="Page Count"/>
+            <TextField fx:id="pageCountField" promptText="Enter the page count"/>
+
+            <!-- Categories -->
+            <Label text="Categories"/>
+            <TextField fx:id="categoriesField" promptText="Enter the categories (e.g., Fiction, Thriller)"/>
+
+            <!-- Average Rating -->
+            <Label text="Average Rating"/>
+            <TextField fx:id="ratingField" promptText="Enter the average rating (e.g., 4.5)"/>
+
+            <!-- Preview Link -->
+            <Label text="Preview Link"/>
+            <TextField fx:id="previewLinkField" promptText="Enter the preview link for the book"/>
+
+            <!-- Buttons -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add Book" onAction="#handleAddBookAction"/>
+                <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancelAction"/>
+            </HBox>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>

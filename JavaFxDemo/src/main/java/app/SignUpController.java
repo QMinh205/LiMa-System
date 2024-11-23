@@ -87,7 +87,7 @@ public class SignUpController {
     private boolean registerUser(String username, String password, String email, String safecode) {
         String url = "jdbc:mysql://localhost:3306/user_db";
         String dbUser = "root";
-        String dbPassword = "Phong416ct5x2";
+        String dbPassword = "bisql69";
 
         try (Connection connection = DriverManager.getConnection(url, dbUser, dbPassword)) {
             String sql = "INSERT INTO users (username, password, email, safecode) VALUES (?, ?, ?, ?)";

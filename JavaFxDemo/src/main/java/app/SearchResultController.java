@@ -25,12 +25,11 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class SearchResultController implements Initializable {
 
-    @FXML
-    private TextField searchField; // TextField for user search input
     @FXML
     private ListView<String> resultsListView; // ListView to display search results
     @FXML
@@ -103,8 +102,14 @@ public class SearchResultController implements Initializable {
     private void fetchBooks(String title, String author, String publisher) {
         String urlString = buildQueryUrl(title, author, publisher);
         HttpURLConnection connection = null;
-
         try {
+            ObservableList<Book> apiBooks = FXCollections.observableArrayList();
+            ObservableList<Book> dbBooks = fetchBooksFromDatabase(title, author, publisher);
+            if (dbBooks.isEmpty()) {
+                System.out.println("No books found in the database.");
+            }
+            ObservableList<Book> combinedBooks = FXCollections.observableArrayList();
+            combinedBooks.addAll(dbBooks);
             URL url = new URL(urlString);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
@@ -116,13 +121,22 @@ public class SearchResultController implements Initializable {
 
             JsonArray items = response.has("items") ? response.getAsJsonArray("items") : null;
 
-            if (items == null || items.size() == 0) {
+
+            if ((items == null || items.size() == 0) && combinedBooks.size() == 0) {
                 System.out.println("No books found for the query.");
+                System.out.println(combinedBooks.size());
+                // Add an "Add Book" button when no results are found
+                Button addBookButton = new Button("Not found your book? Add book");
+                addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
+                addBookButton.setOnAction(event -> onAddBookButtonClicked());
+
+                resultsVBox.getChildren().add(addBookButton); // Add the button to the resultsVBox
                 return;
             }
 
+
             resultsVBox.getChildren().clear();  // Clear previous results
-            booksList.clear();  // Clear previous search results
+            //booksList.clear();  // Clear previous search results
 
             for (int i = 0; i < items.size(); i++) {
                 JsonObject book = items.get(i).getAsJsonObject();
@@ -145,8 +159,10 @@ public class SearchResultController implements Initializable {
                         bookTitle, bookAuthor, bookPublisher, description, imageUrl,
                         publishedDate, pageCount, categories, averageRating, previewLink
                 );
-                booksList.add(bookObject);  // Add book to the list
+                //booksList.add(bookObject);  // Add book to the list
+                apiBooks.add(bookObject);
 
+                /*
                 // Create the UI components for displaying the book
                 HBox bookInfoBox = new HBox(10);
                 VBox textBox = new VBox();
@@ -171,7 +187,54 @@ public class SearchResultController implements Initializable {
                 bookInfoBox.setOnMouseClicked(event -> showBookDetails(bookObject));
 
                 resultsVBox.getChildren().add(bookInfoBox); // Add book to results VBox
+
+                 */
             }
+
+            combinedBooks.addAll(apiBooks);
+
+            if (combinedBooks.isEmpty()) {
+                resultsVBox.getChildren().clear();
+                System.out.println("No books found for the query.");
+                Button addBookButton = new Button("Not found your book? Add book");
+                addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
+                addBookButton.setOnAction(event -> onAddBookButtonClicked());
+                resultsVBox.getChildren().add(addBookButton);
+                return;
+            }
+
+            // Clear previous results and update the UI
+            resultsVBox.getChildren().clear();
+            booksList.clear();
+            booksList.addAll(combinedBooks);
+
+            for (Book book : combinedBooks) {
+                HBox bookInfoBox = new HBox(10);
+                VBox textBox = new VBox();
+                textBox.getChildren().addAll(
+                        new Label("Title: " + book.getTitle()),
+                        new Label("Author: " + book.getAuthor()),
+                        new Label("Publisher: " + book.getPublisher())
+                );
+
+                ImageView imageView = book.getImageUrl() != null
+                        ? new ImageView(new Image(book.getImageUrl()))
+                        : new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop btl/" +
+                        "Library-Management-System/JavaFxDemo/assets/unavailable.jpg").toURI().toString()));
+
+                imageView.setFitWidth(160);
+                imageView.setFitHeight(240);
+
+                bookInfoBox.getChildren().addAll(imageView, textBox);
+
+                bookInfoBox.setOnMouseClicked(event -> showBookDetails(book));
+                resultsVBox.getChildren().add(bookInfoBox);
+            }
+
+            Button addBookButton = new Button("Not found your book? Add book");
+            addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
+            addBookButton.setOnAction(event -> onAddBookButtonClicked());
+            resultsVBox.getChildren().add(addBookButton);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -179,6 +242,78 @@ public class SearchResultController implements Initializable {
             if (connection != null) {
                 connection.disconnect();
             }
+        }
+    }
+
+    private ObservableList<Book> fetchBooksFromDatabase(String title, String author, String publisher) {
+        ObservableList<Book> dbBooks = FXCollections.observableArrayList();
+
+        // Normalize input
+        title = (title == null || title.isEmpty()) ? "" : title;
+        author = (author == null || author.isEmpty()) ? "" : author;
+        publisher = (publisher == null || publisher.isEmpty()) ? "" : publisher;
+
+        String sql = "SELECT * FROM book WHERE (title LIKE ? OR ? = '') AND (author LIKE ? OR ? = '') AND (publisher LIKE ? OR ? = '')";
+        System.out.println("Executing SQL Query: " + sql);
+
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user_db", "root", "bisql69");
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, "%" + title + "%");
+            pstmt.setString(2, title);
+            pstmt.setString(3, "%" + author + "%");
+            pstmt.setString(4, author);
+            pstmt.setString(5, "%" + publisher + "%");
+            pstmt.setString(6, publisher);
+
+            System.out.println("Parameters: " + title + ", " + author + ", " + publisher);
+
+
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    String imageUrl = null;
+                    if (rs.getString("imageUrl") != null) {
+                        imageUrl = rs.getString("imageUrl");
+                    }
+                    Book book = new Book(
+                            rs.getString("title"),
+                            rs.getString("author"),
+                            rs.getString("publisher"),
+                            rs.getString("description"),
+                            imageUrl,
+                            rs.getString("publishedDate"),
+                            rs.getInt("pageCount"),
+                            rs.getString("categories"),
+                            rs.getString("averageRating"),
+                            rs.getString("previewLink")
+                    );
+                    dbBooks.add(book);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Books retrieved: " + dbBooks.size());
+        return dbBooks;
+    }
+
+
+
+    private void onAddBookButtonClicked() {
+        System.out.println("Redirecting to Add Book Form...");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
+            Parent root = loader.load();
+
+            // Open the Add Book form in a new window
+            Stage stage = new Stage();
+            stage.setTitle("Add Book");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
