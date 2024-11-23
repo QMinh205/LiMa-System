@@ -6,11 +6,26 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SignUpController">
+<AnchorPane prefHeight="750.0" prefWidth="1500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SignUpController">
    <children>
+      <ImageView fitHeight="750.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/background.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="384.0" layoutY="10.0" prefHeight="733.0" prefWidth="751.0" styleClass="transparent-box">
+         <children>
+            <JFXButton fx:id="signUpConfirmButton" buttonType="RAISED" layoutX="339.0" layoutY="535.0" onAction="#onSignUpConfirmButton" prefHeight="50.0" prefWidth="135.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="22.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
       <Text fill="WHITE" layoutX="504.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="101.33673095703125">
          <font>
             <Font name="Trebuchet MS Bold" size="20.0" />
@@ -57,18 +72,6 @@
       <JFXButton fx:id="signUpReturnButton" buttonType="RAISED" layoutX="14.0" layoutY="25.0" onAction="#onSignUpReturnButton" prefHeight="50.0" prefWidth="149.0" styleClass="setting-button" text="Return" textFill="WHITE">
          <font>
             <Font name="Trebuchet MS Bold" size="16.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="42.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/return.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="signUpConfirmButton" buttonType="RAISED" layoutX="722.0" layoutY="519.0" onAction="#onSignUpConfirmButton" prefHeight="50.0" prefWidth="135.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
-         <font>
-            <Font name="Trebuchet MS Bold" size="22.0" />
          </font>
       </JFXButton>
    </children>

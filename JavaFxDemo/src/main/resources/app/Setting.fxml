@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SettingController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SettingController">
     <left>
         <VBox prefHeight="750.0" prefWidth="431.0" styleClass="primary-color" BorderPane.alignment="CENTER">
             <children>
@@ -48,106 +48,86 @@
                 </VBox>
                 <VBox prefHeight="396.0" prefWidth="431.0">
                     <children>
-                        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected-border">
+                        <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected-border">
                             <children>
-                                <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/user.png" />
-                                    </image>
-                                </ImageView>
-                                <Label prefHeight="32.0" prefWidth="191.0" text="Profile" textFill="WHITE">
-                                    <padding>
-                                        <Insets left="15.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="22.0" />
-                                    </font>
-                                </Label>
+                        <Pane prefHeight="75.0" prefWidth="104.0" />
+                        <JFXButton text="Profile" textFill="WHITE">
+                           <graphic>
+                                      <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/user.png" />
+                                          </image>
+                                      </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXButton>
                             </children>
                             <padding>
                                 <Insets bottom="20.0" />
                             </padding>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected">
-                            <children>
-                                <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
-                                    </image>
-                                </ImageView>
-                                <Label prefHeight="32.0" prefWidth="191.0" text="Notifications" textFill="WHITE">
-                                    <padding>
-                                        <Insets left="15.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="22.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                            <padding>
-                                <Insets bottom="20.0" />
-                            </padding>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected">
-                            <children>
-                                <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/password.png" />
-                                    </image>
-                                </ImageView>
-                                <Label prefHeight="32.0" prefWidth="191.0" text="Password" textFill="WHITE">
-                                    <padding>
-                                        <Insets left="15.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="22.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                            <padding>
-                                <Insets bottom="20.0" />
-                            </padding>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected">
-                            <children>
-                                <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/setting.png" />
-                                    </image>
-                                </ImageView>
-                                <Label prefHeight="32.0" prefWidth="191.0" text="Settings" textFill="WHITE">
-                                    <padding>
-                                        <Insets left="15.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="22.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                            <padding>
-                                <Insets bottom="20.0" />
-                            </padding>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected">
-                            <children>
-                                <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/privacy.png" />
-                                    </image>
-                                </ImageView>
-                                <Label prefHeight="32.0" prefWidth="191.0" text="Privacy Policy" textFill="WHITE">
-                                    <padding>
-                                        <Insets left="15.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="22.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                            <padding>
-                                <Insets bottom="20.0" />
-                            </padding>
-                        </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0">
+                     <children>
+                        <Pane prefHeight="75.0" prefWidth="104.0" />
+                        <JFXButton text="Password" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/password.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0">
+                     <children>
+                        <Pane prefHeight="75.0" prefWidth="104.0" />
+                        <JFXButton text="Setting" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/setting.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="104.0" />
+                        <JFXButton text="Privacy policy" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/privacy.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </HBox>
                     </children>
                 </VBox>
             </children>
