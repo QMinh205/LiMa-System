@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -19,54 +20,92 @@
       </ImageView>
       <Pane layoutX="384.0" layoutY="10.0" prefHeight="733.0" prefWidth="751.0" styleClass="transparent-box">
          <children>
-            <JFXButton fx:id="signUpConfirmButton" buttonType="RAISED" layoutX="339.0" layoutY="535.0" onAction="#onSignUpConfirmButton" prefHeight="50.0" prefWidth="135.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
+            <JFXButton fx:id="signUpConfirmButton" buttonType="RAISED" layoutX="308.0" layoutY="669.0" onAction="#onSignUpConfirmButton" prefHeight="50.0" prefWidth="135.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS Bold" size="22.0" />
                </font>
             </JFXButton>
+            <TextField fx:id="safeCode" layoutX="272.0" layoutY="585.0" prefHeight="42.0" prefWidth="371.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text fill="WHITE" layoutX="118.0" layoutY="625.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Safecode" wrappingWidth="90.80340576171875">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="20.0" />
+               </font>
+            </Text>
+            <TextField layoutX="272.0" layoutY="176.0" prefHeight="42.0" prefWidth="371.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text fill="WHITE" layoutX="118.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fullname" wrappingWidth="90.80340576171875">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="20.0" />
+               </font>
+            </Text>
+            <TextField layoutX="272.0" layoutY="233.0" prefHeight="42.0" prefWidth="371.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text fill="WHITE" layoutX="118.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="90.80340576171875">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="119.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="101.33673095703125">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="118.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-Enter" wrappingWidth="90.80340576171875">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="20.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="password" layoutX="272.0" layoutY="371.0" prefHeight="42.0" prefWidth="371.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <PasswordField fx:id="confirmpassword" layoutX="270.0" layoutY="434.0" prefHeight="42.0" prefWidth="371.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="email" layoutX="272.0" layoutY="307.0" prefHeight="42.0" prefWidth="371.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text fill="WHITE" layoutX="117.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="128.00341796875">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="20.0" />
+               </font>
+            </Text>
+            <DatePicker layoutX="272.0" layoutY="524.0" prefHeight="26.0" prefWidth="371.0" styleClass="date-picker" />
+            <TextField fx:id="username" layoutX="270.0" layoutY="119.0" prefHeight="42.0" prefWidth="371.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text fill="WHITE" layoutX="119.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="62.136718750000114">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="119.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="101.33673095703125">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="20.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
-      <Text fill="WHITE" layoutX="504.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="101.33673095703125">
-         <font>
-            <Font name="Trebuchet MS Bold" size="20.0" />
-         </font>
-      </Text>
-      <TextField fx:id="username" layoutX="664.0" layoutY="155.0" prefHeight="42.0" prefWidth="371.0">
-         <font>
-            <Font size="16.0" />
-         </font></TextField>
-      <Text fill="WHITE" layoutX="502.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="101.33673095703125">
-         <font>
-            <Font name="Trebuchet MS Bold" size="20.0" />
-         </font>
-      </Text>
-      <Text fill="WHITE" layoutX="502.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-Enter" wrappingWidth="90.80340576171875">
-         <font>
-            <Font name="Trebuchet MS Bold" size="20.0" />
-         </font>
-      </Text>
-      <Text fill="WHITE" layoutX="502.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="62.136718750000114">
-         <font>
-            <Font name="Trebuchet MS Bold" size="20.0" />
-         </font>
-      </Text>
-      <TextField fx:id="email" layoutX="664.0" layoutY="331.0" prefHeight="42.0" prefWidth="371.0" />
-      <Text fill="WHITE" layoutX="570.0" layoutY="696.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2024. All Rights Reserved. TamThaiTu" wrappingWidth="487.4699401855469">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Text>
-      <PasswordField fx:id="password" layoutX="664.0" layoutY="209.0" prefHeight="42.0" prefWidth="371.0" />
-      <PasswordField fx:id="confirmpassword" layoutX="664.0" layoutY="266.0" prefHeight="42.0" prefWidth="371.0" />
       <Text fill="WHITE" layoutX="722.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="135.2109375">
          <font>
             <Font name="Trebuchet MS Bold" size="36.0" />
-         </font>
-      </Text>
-      <TextField fx:id="safeCode" layoutX="664.0" layoutY="397.0" prefHeight="42.0" prefWidth="371.0" />
-      <Text fill="WHITE" layoutX="499.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Safecode" wrappingWidth="90.80340576171875">
-         <font>
-            <Font name="Trebuchet MS Bold" size="20.0" />
          </font>
       </Text>
       <JFXButton fx:id="signUpReturnButton" buttonType="RAISED" layoutX="14.0" layoutY="25.0" onAction="#onSignUpReturnButton" prefHeight="50.0" prefWidth="149.0" styleClass="setting-button" text="Return" textFill="WHITE">

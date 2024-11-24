@@ -129,3 +129,10 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.3, 0, 1);
     -fx-translate-y: 2;
 }
+.date-picker {
+    -fx-text-fill: black; /* Màu chữ đen */
+}
+
+.date-picker .text-field {
+    -fx-text-fill: black; /* Màu chữ trong trường nhập liệu */
+}

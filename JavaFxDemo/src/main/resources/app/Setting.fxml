@@ -65,7 +65,7 @@
                         </JFXButton>
                             </children>
                             <padding>
-                                <Insets bottom="20.0" />
+                                <Insets bottom="40.0" />
                             </padding>
                         </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0">
@@ -85,27 +85,7 @@
                         </JFXButton>
                      </children>
                      <padding>
-                        <Insets bottom="20.0" />
-                     </padding>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0">
-                     <children>
-                        <Pane prefHeight="75.0" prefWidth="104.0" />
-                        <JFXButton text="Setting" textFill="WHITE">
-                           <graphic>
-                              <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/setting.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font size="22.0" />
-                           </font>
-                        </JFXButton>
-                     </children>
-                     <padding>
-                        <Insets bottom="20.0" />
+                        <Insets bottom="40.0" />
                      </padding>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0">
@@ -125,7 +105,7 @@
                         </JFXButton>
                      </children>
                      <padding>
-                        <Insets bottom="20.0" />
+                        <Insets bottom="40.0" />
                      </padding>
                   </HBox>
                     </children>
