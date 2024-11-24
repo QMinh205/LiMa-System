@@ -35,7 +35,7 @@
                   <Font name="Trebuchet MS Bold" size="20.0" />
                </font>
             </Text>
-            <TextField layoutX="272.0" layoutY="176.0" prefHeight="42.0" prefWidth="371.0">
+            <TextField fx:id="fullName" layoutX="272.0" layoutY="176.0" prefHeight="42.0" prefWidth="371.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -45,7 +45,7 @@
                   <Font name="Trebuchet MS Bold" size="20.0" />
                </font>
             </Text>
-            <TextField layoutX="272.0" layoutY="233.0" prefHeight="42.0" prefWidth="371.0">
+            <TextField fx:id="phoneNumber" layoutX="272.0" layoutY="233.0" prefHeight="42.0" prefWidth="371.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -85,7 +85,7 @@
                   <Font name="Trebuchet MS Bold" size="20.0" />
                </font>
             </Text>
-            <DatePicker layoutX="272.0" layoutY="524.0" prefHeight="26.0" prefWidth="371.0" styleClass="date-picker" />
+            <DatePicker fx:id="dateOfBirth" layoutX="272.0" layoutY="524.0" prefHeight="26.0" prefWidth="371.0" styleClass="date-picker" />
             <TextField fx:id="username" layoutX="270.0" layoutY="119.0" prefHeight="42.0" prefWidth="371.0">
                <font>
                   <Font size="16.0" />

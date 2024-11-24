@@ -21,13 +21,13 @@ import java.util.*;
 public class Game extends Application {
 
     private final String[] imageUrls = {
-            "file:/D:/Library_Management/JavaFxDemo/assets/image1.jpg",
-            "file:/D:/Library_Management/JavaFxDemo/assets/image2.jpg",
-            "file:/D:/Library_Management/JavaFxDemo/assets/image3.jpg",
-            "file:/D:/Library_Management/JavaFxDemo/assets/image4.jpg",
-            "file:/D:/Library_Management/JavaFxDemo/assets/image5.jpg",
-            "file:/D:/Library_Management/JavaFxDemo/assets/image6.jpg",
-            "file:/D:/Library_Management/JavaFxDemo/assets/image7.jpg"
+            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image1.jpg",
+            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image2.jpg",
+            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image3.jpg",
+            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image4.jpg",
+            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image5.jpg",
+            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image6.jpg",
+            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image7.jpg"
             /*"file:/D:/Library_Management/JavaFxDemo/assets/image8.jpg",
             "file:/D:/Library_Management/JavaFxDemo/assets/image9.jpg",
             "file:/D:/Library_Management/JavaFxDemo/assets/image10.jpg",

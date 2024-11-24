@@ -5,20 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class SignUpController {
+
     @FXML
     private TextField username;
 
@@ -41,37 +36,67 @@ public class SignUpController {
     private TextField safeCode;
 
     @FXML
+    private TextField fullName;
+
+    @FXML
+    private TextField phoneNumber;
+
+    @FXML
+    private DatePicker dateOfBirth;
+
+    @FXML
     protected void onSignUpConfirmButton() {
         String user = username.getText();
         String pass = password.getText();
         String confirmPass = confirmpassword.getText();
         String emailAddress = email.getText();
         String safecode = safeCode.getText();
+        String fullNameText = fullName.getText();
+        String phoneNumberText = phoneNumber.getText();
+        LocalDate dob = dateOfBirth.getValue();
 
-        // check điền full ô
-        if (user.isEmpty() || pass.isEmpty() || confirmPass.isEmpty() || emailAddress.isEmpty() || safecode.isEmpty()) {
-            showAlert("Error", "All fields are required!");
+        // kiểm tra các trường có rỗng không
+        if (user.isEmpty() || pass.isEmpty() || confirmPass.isEmpty() || emailAddress.isEmpty() || safecode.isEmpty() || fullNameText.isEmpty() || phoneNumberText.isEmpty() || dob == null) {
+            showAlert(Alert.AlertType.ERROR, "Error", "All fields are required!");
             return;
         }
 
-        // check nhập lại password
+        // kiểm tra tuổi người dùng
+        if (!isEligibleAge(dob)) {
+            showAlert(Alert.AlertType.ERROR, "Error", "You must be at least 18 years old to register.");
+            return;
+        }
+
+        // kiểm tra khớp mật khẩu
         if (!pass.equals(confirmPass)) {
-            showAlert("Error", "Passwords do not match!");
+            showAlert(Alert.AlertType.ERROR, "Error", "Passwords do not match!");
             return;
         }
 
-        // đăng ký vào database
-        if (registerUser(user, pass, emailAddress, safecode)) {
-            showAlert("Success", "Registration successful!");
+        // đăng ký người dùng
+        if (registerUser(user, pass, fullNameText, phoneNumberText, dob, emailAddress, safecode)) {
+            showAlert(Alert.AlertType.INFORMATION, "Success", "Registration successful!");
+            clearAllFields();
         } else {
-            showAlert("Error", "Registration failed! Please try again.");
+            showAlert(Alert.AlertType.ERROR, "Error", "Registration failed! Please try again.");
         }
+    }
+
+    private void clearAllFields() {
+        username.clear();
+        password.clear();
+        confirmpassword.clear();
+        email.clear();
+        safeCode.clear();
+        fullName.clear();
+        phoneNumber.clear();
+        dateOfBirth.setValue(null);
     }
 
     @FXML
     protected void onSignUpReturnButton() {
         try {
-            // về màn hình đăng nhập
+            // quay lại màn hình đăng nhập
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) signUpReturnButton.getScene().getWindow();
@@ -80,11 +105,11 @@ public class SignUpController {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert("Error", "Could not load the login screen.");
+            showAlert(Alert.AlertType.ERROR, "Error", "Could not load the login screen.");
         }
     }
 
-    private boolean registerUser(String userName, String password, String email, String safecode) {
+    private boolean registerUser(String userName, String password, String fullName, String phoneNumber, LocalDate dateOfBirth, String email, String safecode) {
         String url = "jdbc:mysql://localhost:3306/new_dtb";
         String dbUser = "root";
         String dbPassword = "Phong416ct5x2";
@@ -92,60 +117,54 @@ public class SignUpController {
 
         try {
             connection = DriverManager.getConnection(url, dbUser, dbPassword);
-            // bắt đầu một giao dịch
-            connection.setAutoCommit(false); // tắt tự động commit auto_increment
+            connection.setAutoCommit(false); // Tắt auto commit
 
-            // kiểm tra xem username và email có bị trùng không
+            // Kiểm tra username hoặc email đã tồn tại
             String checkUserQuery = "SELECT COUNT(*) FROM users WHERE userName = ? OR email = ?";
             try (PreparedStatement checkStmt = connection.prepareStatement(checkUserQuery)) {
                 checkStmt.setString(1, userName);
                 checkStmt.setString(2, email);
                 ResultSet rs = checkStmt.executeQuery();
                 if (rs.next() && rs.getInt(1) > 0) {
-                    showAlert("Error", "The username or email is already taken.");
-                    connection.rollback(); // Rollback nếu có lỗi
+                    showAlert(Alert.AlertType.ERROR, "Error", "The username or email is already taken.");
+                    connection.rollback(); // Rollback nếu phát hiện lỗi
                     return false;
                 }
             }
 
-            // sql để chèn người dùng vào cơ sở dữ liệu
-            String sql = "INSERT INTO users (username, password, email, safecode) VALUES (?, ?, ?, ?)";
+            // Thêm người dùng vào cơ sở dữ liệu
+            String sql = "INSERT INTO users (fullName, userName, password, email, phoneNumber, safeCode, dateOfBirth) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setString(1, userName);
-                statement.setString(2, password);
-                statement.setString(3, email);
-                statement.setString(4, safecode);
+                statement.setString(1, fullName);
+                statement.setString(2, userName);
+                statement.setString(3, password);
+                statement.setString(4, email);
+                statement.setString(5, phoneNumber);
+                statement.setString(6, safecode);
+                statement.setDate(7, Date.valueOf(dateOfBirth)); // Chuyển đổi LocalDate sang SQL Date
 
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
-                    connection.commit(); // commit nếu chèn thành công
+                    connection.commit(); // Commit nếu thành công
                     return true;
                 } else {
-                    connection.rollback(); // rollback nếu không có bản ghi nào được thêm
+                    connection.rollback(); // Rollback nếu không có dòng nào được thêm
                     return false;
                 }
             }
         } catch (SQLException e) {
             try {
-                // nếu có lỗi xảy ra thì rollback giao dịch
                 if (connection != null) {
                     connection.rollback();
                 }
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
-            // các lỗi chi tiết
-            String errorMessage = "Database error: " + e.getMessage();
-            if (e.getMessage().contains("Duplicate entry")) {
-                showAlert("Error", "The username or email is already taken.");
-            } else {
-                showAlert("Error", errorMessage);
-            }
+            showAlert(Alert.AlertType.ERROR, "Error", "Database error: " + e.getMessage());
             e.printStackTrace();
             return false;
         } finally {
             try {
-                //trả lại đúng chế độ của commit sau khi commit xong
                 if (connection != null) {
                     connection.setAutoCommit(true);
                 }
@@ -155,16 +174,17 @@ public class SignUpController {
         }
     }
 
+    private boolean isEligibleAge(LocalDate dob) {
+        LocalDate currentDate = LocalDate.now();
+        int age = Period.between(dob, currentDate).getYears();
+        return age >= 18;
+    }
 
-
-
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
     }
-
 }
-
