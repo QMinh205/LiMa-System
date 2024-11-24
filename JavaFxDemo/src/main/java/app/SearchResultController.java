@@ -32,14 +32,11 @@ import java.util.ResourceBundle;
 public class SearchResultController implements Initializable {
 
     @FXML
-    private ListView<String> resultsListView; // ListView to display search results
-    @FXML
     private VBox resultsVBox; // VBox to organize results
     @FXML
     private Button backButton;
 
     private static final String API_KEY = ""; // Replace with your actual API key
-    private ObservableList<Book> booksList = FXCollections.observableArrayList();
     private static Scene searchResultScene;
 
     public static void setSearchResultScene(Scene scene) {

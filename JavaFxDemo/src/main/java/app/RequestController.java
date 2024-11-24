@@ -1,6 +1,7 @@
 package app;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,9 +13,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RequestController {
-    @FXML
-    private BorderPane mainBorderPane;
+public class RequestController extends BaseController {
 
     @FXML
     private JFXButton homeButton;
@@ -34,64 +33,15 @@ public class RequestController {
     @FXML
     private JFXButton settingButton;
 
-    private final Map<String, String> buttonToFXMLMap = new HashMap<>();
-
     @FXML
     public void initialize() {
-        setupHomeButton();
-        setupRequestButton();
-        setupInformationButton();
-        setupFavouriteButton();
-        setupGameButton();
-        setupSettingButton();
-    }
+        // Use the setupButton method from BaseController
+        setupButton(homeButton, "User-Home.fxml", "Home");
+        setupButton(requestButton, "Request.fxml", "Request");
+        setupButton(informationButton, "Information.fxml", "Information");
+        setupButton(favouriteButton, "Favourite.fxml", "Favourite");
+        setupButton(settingButton, "Setting.fxml", "Setting");
 
-    private void setupHomeButton() {
-        homeButton.setOnAction(event -> {
-            loadScene("User-Home.fxml", "Home", homeButton);
-        });
-    }
-
-    private void setupRequestButton() {
-        requestButton.setOnAction(event -> {
-            loadScene("Request.fxml", "Request", requestButton);
-        });
-    }
-
-    private void setupInformationButton() {
-        informationButton.setOnAction(event -> {
-            loadScene("Information.fxml", "Information", informationButton);
-        });
-    }
-
-    private void setupFavouriteButton() {
-        favouriteButton.setOnAction(event -> {
-            loadScene("Favourite.fxml", "Favourite", favouriteButton);
-        });
-    }
-
-    private void setupGameButton() {
-        gameButton.setOnAction(event -> {
-            loadScene("Game.fxml", "Game", gameButton);
-        });
-    }
-
-    private void setupSettingButton() {
-        settingButton.setOnAction(event -> {
-            loadScene("Setting.fxml", "Setting", settingButton);
-        });
-    }
-
-    private void loadScene(String fxmlFile, String title, JFXButton button) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Parent root = loader.load();
-
-            Stage stage = (Stage) button.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle(title);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        setupGameButton(gameButton);
     }
 }

@@ -12,9 +12,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class InformationController {
-    @FXML
-    private BorderPane mainBorderPane;
+public class InformationController extends BaseController {
 
     @FXML
     private JFXButton homeButton;
@@ -37,72 +35,16 @@ public class InformationController {
     @FXML
     private JFXButton searchButton;
 
-    private final Map<String, String> buttonToFXMLMap = new HashMap<>();
-
     @FXML
     public void initialize() {
-        setupHomeButton();
-        setupRequestButton();
-        setupInformationButton();
-        setupFavouriteButton();
-        setupGameButton();
-        setupSettingButton();
-        setupSearchButton();
-    }
+        // Use the setupButton method from BaseController
+        setupButton(homeButton, "User-Home.fxml", "Home");
+        setupButton(requestButton, "Request.fxml", "Request");
+        setupButton(informationButton, "Information.fxml", "Information");
+        setupButton(favouriteButton, "Favourite.fxml", "Favourite");
+        setupButton(settingButton, "Setting.fxml", "Setting");
+        setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 
-    private void setupSearchButton() {
-        searchButton.setOnAction(event -> {
-            loadScene("SearchBar.fxml", "SearchBar", searchButton);
-        });
-    }
-    private void setupHomeButton() {
-        homeButton.setOnAction(event -> {
-            loadScene("User-Home.fxml", "Home", homeButton);
-        });
-    }
-
-    private void setupRequestButton() {
-        requestButton.setOnAction(event -> {
-            loadScene("Request.fxml", "Request", requestButton);
-        });
-    }
-
-    private void setupInformationButton() {
-        informationButton.setOnAction(event -> {
-            loadScene("Information.fxml", "Information", informationButton);
-        });
-    }
-
-    private void setupFavouriteButton() {
-        favouriteButton.setOnAction(event -> {
-            loadScene("Favourite.fxml", "Favourite", favouriteButton);
-        });
-    }
-
-    private void setupGameButton() {
-        gameButton.setOnAction(event -> {
-            loadScene("Game.fxml", "Game", gameButton);
-        });
-    }
-
-    private void setupSettingButton() {
-        settingButton.setOnAction(event -> {
-            loadScene("Setting.fxml", "Setting", settingButton);
-        });
-    }
-
-    private void loadScene(String fxmlFile, String title, JFXButton button) {
-        try {
-            // load fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Parent root = loader.load();
-
-            // lấy stage hiện tại và đặt scene mới
-            Stage stage = (Stage) button.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle(title);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        setupGameButton(gameButton);
     }
 }
