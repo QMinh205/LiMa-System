@@ -76,7 +76,7 @@ public class AddBookController {
         String user = "root";
         String password = "bisql69";
 
-        String insertBookQuery = "INSERT INTO book (title, author, publisher, description, image_url, published_date, " +
+        String insertBookQuery = "INSERT INTO books (title, author, publisher, description, image_url, published_date, " +
                 "page_count, categories, average_rating, preview_link) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection(url, user, password);

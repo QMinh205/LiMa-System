@@ -25,7 +25,7 @@ public class BookDetailController {
     @FXML
     private ImageView bookImageView;
     @FXML
-    private Label bookTitleLabel, bookAuthorLabel, bookPublisherLabel, bookPublishedDateLabel, bookPageCountLabel,
+    private Label bookIdLabel, bookTitleLabel, bookAuthorLabel, bookPublisherLabel, bookPublishedDateLabel, bookPageCountLabel,
             bookCategoriesLabel, bookAverageRatingLabel, bookDescriptionLabel;
     @FXML
     private TextFlow bookDescriptionFlow;
@@ -35,6 +35,7 @@ public class BookDetailController {
     private static final int DESCRIPTION_PREVIEW_LENGTH = 200;
 
     public void setBookDetails(Book book) {
+        bookIdLabel.setText("Book ID: " + book.getBookId());
         bookTitleLabel.setText(book.getTitle());
         bookAuthorLabel.setText(book.getAuthor());
         bookPublisherLabel.setText(book.getPublisher());

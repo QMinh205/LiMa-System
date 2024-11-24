@@ -1,6 +1,7 @@
 package app;
 
 public class Book {
+    private String bookId;
     private String title;
     private String author;
     private String publisher;
@@ -13,8 +14,9 @@ public class Book {
     private String previewLink;
 
     // Constructor
-    public Book(String title, String author, String publisher, String description, String imageUrl,
+    public Book(String bookId, String title, String author, String publisher, String description, String imageUrl,
                 String publishedDate, int pageCount, String categories, String averageRating, String previewLink) {
+        this.bookId = bookId;
         this.title = title;
         this.author = author;
         this.publisher = publisher;
@@ -28,6 +30,7 @@ public class Book {
     }
 
     // Getters and setters for all fields
+    public String getBookId() { return bookId; }
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public String getPublisher() { return publisher; }

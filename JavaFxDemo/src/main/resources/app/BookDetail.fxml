@@ -18,6 +18,7 @@
         <VBox fx:id="detailsBox" spacing="10" alignment="TOP_LEFT"
               AnchorPane.topAnchor="50" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
             <ImageView fx:id="bookImageView" fitWidth="150" fitHeight="200" />
+            <Label fx:id="bookIdLabel" layoutX="20" layoutY="20" text="Book ID:" />
             <Label fx:id="bookTitleLabel" text="Title" />
             <Label fx:id="bookAuthorLabel" text="Author" />
             <Label fx:id="bookPublisherLabel" text="Publisher" />

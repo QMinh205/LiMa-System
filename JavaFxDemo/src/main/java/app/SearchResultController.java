@@ -1,6 +1,7 @@
 package app;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
 import javafx.application.Platform;
@@ -105,11 +106,13 @@ public class SearchResultController implements Initializable {
         try {
             ObservableList<Book> apiBooks = FXCollections.observableArrayList();
             ObservableList<Book> dbBooks = fetchBooksFromDatabase(title, author, publisher);
+            ObservableList<Book> combinedBooks = FXCollections.observableArrayList();
+            combinedBooks.addAll(dbBooks);
+
             if (dbBooks.isEmpty()) {
                 System.out.println("No books found in the database.");
             }
-            ObservableList<Book> combinedBooks = FXCollections.observableArrayList();
-            combinedBooks.addAll(dbBooks);
+
             URL url = new URL(urlString);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
@@ -121,92 +124,48 @@ public class SearchResultController implements Initializable {
 
             JsonArray items = response.has("items") ? response.getAsJsonArray("items") : null;
 
-
-            if ((items == null || items.size() == 0) && combinedBooks.size() == 0) {
-                System.out.println("No books found for the query.");
-                System.out.println(combinedBooks.size());
-                // Add an "Add Book" button when no results are found
-                Button addBookButton = new Button("Not found your book? Add book");
-                addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
-                addBookButton.setOnAction(event -> onAddBookButtonClicked());
-
-                resultsVBox.getChildren().add(addBookButton); // Add the button to the resultsVBox
-                return;
-            }
-
-
-            resultsVBox.getChildren().clear();  // Clear previous results
-            //booksList.clear();  // Clear previous search results
-
-            for (int i = 0; i < items.size(); i++) {
-                JsonObject book = items.get(i).getAsJsonObject();
-                JsonObject volumeInfo = book.getAsJsonObject("volumeInfo");
-
-                String bookTitle = volumeInfo.get("title").getAsString();
-                String bookAuthor = volumeInfo.has("authors") ? volumeInfo.getAsJsonArray("authors").get(0).getAsString() : "Unknown Author";
-                String bookPublisher = volumeInfo.has("publisher") ? volumeInfo.get("publisher").getAsString() : "Unknown Publisher";
-                String description = volumeInfo.has("description") ? volumeInfo.get("description").getAsString() : "No description available.";
-                String publishedDate = volumeInfo.has("publishedDate") ? volumeInfo.get("publishedDate").getAsString() : "Unknown";
-                int pageCount = volumeInfo.has("pageCount") ? volumeInfo.get("pageCount").getAsInt() : 0;
-                String categories = volumeInfo.has("categories") ? volumeInfo.getAsJsonArray("categories").get(0).getAsString() : "Uncategorized";
-                String averageRating = volumeInfo.has("averageRating") ? volumeInfo.get("averageRating").getAsString() : "No rating";
-                String previewLink = volumeInfo.has("previewLink") ? volumeInfo.get("previewLink").getAsString() : "No preview available";
-                String imageUrl = volumeInfo.has("imageLinks") && volumeInfo.getAsJsonObject("imageLinks").has("thumbnail")
-                        ? volumeInfo.getAsJsonObject("imageLinks").get("thumbnail").getAsString()
-                        : null;
-
-                Book bookObject = new Book(
-                        bookTitle, bookAuthor, bookPublisher, description, imageUrl,
-                        publishedDate, pageCount, categories, averageRating, previewLink
-                );
-                //booksList.add(bookObject);  // Add book to the list
-                apiBooks.add(bookObject);
-
-                /*
-                // Create the UI components for displaying the book
-                HBox bookInfoBox = new HBox(10);
-                VBox textBox = new VBox();
-                textBox.getChildren().addAll(
-                        new Label("Title: " + bookTitle),
-                        new Label("Author: " + bookAuthor),
-                        new Label("Publisher: " + bookPublisher)
-                );
-
-                // Handle the image
-                ImageView imageView = imageUrl != null
-                        ? new ImageView(new Image(imageUrl))
-                        : new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop btl/" +
-                        "Library-Management-System/JavaFxDemo/assets/unavailable.jpg").toURI().toString()));
-
-                imageView.setFitWidth(160);
-                imageView.setFitHeight(240);
-
-                bookInfoBox.getChildren().addAll(imageView, textBox);
-
-                // Add event handler to show book details
-                bookInfoBox.setOnMouseClicked(event -> showBookDetails(bookObject));
-
-                resultsVBox.getChildren().add(bookInfoBox); // Add book to results VBox
-
-                 */
+            if (items != null) {
+                for (JsonElement element : items) {
+                    JsonObject bookJson = element.getAsJsonObject();
+                    Book book = parseBookFromJson(bookJson);
+                    if (book != null) {
+                        apiBooks.add(book);
+                    }
+                }
             }
 
             combinedBooks.addAll(apiBooks);
 
             if (combinedBooks.isEmpty()) {
-                resultsVBox.getChildren().clear();
-                System.out.println("No books found for the query.");
-                Button addBookButton = new Button("Not found your book? Add book");
-                addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
-                addBookButton.setOnAction(event -> onAddBookButtonClicked());
-                resultsVBox.getChildren().add(addBookButton);
+                displayNoResultsUI();
                 return;
             }
 
-            // Clear previous results and update the UI
+            updateResultsUI(combinedBooks);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
+    }
+
+
+    private void displayNoResultsUI() {
+        resultsVBox.getChildren().clear();
+        System.out.println("No books found for the query.");
+
+        Button addBookButton = new Button("Not found your book? Add book");
+        addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
+        addBookButton.setOnAction(event -> onAddBookButtonClicked());
+        resultsVBox.getChildren().add(addBookButton);
+    }
+
+    private void updateResultsUI(ObservableList<Book> combinedBooks) {
+        Platform.runLater(() -> {
             resultsVBox.getChildren().clear();
-            booksList.clear();
-            booksList.addAll(combinedBooks);
 
             for (Book book : combinedBooks) {
                 HBox bookInfoBox = new HBox(10);
@@ -217,31 +176,60 @@ public class SearchResultController implements Initializable {
                         new Label("Publisher: " + book.getPublisher())
                 );
 
-                ImageView imageView = book.getImageUrl() != null
-                        ? new ImageView(new Image(book.getImageUrl()))
-                        : new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop btl/" +
-                        "Library-Management-System/JavaFxDemo/assets/unavailable.jpg").toURI().toString()));
+                // Check if the image URL is valid
+                String imageUrl = book.getImageUrl();
+                ImageView imageView;
+                if (imageUrl != null && !imageUrl.isEmpty()) {
+                    try {
+                        imageView = new ImageView(new Image(imageUrl));
+                    } catch (IllegalArgumentException e) {
+                        // Fallback to a placeholder if the URL is invalid
+                        imageView = new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop btl/" +
+                                "Library-Management-System/JavaFxDemo/assets/unavailable.jpg").toURI().toString()));
+                    }
+                } else {
+                    // Fallback to a placeholder if the URL is null or empty
+                    imageView = new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop btl/" +
+                            "Library-Management-System/JavaFxDemo/assets/unavailable.jpg").toURI().toString()));
+                }
 
                 imageView.setFitWidth(160);
                 imageView.setFitHeight(240);
 
                 bookInfoBox.getChildren().addAll(imageView, textBox);
-
                 bookInfoBox.setOnMouseClicked(event -> showBookDetails(book));
                 resultsVBox.getChildren().add(bookInfoBox);
             }
 
+            // Optionally add a button to handle no results found
             Button addBookButton = new Button("Not found your book? Add book");
             addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
             addBookButton.setOnAction(event -> onAddBookButtonClicked());
             resultsVBox.getChildren().add(addBookButton);
+        });
+    }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                connection.disconnect();
-            }
+    private Book parseBookFromJson(JsonObject bookJson) {
+        try {
+            String bookID = bookJson.has("id") ? bookJson.get("id").getAsString() : "Unknown ID";
+            JsonObject volumeInfo = bookJson.getAsJsonObject("volumeInfo");
+            String bookTitle = volumeInfo.get("title").getAsString();
+            String bookAuthor = volumeInfo.has("authors") ? volumeInfo.getAsJsonArray("authors").get(0).getAsString() : "Unknown Author";
+            String bookPublisher = volumeInfo.has("publisher") ? volumeInfo.get("publisher").getAsString() : "Unknown Publisher";
+            String description = volumeInfo.has("description") ? volumeInfo.get("description").getAsString() : "No description available.";
+            String publishedDate = volumeInfo.has("publishedDate") ? volumeInfo.get("publishedDate").getAsString() : "Unknown";
+            int pageCount = volumeInfo.has("pageCount") ? volumeInfo.get("pageCount").getAsInt() : 0;
+            String categories = volumeInfo.has("categories") ? volumeInfo.getAsJsonArray("categories").get(0).getAsString() : "Uncategorized";
+            String averageRating = volumeInfo.has("averageRating") ? volumeInfo.get("averageRating").getAsString() : "No rating";
+            String previewLink = volumeInfo.has("previewLink") ? volumeInfo.get("previewLink").getAsString() : "No preview available";
+            String imageUrl = volumeInfo.has("imageLinks") && volumeInfo.getAsJsonObject("imageLinks").has("thumbnail")
+                    ? volumeInfo.getAsJsonObject("imageLinks").get("thumbnail").getAsString()
+                    : null;
+
+            return new Book(bookID, bookTitle, bookAuthor, bookPublisher, description, imageUrl, publishedDate, pageCount, categories, averageRating, previewLink);
+        } catch (Exception e) {
+            System.out.println("Error parsing book JSON: " + e.getMessage());
+            return null;
         }
     }
 
@@ -253,7 +241,7 @@ public class SearchResultController implements Initializable {
         author = (author == null || author.isEmpty()) ? "" : author;
         publisher = (publisher == null || publisher.isEmpty()) ? "" : publisher;
 
-        String sql = "SELECT * FROM book WHERE (title LIKE ? OR ? = '') AND (author LIKE ? OR ? = '') AND (publisher LIKE ? OR ? = '')";
+        String sql = "SELECT * FROM books WHERE (title LIKE ? OR ? = '') AND (author LIKE ? OR ? = '') AND (publisher LIKE ? OR ? = '')";
         System.out.println("Executing SQL Query: " + sql);
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user_db", "root", "bisql69");
@@ -272,21 +260,18 @@ public class SearchResultController implements Initializable {
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
-                    String imageUrl = null;
-                    if (rs.getString("imageUrl") != null) {
-                        imageUrl = rs.getString("imageUrl");
-                    }
                     Book book = new Book(
+                            rs.getString("book_id"),
                             rs.getString("title"),
                             rs.getString("author"),
                             rs.getString("publisher"),
                             rs.getString("description"),
-                            imageUrl,
-                            rs.getString("publishedDate"),
-                            rs.getInt("pageCount"),
+                            rs.getString("image_url"),
+                            rs.getString("published_date"),
+                            rs.getInt("page_count"),
                             rs.getString("categories"),
-                            rs.getString("averageRating"),
-                            rs.getString("previewLink")
+                            rs.getString("average_rating"),
+                            rs.getString("preview_link")
                     );
                     dbBooks.add(book);
                 }

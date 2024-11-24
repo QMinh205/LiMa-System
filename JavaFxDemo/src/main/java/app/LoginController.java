@@ -89,7 +89,7 @@ public class LoginController {
 
     // hàm xác thực đăng nhập
     private boolean isValidLogin(String username, String password) {
-        String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+        String query = "SELECT * FROM users WHERE userName = ? AND password = ?";
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
