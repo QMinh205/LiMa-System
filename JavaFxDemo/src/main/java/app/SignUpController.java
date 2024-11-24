@@ -84,33 +84,87 @@ public class SignUpController {
         }
     }
 
-    private boolean registerUser(String username, String password, String email, String safecode) {
-        String url = "jdbc:mysql://localhost:3306/user_db";
+    private boolean registerUser(String userName, String password, String email, String safecode) {
+        String url = "jdbc:mysql://localhost:3306/new_dtb";
         String dbUser = "root";
-        String dbPassword = "bisql69";
+        String dbPassword = "Phong416ct5x2";
+        Connection connection = null;
 
-        try (Connection connection = DriverManager.getConnection(url, dbUser, dbPassword)) {
+        try {
+            connection = DriverManager.getConnection(url, dbUser, dbPassword);
+            // bắt đầu một giao dịch
+            connection.setAutoCommit(false); // tắt tự động commit auto_increment
+
+            // kiểm tra xem username và email có bị trùng không
+            String checkUserQuery = "SELECT COUNT(*) FROM users WHERE userName = ? OR email = ?";
+            try (PreparedStatement checkStmt = connection.prepareStatement(checkUserQuery)) {
+                checkStmt.setString(1, userName);
+                checkStmt.setString(2, email);
+                ResultSet rs = checkStmt.executeQuery();
+                if (rs.next() && rs.getInt(1) > 0) {
+                    showAlert("Error", "The username or email is already taken.");
+                    connection.rollback(); // Rollback nếu có lỗi
+                    return false;
+                }
+            }
+
+            // sql để chèn người dùng vào cơ sở dữ liệu
             String sql = "INSERT INTO users (username, password, email, safecode) VALUES (?, ?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, username);
-            statement.setString(2, password);
-            statement.setString(3, email);
-            statement.setString(4, safecode);
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, userName);
+                statement.setString(2, password);
+                statement.setString(3, email);
+                statement.setString(4, safecode);
 
-            int rowsInserted = statement.executeUpdate();
-            return rowsInserted > 0; //true nếu có ít nhất 1 hàng được thêm vào
+                int rowsInserted = statement.executeUpdate();
+                if (rowsInserted > 0) {
+                    connection.commit(); // commit nếu chèn thành công
+                    return true;
+                } else {
+                    connection.rollback(); // rollback nếu không có bản ghi nào được thêm
+                    return false;
+                }
+            }
         } catch (SQLException e) {
+            try {
+                // nếu có lỗi xảy ra thì rollback giao dịch
+                if (connection != null) {
+                    connection.rollback();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            // các lỗi chi tiết
+            String errorMessage = "Database error: " + e.getMessage();
+            if (e.getMessage().contains("Duplicate entry")) {
+                showAlert("Error", "The username or email is already taken.");
+            } else {
+                showAlert("Error", errorMessage);
+            }
             e.printStackTrace();
-            return false; // nếu có lỗi xảy ra, trả về false
+            return false;
+        } finally {
+            try {
+                //trả lại đúng chế độ của commit sau khi commit xong
+                if (connection != null) {
+                    connection.setAutoCommit(true);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
+
+
+
     private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
     }
+
 }
 

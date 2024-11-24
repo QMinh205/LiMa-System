@@ -84,7 +84,14 @@ public class UserHome {
 
     private void setupGameButton() {
         gameButton.setOnAction(event -> {
-            loadScene("Game.fxml", "Game", gameButton);
+            try {
+                Stage stage = (Stage) gameButton.getScene().getWindow();
+                app.Game game = new app.Game(stage);
+                stage.setScene(game.createIntroScene());
+                stage.setTitle("Game");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
     }
 
