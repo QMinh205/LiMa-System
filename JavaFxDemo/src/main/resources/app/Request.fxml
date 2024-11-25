@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.RequestController">
@@ -119,26 +118,6 @@
                         <String fx:value="login-button" />
                     </styleClass>
                 </Pane>
-                <Pane layoutX="144.0" layoutY="311.0" prefHeight="180.0" prefWidth="406.0">
-                    <children>
-                        <JFXButton layoutX="66.0" layoutY="60.0" text="RECOMMEND NEW BOOK" textFill="WHITE">
-                            <graphic>
-                                <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/recommend.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <font>
-                                <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-                            </font>
-                        </JFXButton>
-                    </children>
-                    <styleClass>
-                        <String fx:value="secondary-color" />
-                        <String fx:value="login-button" />
-                    </styleClass>
-                </Pane>
                 <Pane layoutX="1147.0" layoutY="63.0" prefHeight="180.0" prefWidth="329.0">
                     <children>
                         <JFXButton layoutX="85.0" layoutY="60.0" text="FIX BOOKS" textFill="WHITE">
@@ -159,7 +138,7 @@
                         <String fx:value="login-button" />
                     </styleClass>
                 </Pane>
-                <Pane layoutX="773.0" layoutY="63.0" prefHeight="180.0" prefWidth="329.0">
+                <Pane layoutX="881.0" layoutY="325.0" prefHeight="180.0" prefWidth="329.0">
                     <children>
                         <JFXButton layoutX="58.0" layoutY="60.0" text="ADD NEW BOOKS" textFill="WHITE">
                             <graphic>
@@ -179,27 +158,7 @@
                         <String fx:value="login-button" />
                     </styleClass>
                 </Pane>
-                <Pane layoutX="394.0" layoutY="63.0" prefHeight="180.0" prefWidth="283.0">
-                    <children>
-                        <JFXButton layoutX="72.0" layoutY="60.0" text="REPORT" textFill="WHITE">
-                            <graphic>
-                                <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/report.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <font>
-                                <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-                            </font>
-                        </JFXButton>
-                    </children>
-                    <styleClass>
-                        <String fx:value="secondary-color" />
-                        <String fx:value="login-button" />
-                    </styleClass>
-                </Pane>
-                <Pane layoutX="1147.0" layoutY="311.0" prefHeight="180.0" prefWidth="329.0">
+                <Pane layoutX="585.0" layoutY="79.0" prefHeight="180.0" prefWidth="329.0">
                     <children>
                         <JFXButton layoutX="120.0" layoutY="60.0" text="BAN" textFill="WHITE">
                             <graphic>
@@ -219,7 +178,7 @@
                         <String fx:value="login-button" />
                     </styleClass>
                 </Pane>
-            <Pane layoutX="773.0" layoutY="311.0" prefHeight="180.0" prefWidth="329.0">
+            <Pane layoutX="280.0" layoutY="317.0" prefHeight="180.0" prefWidth="329.0">
                <children>
                   <JFXButton layoutX="72.0" layoutY="60.0" text="DELETE BOOK" textFill="WHITE">
                      <graphic>
@@ -239,7 +198,6 @@
                   <String fx:value="login-button" />
                </styleClass>
             </Pane>
-            <Line endX="33.99993896484375" endY="493.3333740234375" layoutX="716.0" layoutY="44.0" startX="33.99993896484375" startY="-44.0" stroke="WHITE" />
             </children>
         </Pane>
     </center>

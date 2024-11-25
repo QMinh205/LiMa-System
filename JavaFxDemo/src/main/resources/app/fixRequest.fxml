@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID" textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="30.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="100.0" prefWidth="470.0" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="150.0" prefWidth="550.0" />
+            <JFXButton text=" ">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Pane prefHeight="150.0" prefWidth="19.0" />
+            <JFXButton text=" ">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="33.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="60.0" prefWidth="150.0" />
+            <JFXButton buttonType="RAISED" text="Home" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="100.0" prefWidth="78.0" />
+            <JFXButton buttonType="RAISED" styleClass="selectedunder-border" text="Request" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/yeucau.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="100.0" prefWidth="78.0" />
+            <JFXButton buttonType="RAISED" text="Information" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/thongtin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="100.0" prefWidth="78.0" />
+            <JFXButton buttonType="RAISED" text="Favourite" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="100.0" prefWidth="78.0" />
+            <JFXButton buttonType="RAISED" text="Game" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/game.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="100.0" prefWidth="78.0" />
+            <JFXButton buttonType="RAISED" text="Setting" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/caidat.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <ScrollPane prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefHeight="1000.0" prefWidth="5000.0">
+               <children>
+                  <Pane prefHeight="1000.0" prefWidth="5000.0" styleClass="primary-color">
+                     <children>
+                        <Label layoutX="595.0" layoutY="139.0" text="BOOK_ID" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="708.0" layoutY="118.0" prefHeight="41.0" prefWidth="195.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="675.0" layoutY="42.0" text="FIX BOOKS" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="130.0" layoutY="210.0" text="TITLE" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="250.0" layoutY="190.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="250.0" layoutY="266.0" prefHeight="17.0" prefWidth="350.0" text="OLD TITLE" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="130.0" layoutY="360.0" text="AUTHOR" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="250.0" layoutY="340.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="250.0" layoutY="414.0" prefHeight="17.0" prefWidth="350.0" text="OLD AUTHOR" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="130.0" layoutY="510.0" text="PUBLISHER" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="250.0" layoutY="490.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="250.0" layoutY="564.0" prefHeight="17.0" prefWidth="350.0" text="OLD PUBLISHER" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="130.0" layoutY="660.0" text="DESCRIPTION" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="250.0" layoutY="640.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="250.0" layoutY="714.0" prefHeight="17.0" prefWidth="350.0" text="OLD DESCRIPTION" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="130.0" layoutY="810.0" text="IMAGE_URL" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="250.0" layoutY="790.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="250.0" layoutY="864.0" prefHeight="17.0" prefWidth="350.0" text="OLD IMAGE_URL" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="875.0" layoutY="213.0" text="PUBLISHED_DATE" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="1058.0" layoutY="190.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="1058.0" layoutY="266.0" prefHeight="17.0" prefWidth="350.0" text="OLD PUBLISHED_DATE" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="875.0" layoutY="363.0" text="PAGE_COUNT" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="1058.0" layoutY="340.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="1058.0" layoutY="414.0" prefHeight="17.0" prefWidth="350.0" text="OLD PAGE_COUNT" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="875.0" layoutY="513.0" text="CATEGORIES" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="1058.0" layoutY="490.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="1058.0" layoutY="564.0" prefHeight="17.0" prefWidth="350.0" text="OLD CATEGORIES" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="875.0" layoutY="663.0" text="AVERAGE_RATING" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="1058.0" layoutY="640.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="1058.0" layoutY="714.0" prefHeight="17.0" prefWidth="350.0" text="OLD AVERAGE_RATING" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="875.0" layoutY="813.0" text="PREVIEW_LINK" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="1058.0" layoutY="790.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="1058.0" layoutY="864.0" prefHeight="17.0" prefWidth="350.0" text="OLD PREVIEW_LINK" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton layoutX="677.0" layoutY="900.0" prefHeight="64.0" prefWidth="144.0" styleClass="setting-button" text="Confirm" textFill="WHITE" />
+                        <JFXButton layoutX="927.0" layoutY="127.0" prefHeight="25.0" prefWidth="74.0" styleClass="setting-button" text="OK" textFill="WHITE" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </left>
+</BorderPane>
