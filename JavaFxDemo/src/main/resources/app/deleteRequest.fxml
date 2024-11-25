@@ -10,10 +10,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" fx:controller="app.DeleteBookController" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
+            <JFXButton fx:id="returnButton" text="RETURN" textFill="WHITE" onAction="#onReturnButtonClicked">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/return1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <Pane prefWidth="20.0" />
             <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS Bold" size="30.0" />

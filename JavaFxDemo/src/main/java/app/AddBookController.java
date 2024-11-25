@@ -72,14 +72,11 @@ public class AddBookController {
 
     private void saveBookToDatabase(String title, String author, String publisher, String description, String imageUrl,
                                     String publishedDate, String pageCount, String categories, String rating, String previewLink) {
-        String url = "jdbc:mysql://localhost:3306/user_db";
-        String user = "root";
-        String password = "bisql69";
 
         String insertBookQuery = "INSERT INTO books (title, author, publisher, description, image_url, published_date, " +
                 "page_count, categories, average_rating, preview_link) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection connection = DriverManager.getConnection(url, user, password);
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(insertBookQuery)) {
 
             // Validate numeric fields

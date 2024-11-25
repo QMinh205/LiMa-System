@@ -120,7 +120,7 @@
                 </Pane>
                 <Pane layoutX="1147.0" layoutY="63.0" prefHeight="180.0" prefWidth="329.0">
                     <children>
-                        <JFXButton layoutX="85.0" layoutY="60.0" text="FIX BOOKS" textFill="WHITE">
+                        <JFXButton fx:id="fixButton" layoutX="85.0" layoutY="60.0" text="FIX BOOKS" textFill="WHITE" onAction="#onFixButtonClicked">
                             <graphic>
                                 <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -180,7 +180,7 @@
                 </Pane>
             <Pane layoutX="280.0" layoutY="317.0" prefHeight="180.0" prefWidth="329.0">
                <children>
-                  <JFXButton layoutX="72.0" layoutY="60.0" text="DELETE BOOK" textFill="WHITE">
+                  <JFXButton fx:id="deleteButton" layoutX="72.0" layoutY="60.0" text="DELETE BOOK" textFill="WHITE" onAction="#onDeleteButtonClicked">
                      <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                            <image>

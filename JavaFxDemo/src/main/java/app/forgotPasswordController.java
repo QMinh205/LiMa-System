@@ -111,12 +111,9 @@ public class forgotPasswordController {
     }
 
     private boolean updatePassword(String username, String newPassword) {
-        String url = "jdbc:mysql://localhost:3306/new_dtb";
-        String dbUser = "root";
-        String dbPassword = "Phong416ct5x2";
         String query = "UPDATE users SET password = ? WHERE userName = ?";
 
-        try (Connection connection = DriverManager.getConnection(url, dbUser, dbPassword);
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, newPassword);
             statement.setString(2, username);

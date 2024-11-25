@@ -52,12 +52,6 @@ public class LoginController {
     @FXML
     private BorderPane rootPane; //  biến này để tham chiếu đến BorderPane
 
-
-    // kết nối tới cơ sở dữ liệu
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/new_dtb";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Phong416ct5x2";
-
     @FXML
     protected void onLoginConfirmButton() {
         // lấy username và password
@@ -91,7 +85,7 @@ public class LoginController {
     private boolean isValidLogin(String userName, String password) {
         String query = "SELECT * FROM users WHERE userName = ? AND password = ?";
 
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setString(1, userName);

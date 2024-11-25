@@ -110,13 +110,10 @@ public class SignUpController {
     }
 
     private boolean registerUser(String userName, String password, String fullName, String phoneNumber, LocalDate dateOfBirth, String email, String safecode) {
-        String url = "jdbc:mysql://localhost:3306/new_dtb";
-        String dbUser = "root";
-        String dbPassword = "Phong416ct5x2";
         Connection connection = null;
 
         try {
-            connection = DriverManager.getConnection(url, dbUser, dbPassword);
+            connection = DatabaseConnection.getConnection();
             connection.setAutoCommit(false); // Tắt auto commit
 
             // Kiểm tra username hoặc email đã tồn tại
