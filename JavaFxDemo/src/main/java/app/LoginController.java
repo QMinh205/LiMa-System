@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import user.User;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -58,8 +59,9 @@ public class LoginController {
         String userName = usernameTxt.getText();
         String password = passwordField.isVisible() ? passwordField.getText() : passwordTxt.getText();
 
+        User user = isValidLogin(userName, password);
         // kiểm tra đăng nhập
-        if (isValidLogin(userName, password)) {
+        if (user != null) {
             try {
                 // nếu thành công thì chuyển màn
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/User-Home.fxml"));
@@ -67,6 +69,9 @@ public class LoginController {
 
                 // lấy stage hiện tại
                 Stage currentStage = (Stage) btnLogin.getScene().getWindow();
+
+                UserHome userHomeController = fxmlLoader.getController();
+                userHomeController.setUserInfo(user.getUserId(), user.getUserName());
 
                 // hiển thị giao diện mới
                 Scene scene = new Scene(root);
@@ -82,8 +87,8 @@ public class LoginController {
     }
 
     // hàm xác thực đăng nhập
-    private boolean isValidLogin(String userName, String password) {
-        String query = "SELECT * FROM users WHERE userName = ? AND password = ?";
+    private User isValidLogin(String userName, String password) {
+        String query = "SELECT user_id, userName FROM users WHERE userName = ? AND password = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -92,12 +97,19 @@ public class LoginController {
             preparedStatement.setString(2, password);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                return resultSet.next();  // nếu tìm thấy thông tin đúng, trả về true
+                if (resultSet.next()) { // Move the cursor to the first row
+                    int userId = resultSet.getInt("user_id");
+                    String retrievedUserName = resultSet.getString("userName");
+                    return new User(userId, retrievedUserName);
+                } else {
+                    // No rows found
+                    return null;
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return null;
     }
 
     public void initialize() {

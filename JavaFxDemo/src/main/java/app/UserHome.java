@@ -39,7 +39,26 @@ public class UserHome extends BaseController {
     private JFXButton searchButton;
 
     @FXML
+    private Label userLabel;
+
+    private int user_id;
+    private String userName;
+
+    public void setUserInfo(int user_id, String userName) {
+        this.user_id = user_id;
+        this.userName = userName;
+
+        // Update the user label here
+        if (userLabel != null) {
+            userLabel.setText("Name: " + userName + " - ID: " + user_id);
+        }
+    }
+
+    @FXML
     public void initialize() {
+        if (userLabel != null && userName != null && user_id != 0) {
+            userLabel.setText(userName + " - " + user_id); // Update the label with the user's name and ID
+        }
         // Use the setupButton method from BaseController
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");
