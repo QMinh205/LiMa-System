@@ -9,10 +9,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SettingController {
+public class PasswordSettingController {
 
     @FXML
     private Button returnButton;
+    @FXML
+    private Button settingButton;
     @FXML
     private Button passwordSettingButton;
     @FXML
@@ -25,7 +27,7 @@ public class SettingController {
             Parent root = loader.load();
 
             Stage stage = (Stage) returnButton.getScene().getWindow();
-            stage.setScene(new Scene(root)); // Adjust the window size here
+            stage.setScene(new Scene(root));
             stage.setTitle("User Home");
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,14 +35,14 @@ public class SettingController {
     }
 
     @FXML
-    private void onPasswordSettingButtonClicked() {
+    private void onSettingButtonClicked() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("passwordSetting.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Setting.fxml"));
             Parent root = loader.load();
 
-            Stage stage = (Stage) passwordSettingButton.getScene().getWindow();
+            Stage stage = (Stage) settingButton.getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle("Password Setting");
+            stage.setTitle("Setting");
         } catch (IOException e) {
             e.printStackTrace();
         }
