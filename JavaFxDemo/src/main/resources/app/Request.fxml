@@ -124,7 +124,7 @@
                             <graphic>
                                 <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../../assets/fix.png" />
+                                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/fix.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -184,7 +184,7 @@
                      <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../assets/delete.png" />
+                              <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/delete.png" />
                            </image>
                         </ImageView>
                      </graphic>
