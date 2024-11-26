@@ -163,7 +163,7 @@
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID" textFill="WHITE">
+                <Label fx:id="userLabel" prefHeight="36.0" prefWidth="500.0" text="NAME - ID" textFill="WHITE">
                     <font>
                         <Font name="Trebuchet MS Bold" size="30.0" />
                     </font>

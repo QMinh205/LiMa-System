@@ -86,7 +86,7 @@ public class LoginController {
 
     // hàm xác thực đăng nhập
     private User isValidLogin(String userName, String password) {
-        String query = "SELECT user_id, userName FROM users WHERE userName = ? AND password = ?";
+        String query = "SELECT * FROM users WHERE userName = ? AND password = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -97,8 +97,14 @@ public class LoginController {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) { // Move the cursor to the first row
                     int userId = resultSet.getInt("user_id");
-                    String retrievedUserName = resultSet.getString("userName");
-                    return new User(userId, retrievedUserName);
+                    String fullName = resultSet.getString("fullName");
+                    String dateOfBirth = resultSet.getString("dateOfBirth");
+                    String email = resultSet.getString("email");
+                    String phone = resultSet.getString("phoneNumber");
+                    String safeCode = resultSet.getString("safeCode");
+
+                    return new User(userId, fullName, userName, password, email,
+                            phone, safeCode, dateOfBirth);
                 } else {
                     // No rows found
                     return null;
