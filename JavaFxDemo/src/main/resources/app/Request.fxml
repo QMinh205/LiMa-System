@@ -145,7 +145,7 @@
                   <Font name="Berlin Sans FB Demi Bold" size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="845.0" layoutY="307.0" prefHeight="182.0" prefWidth="284.0" styleClass="login2-button" text="ADD NEW BOOKS" textFill="WHITE">
+            <JFXButton fx:id="addButton" buttonType="RAISED" layoutX="845.0" layoutY="307.0" prefHeight="182.0" prefWidth="284.0" styleClass="login2-button" text="ADD NEW BOOKS" textFill="WHITE" onAction="#onAddButtonClicked">
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>

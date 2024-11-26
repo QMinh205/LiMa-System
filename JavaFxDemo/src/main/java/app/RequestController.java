@@ -42,6 +42,9 @@ public class RequestController extends BaseController {
     private JFXButton fixButton;
 
     @FXML
+    private JFXButton addButton;
+
+    @FXML
     private Label userLabel;
 
     @FXML
@@ -84,6 +87,22 @@ public class RequestController extends BaseController {
             Stage stage = (Stage) deleteButton.getScene().getWindow();
             stage.setScene(new Scene(root)); // Adjust the window size here
             stage.setTitle("Delete Request");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onAddButtonClicked() {
+        try {
+            // Load the UserHome.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) addButton.getScene().getWindow();
+            stage.setScene(new Scene(root, 1500, 750)); // Adjust the window size here
+            stage.setTitle("Add Book");
         } catch (IOException e) {
             e.printStackTrace();
         }

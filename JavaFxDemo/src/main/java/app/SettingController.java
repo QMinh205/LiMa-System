@@ -4,12 +4,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import user.User;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class SettingController {
 
@@ -91,4 +91,37 @@ public class SettingController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void onLogoutButtonClicked() {
+        // Create a confirmation dialog
+        Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationDialog.setTitle("Logout Confirmation");
+        confirmationDialog.setHeaderText("Are you sure you want to log out?");
+        confirmationDialog.setContentText("Press OK to confirm or Cancel to stay logged in.");
+
+        // Customize the dialog buttons
+        ButtonType okButton = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+        confirmationDialog.getButtonTypes().setAll(okButton, cancelButton);
+
+        // Show the dialog and capture the user's choice
+        Optional<ButtonType> result = confirmationDialog.showAndWait();
+        if (result.isPresent() && result.get() == okButton) {
+            // User confirmed logout, navigate to the login screen
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+                Parent root = loader.load();
+
+                // Get the current stage and set the new scene
+                Stage stage = (Stage) returnButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.setTitle("Login");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        // If the user cancels, do nothing
+    }
+
 }

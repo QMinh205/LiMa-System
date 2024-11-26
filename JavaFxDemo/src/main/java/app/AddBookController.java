@@ -1,12 +1,16 @@
 package app;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -36,6 +40,8 @@ public class AddBookController {
     private TextField previewLinkField;
     @FXML
     private Button cancelButton;
+    @FXML
+    private Button returnButton;
 
     // Method to handle Add Book action
     @FXML
@@ -107,6 +113,24 @@ public class AddBookController {
             showAlert(AlertType.ERROR, "Database Error", "Error: " + e.getMessage());
         } catch (NumberFormatException e) {
             showAlert(AlertType.ERROR, "Validation Error", "Page count and rating must be valid numbers.");
+        }
+    }
+
+    @FXML
+    private void handleReturnToRequestAction() {
+        try {
+            // Load the Request.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Request.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) returnButton.getScene().getWindow();
+
+            // Set the new scene
+            stage.setScene(new Scene(root));
+            stage.setTitle("Request");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

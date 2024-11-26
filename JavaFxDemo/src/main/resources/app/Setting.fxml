@@ -111,7 +111,7 @@
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Pane prefHeight="52.0" prefWidth="168.0" />
-                        <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="107.0" styleClass="setting-button" text="Log Out" textFill="#e60b0b">
+                        <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="107.0" styleClass="setting-button" text="Log Out" textFill="#e60b0b" onAction="#onLogoutButtonClicked">
                            <font>
                               <Font name="System Bold" size="19.0" />
                            </font>
