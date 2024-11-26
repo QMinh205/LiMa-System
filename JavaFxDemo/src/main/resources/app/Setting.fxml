@@ -51,7 +51,7 @@
                         <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected-border">
                             <children>
                         <Pane prefHeight="75.0" prefWidth="104.0" />
-                        <JFXButton text="Profile" textFill="WHITE">
+                        <JFXButton alignment="CENTER" text="Profile" textFill="WHITE">
                            <graphic>
                                       <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                           <image>
@@ -107,6 +107,16 @@
                      <padding>
                         <Insets bottom="40.0" />
                      </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="52.0" prefWidth="168.0" />
+                        <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="107.0" styleClass="setting-button" text="Log Out" textFill="#e60b0b">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
                   </HBox>
                     </children>
                 </VBox>
