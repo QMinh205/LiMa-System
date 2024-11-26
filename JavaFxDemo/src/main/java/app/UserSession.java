@@ -1,0 +1,31 @@
+package app;
+
+import user.User;
+
+public class UserSession {
+    private static UserSession instance;
+    private User user;
+
+    private UserSession() {
+        // Private constructor to enforce singleton
+    }
+
+    public static UserSession getInstance() {
+        if (instance == null) {
+            instance = new UserSession();
+        }
+        return instance;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void clearSession() {
+        this.user = null;
+    }
+}

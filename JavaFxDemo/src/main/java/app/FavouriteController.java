@@ -5,8 +5,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import user.User;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -36,7 +38,11 @@ public class FavouriteController extends BaseController {
     private JFXButton searchButton;
 
     @FXML
+    private Label userLabel;
+
+    @FXML
     public void initialize() {
+        updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");

@@ -62,6 +62,7 @@ public class LoginController {
         User user = isValidLogin(userName, password);
         // kiểm tra đăng nhập
         if (user != null) {
+            UserSession.getInstance().setUser(user);
             try {
                 // nếu thành công thì chuyển màn
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/User-Home.fxml"));
@@ -69,9 +70,6 @@ public class LoginController {
 
                 // lấy stage hiện tại
                 Stage currentStage = (Stage) btnLogin.getScene().getWindow();
-
-                UserHome userHomeController = fxmlLoader.getController();
-                userHomeController.setUserInfo(user.getUserId(), user.getUserName());
 
                 // hiển thị giao diện mới
                 Scene scene = new Scene(root);

@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 import java.awt.*;
 import java.io.IOException;
@@ -41,7 +42,11 @@ public class RequestController extends BaseController {
     private JFXButton fixButton;
 
     @FXML
+    private Label userLabel;
+
+    @FXML
     public void initialize() {
+        updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");

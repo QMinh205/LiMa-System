@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -36,7 +37,11 @@ public class InformationController extends BaseController {
     private JFXButton searchButton;
 
     @FXML
+    private Label userLabel;
+
+    @FXML
     public void initialize() {
+        updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");
