@@ -54,6 +54,8 @@ public class SearchResultController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(backButton);
         // Save the current scene to the static variable
         Platform.runLater(() -> {
             Stage stage = (Stage) resultsVBox.getScene().getWindow();

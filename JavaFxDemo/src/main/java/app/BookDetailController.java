@@ -34,6 +34,12 @@ public class BookDetailController {
 
     private static final int DESCRIPTION_PREVIEW_LENGTH = 200;
 
+    public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(backButton);
+
+    }
+
     public void setBookDetails(Book book) {
         bookIdLabel.setText("Book ID: " + book.getBookId());
         bookTitleLabel.setText(book.getTitle());

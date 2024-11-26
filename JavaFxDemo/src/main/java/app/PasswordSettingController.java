@@ -40,6 +40,10 @@ public class PasswordSettingController {
 
     @FXML
     public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(returnButton);
+        ButtonSoundUtil.addClickSound(settingButton);
+        //ButtonSoundUtil.addClickSound(PrivacyPolicyButton);
         // Populate the password fields with the current user information if required
         populateUserFields();
     }

@@ -30,6 +30,13 @@ public class DeleteBookController {
     @FXML
     private Label statusLabel;
 
+    public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(confirmButton);
+        ButtonSoundUtil.addClickSound(returnButton);
+
+    }
+
     @FXML
     private void onReturnButtonClicked() {
         try {

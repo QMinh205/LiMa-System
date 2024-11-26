@@ -41,6 +41,15 @@ public class InformationController extends BaseController {
 
     @FXML
     public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(homeButton);
+        ButtonSoundUtil.addClickSound(requestButton);
+        ButtonSoundUtil.addClickSound(informationButton);
+        ButtonSoundUtil.addClickSound(favouriteButton);
+        ButtonSoundUtil.addClickSound(gameButton);
+        ButtonSoundUtil.addClickSound(settingButton);
+        ButtonSoundUtil.addClickSound(searchButton);
+
         updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
         setupButton(homeButton, "User-Home.fxml", "Home");

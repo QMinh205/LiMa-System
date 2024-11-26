@@ -155,19 +155,30 @@ class GameBoard {
         this.root = new BorderPane();
 
         initializeTiles();
-
         shuffleTiles();
 
+        // Tạo hình nền
+        ImageView backgroundImage = new ImageView(new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/backgroundColor.jpeg"));
+        backgroundImage.setFitWidth(1500);
+        backgroundImage.setFitHeight(750);
+        backgroundImage.setPreserveRatio(false); // Đảm bảo phủ toàn bộ
+
+        // Tạo canvas để vẽ lưới
         canvas = new Canvas(GRID_SIZE * TILE_SIZE, GRID_SIZE * TILE_SIZE);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         drawTiles(gc);
 
         canvas.setOnMousePressed(this::handleMousePress);
 
-        root.setCenter(canvas);
+        // StackPane chứa hình nền và canvas
+        StackPane gamePane = new StackPane();
+        gamePane.getChildren().addAll(backgroundImage, canvas); // Hình nền bên dưới, canvas bên trên
 
+        // Đặt gamePane vào trung tâm của BorderPane
+        root.setCenter(gamePane);
         addRightPanel();
     }
+
 
     // Trả về scene cho trò chơi
     public Scene getScene() {
@@ -201,8 +212,15 @@ class GameBoard {
         rightPanel.setStyle("-fx-alignment: center; -fx-padding: 10;");
 
         // đặt vị trí của các panel
-        root.setRight(rightPanel);
+        /*root.setRight(rightPanel);
+        root.setTop(leftPanel); */// Đặt leftPanel vào vị trí trên cùng
+
+        BorderPane.setAlignment(rightPanel, javafx.geometry.Pos.CENTER_RIGHT); // Align to the right
+        root.setRight(rightPanel); // đặt rightPanel vào BorderPane
         root.setTop(leftPanel); // Đặt leftPanel vào vị trí trên cùng
+
+        // If it's still not showing, you can try setting a specific width for the right panel
+        rightPanel.setMinWidth(200); // You can adjust this width based on your design
     }
 
     private void backToIntro() {

@@ -14,6 +14,12 @@ public class FixBookController {
     @FXML
     private Button returnButton;
 
+    public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(returnButton);
+
+    }
+
     @FXML
     private void onReturnButtonClicked() {
         try {

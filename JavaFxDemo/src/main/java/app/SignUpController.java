@@ -45,6 +45,14 @@ public class SignUpController {
     private DatePicker dateOfBirth;
 
     @FXML
+    public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(signUpConfirmButton);
+        ButtonSoundUtil.addClickSound(signUpReturnButton);
+
+    }
+
+    @FXML
     protected void onSignUpConfirmButton() {
         String user = username.getText();
         String pass = password.getText();

@@ -34,6 +34,9 @@ public class SearchBarController {
 
     @FXML
     public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(searchButton);
+        ButtonSoundUtil.addClickSound(backButton);
         //if (tagImage == null) {
         //    System.out.println("Error: tagImage is null");
         //    return;

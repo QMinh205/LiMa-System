@@ -10,6 +10,7 @@ module com.example.javafxdemo {
     requires com.google.gson;
     requires javafx.controls;
     requires java.desktop;
+    requires javafx.media;
 
     opens app to javafx.fxml;
     exports app;

@@ -40,6 +40,12 @@ public class forgotPasswordController {
     @FXML
     private PasswordField confirmPasswordField;
 
+    public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(passwordRecoveryReturnButton);
+        ButtonSoundUtil.addClickSound(applyPasswordRecoveryButton);
+    }
+
     @FXML
     protected void onPasswordRecoveryReturnButton() {
         try {

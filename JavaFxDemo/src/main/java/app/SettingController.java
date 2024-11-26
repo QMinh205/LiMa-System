@@ -1,5 +1,6 @@
 package app;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,7 +37,14 @@ public class SettingController {
     private TextField phoneField;
 
     @FXML
+    private JFXButton logOutButton;
+
+    @FXML
     public void initialize() {
+        ButtonSoundUtil.addClickSound(returnButton);
+        ButtonSoundUtil.addClickSound(passwordSettingButton);
+        //ButtonSoundUtil.addClickSound(PrivacyPolicyButton);
+        //ButtonSoundUtil.addClickSound(logOutButton);
         // Update the label at the top using the BaseController's method
         //updateUserInfo(userLabel);
 

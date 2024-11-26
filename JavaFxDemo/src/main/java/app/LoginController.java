@@ -27,9 +27,6 @@ public class LoginController {
     private ImageView img1;
 
     @FXML
-    private Button btnNext;
-
-    @FXML
     private JFXButton btnLogin;
 
     @FXML
@@ -117,6 +114,11 @@ public class LoginController {
     }
 
     public void initialize() {
+        // thêm âm thanh click cho các nút
+        ButtonSoundUtil.addClickSound(btnLogin);
+        ButtonSoundUtil.addClickSound(registerButton);
+        ButtonSoundUtil.addClickSound(forgotPasswordButton);
+
         // chuyển sang màn hình đăng ký
         registerButton.setOnAction(event -> {
             try {
