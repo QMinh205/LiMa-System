@@ -158,6 +158,7 @@ public class SearchResultController implements Initializable {
 
         Button addBookButton = new Button("Not found your book? Add book");
         addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
+        ButtonSoundUtil.addClickSound(addBookButton);
         addBookButton.setOnAction(event -> onAddBookButtonClicked());
         resultsVBox.getChildren().add(addBookButton);
     }
@@ -203,6 +204,7 @@ public class SearchResultController implements Initializable {
             // Optionally add a button to handle no results found
             Button addBookButton = new Button("Not found your book? Add book");
             addBookButton.setStyle("-fx-font-size: 16px; -fx-padding: 10;");
+            ButtonSoundUtil.addClickSound(addBookButton);
             addBookButton.setOnAction(event -> onAddBookButtonClicked());
             resultsVBox.getChildren().add(addBookButton);
         });

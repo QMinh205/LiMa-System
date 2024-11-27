@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.BookInformationController">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton prefHeight="41.0" prefWidth="148.0" text="RETURN" textFill="WHITE">
+            <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="148.0" text="RETURN" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -64,90 +64,6 @@
          </children>
       </HBox>
    </top>
-   <bottom>
-      <HBox prefHeight="33.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Pane prefHeight="60.0" prefWidth="150.0" />
-            <JFXButton buttonType="RAISED" text="Home" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/home.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" text="Request" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/yeucau.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" styleClass="selectedunder-border" text="Information" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/thongtin.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" text="Favourite" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" text="Game" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/game.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" text="Setting" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/caidat.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </HBox>
-   </bottom>
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -156,7 +72,7 @@
                   <Font name="System Bold" size="29.0" />
                </font>
             </Label>
-            <JFXButton layoutX="603.0" layoutY="166.0" prefHeight="35.0" prefWidth="118.0" styleClass="setting-button" text="Search" textFill="WHITE">
+            <JFXButton fx:id="searchButton" layoutX="603.0" layoutY="166.0" prefHeight="35.0" prefWidth="118.0" styleClass="setting-button" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
@@ -167,7 +83,7 @@
                   <String fx:value="border-black" />
                </styleClass>
             </ListView>
-            <TextField alignment="CENTER" layoutX="750.0" layoutY="166.0" prefHeight="39.0" prefWidth="196.0" promptText="ID">
+            <TextField fx:id="searchTextField" alignment="CENTER" layoutX="750.0" layoutY="166.0" prefHeight="39.0" prefWidth="196.0" promptText="ID">
                <font>
                   <Font size="17.0" />
                </font>

@@ -26,6 +26,8 @@ public class PasswordSettingController {
     private Button passwordSettingButton;
     @FXML
     private Button PrivacyPolicyButton;
+    @FXML
+    private Button saveButton;
 
     @FXML
     private PasswordField currentPasswordField;
@@ -43,7 +45,8 @@ public class PasswordSettingController {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(settingButton);
-        //ButtonSoundUtil.addClickSound(PrivacyPolicyButton);
+        ButtonSoundUtil.addClickSound(PrivacyPolicyButton);
+        ButtonSoundUtil.addClickSound(saveButton);
         // Populate the password fields with the current user information if required
         populateUserFields();
     }

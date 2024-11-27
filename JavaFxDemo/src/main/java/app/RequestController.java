@@ -18,6 +18,9 @@ import java.util.Map;
 public class RequestController extends BaseController {
 
     @FXML
+    private JFXButton searchButton;
+
+    @FXML
     private JFXButton homeButton;
 
     @FXML
@@ -48,6 +51,12 @@ public class RequestController extends BaseController {
     private Label userLabel;
 
     @FXML
+    private JFXButton returnButton;
+
+    @FXML
+    private JFXButton banButton;
+
+    @FXML
     public void initialize() {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(homeButton);
@@ -59,6 +68,9 @@ public class RequestController extends BaseController {
         ButtonSoundUtil.addClickSound(deleteButton);
         ButtonSoundUtil.addClickSound(fixButton);
         ButtonSoundUtil.addClickSound(addButton);
+        ButtonSoundUtil.addClickSound(returnButton);
+        ButtonSoundUtil.addClickSound(banButton);
+        ButtonSoundUtil.addClickSound(searchButton);
 
         updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
@@ -67,6 +79,7 @@ public class RequestController extends BaseController {
         setupButton(informationButton, "Information.fxml", "Information");
         setupButton(favouriteButton, "Favourite.fxml", "Favourite");
         setupButton(settingButton, "Setting.fxml", "Setting");
+        setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 
         setupGameButton(gameButton);
     }

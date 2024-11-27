@@ -40,6 +40,12 @@ public class InformationController extends BaseController {
     private Label userLabel;
 
     @FXML
+    private JFXButton userButton;
+
+    @FXML
+    private JFXButton booksButton;
+
+    @FXML
     public void initialize() {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(homeButton);
@@ -49,6 +55,8 @@ public class InformationController extends BaseController {
         ButtonSoundUtil.addClickSound(gameButton);
         ButtonSoundUtil.addClickSound(settingButton);
         ButtonSoundUtil.addClickSound(searchButton);
+        ButtonSoundUtil.addClickSound(booksButton);
+        ButtonSoundUtil.addClickSound(userButton);
 
         updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
@@ -60,5 +68,36 @@ public class InformationController extends BaseController {
         setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 
         setupGameButton(gameButton);
+    }
+    @FXML
+    private void onUserButtonClicked() {
+        try {
+            // Load the UserHome.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("UserInformation.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) userButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Users Information");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onBooksButtonClicked() {
+        try {
+            // Load the UserHome.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("bookInformation.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) booksButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Books Information");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

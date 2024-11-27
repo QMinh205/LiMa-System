@@ -35,6 +35,8 @@ public class FixBookController {
     public void initialize() {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(returnButton);
+        ButtonSoundUtil.addClickSound(confirmButton);
+        ButtonSoundUtil.addClickSound(okButton);
 
         // Handle OK button click to fetch book data
         okButton.setOnAction(event -> fetchBookData());

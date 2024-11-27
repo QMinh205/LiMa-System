@@ -87,7 +87,7 @@
 
             <!-- Buttons -->
             <HBox alignment="CENTER" spacing="10">
-                <Button onAction="#handleAddBookAction" styleClass="login2-button" text="Add Book" />
+                <Button fx:id="addButton" onAction="#handleAddBookAction" styleClass="login2-button" text="Add Book" />
                 <Button fx:id="cancelButton" onAction="#handleCancelAction" styleClass="login2-button" text="Cancel" />
             </HBox>
         </VBox>

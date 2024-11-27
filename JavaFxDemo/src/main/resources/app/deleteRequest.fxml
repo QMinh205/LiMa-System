@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" fx:controller="app.DeleteBookController" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.DeleteBookController">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="returnButton" text="RETURN" textFill="WHITE" onAction="#onReturnButtonClicked">
+            <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" text="RETURN" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -173,14 +173,14 @@
                   <Font size="19.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="confirmButton" layoutX="656.0" layoutY="382.0" prefHeight="63.0" prefWidth="187.0" styleClass="setting-button" text="Confirm" textFill="WHITE" onAction="#onConfirmButtonClicked">
+            <JFXButton fx:id="confirmButton" layoutX="656.0" layoutY="382.0" onAction="#onConfirmButtonClicked" prefHeight="63.0" prefWidth="187.0" styleClass="login2-button" text="Confirm" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
             </JFXButton>
-            <Label fx:id="statusLabel" layoutX="579.0" layoutY="323.0" text="Please input the field above" textFill="WHITE">
+            <Label fx:id="statusLabel" layoutX="646.0" layoutY="322.0" text="Please input the fields above" textFill="WHITE">
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold Italic" size="17.0" />
                </font>
             </Label>
          </children>

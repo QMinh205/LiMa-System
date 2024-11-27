@@ -42,11 +42,14 @@ public class AddBookController {
     private Button cancelButton;
     @FXML
     private Button returnButton;
+    @FXML
+    private Button addButton;
 
     public void initialize() {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(cancelButton);
         ButtonSoundUtil.addClickSound(returnButton);
+        ButtonSoundUtil.addClickSound(addButton);
 
     }
     // Method to handle Add Book action
