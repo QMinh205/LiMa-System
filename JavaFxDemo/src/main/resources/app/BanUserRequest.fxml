@@ -10,12 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="147.0" text="RETURN" textFill="WHITE">
+            <JFXButton prefHeight="41.0" prefWidth="147.0" text="RETURN" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -75,7 +74,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="confirmationField" layoutX="677.0" layoutY="148.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+            <TextField layoutX="677.0" layoutY="148.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                <font>
                   <Font size="19.0" />
                </font>
@@ -85,17 +84,17 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="bookIdField" layoutX="677.0" layoutY="238.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+            <TextField layoutX="677.0" layoutY="238.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="confirmButton" layoutX="656.0" layoutY="382.0" onAction="#onConfirmButtonClicked" prefHeight="63.0" prefWidth="187.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
+            <JFXButton layoutX="656.0" layoutY="382.0" prefHeight="63.0" prefWidth="187.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
             </JFXButton>
-            <Label fx:id="statusLabel" layoutX="579.0" layoutY="323.0" text="Please input the field above" textFill="WHITE">
+            <Label layoutX="579.0" layoutY="323.0" text="Please input the field above" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
