@@ -243,7 +243,7 @@ public class SearchResultController implements Initializable {
         String sql = "SELECT * FROM books WHERE (title LIKE ? OR ? = '') AND (author LIKE ? OR ? = '') AND (publisher LIKE ? OR ? = '')";
         System.out.println("Executing SQL Query: " + sql);
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user_db", "root", "bisql69");
+        try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, "%" + title + "%");

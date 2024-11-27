@@ -1,6 +1,5 @@
 module com.example.javafxdemo {
     requires javafx.fxml;
-
     requires java.sql;
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -11,6 +10,10 @@ module com.example.javafxdemo {
     requires javafx.controls;
     requires java.desktop;
     requires javafx.media;
+    //requires junit.jupiter.api;
+    //requires mockito.core;
+    //requires mockito.junit.jupiter;
+    //requires org.junit.jupiter.engine;
 
     opens app to javafx.fxml;
     exports app;

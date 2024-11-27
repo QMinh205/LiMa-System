@@ -82,7 +82,7 @@ public class AddBookController {
         stage.close();
     }
 
-    private void saveBookToDatabase(String title, String author, String publisher, String description, String imageUrl,
+    public void saveBookToDatabase(String title, String author, String publisher, String description, String imageUrl,
                                     String publishedDate, String pageCount, String categories, String rating, String previewLink) {
 
         String insertBookQuery = "INSERT INTO books (title, author, publisher, description, image_url, published_date, " +
@@ -123,8 +123,15 @@ public class AddBookController {
     }
 
     @FXML
-    private void handleReturnToRequestAction() {
+    public void handleReturnToRequestAction() {
         try {
+            Scene searchResultScene = SearchResultController.getSearchResultScene();
+            if (searchResultScene != null) {
+                Stage stage = (Stage) searchResultScene.getWindow();
+                if (stage != null && stage.isShowing()) {
+                    stage.close();
+                }
+            }
             // Load the Request.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Request.fxml"));
             Parent root = loader.load();
@@ -142,7 +149,7 @@ public class AddBookController {
 
 
     // Helper method to show alert dialog
-    private void showAlert(AlertType type, String title, String message) {
+    public void showAlert(AlertType type, String title, String message) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(null);
