@@ -162,7 +162,7 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="708.0" layoutY="118.0" prefHeight="41.0" prefWidth="195.0" styleClass="text-input">
+                        <TextField fx:id="bookIdField" layoutX="708.0" layoutY="118.0" prefHeight="41.0" prefWidth="195.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -177,12 +177,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="250.0" layoutY="190.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="titleField" layoutX="250.0" layoutY="190.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="250.0" layoutY="266.0" prefHeight="17.0" prefWidth="350.0" text="OLD TITLE" textFill="WHITE">
+                        <Label fx:id="oldTitleField" layoutX="250.0" layoutY="266.0" prefHeight="17.0" prefWidth="350.0" text="OLD TITLE" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -192,12 +192,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="250.0" layoutY="340.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="authorField" layoutX="250.0" layoutY="340.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="250.0" layoutY="414.0" prefHeight="17.0" prefWidth="350.0" text="OLD AUTHOR" textFill="WHITE">
+                        <Label fx:id="oldAuthorField" layoutX="250.0" layoutY="414.0" prefHeight="17.0" prefWidth="350.0" text="OLD AUTHOR" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -207,12 +207,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="250.0" layoutY="490.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="publisherField" layoutX="250.0" layoutY="490.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="250.0" layoutY="564.0" prefHeight="17.0" prefWidth="350.0" text="OLD PUBLISHER" textFill="WHITE">
+                        <Label fx:id="oldPublisherField" layoutX="250.0" layoutY="564.0" prefHeight="17.0" prefWidth="350.0" text="OLD PUBLISHER" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -222,12 +222,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="250.0" layoutY="640.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="descriptionField" layoutX="250.0" layoutY="640.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="250.0" layoutY="714.0" prefHeight="17.0" prefWidth="350.0" text="OLD DESCRIPTION" textFill="WHITE">
+                        <Label fx:id="oldDescriptionField" layoutX="250.0" layoutY="714.0" prefHeight="17.0" prefWidth="350.0" text="OLD DESCRIPTION" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -237,12 +237,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="250.0" layoutY="790.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="imageUrlField" layoutX="250.0" layoutY="790.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="250.0" layoutY="864.0" prefHeight="17.0" prefWidth="350.0" text="OLD IMAGE_URL" textFill="WHITE">
+                        <Label fx:id="oldImageUrlField" layoutX="250.0" layoutY="864.0" prefHeight="17.0" prefWidth="350.0" text="OLD IMAGE_URL" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -252,12 +252,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="1058.0" layoutY="190.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="publishedDateField" layoutX="1058.0" layoutY="190.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="1058.0" layoutY="266.0" prefHeight="17.0" prefWidth="350.0" text="OLD PUBLISHED_DATE" textFill="WHITE">
+                        <Label fx:id="oldPublishedDateField" layoutX="1058.0" layoutY="266.0" prefHeight="17.0" prefWidth="350.0" text="OLD PUBLISHED_DATE" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -267,12 +267,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="1058.0" layoutY="340.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="pageCountField" layoutX="1058.0" layoutY="340.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="1058.0" layoutY="414.0" prefHeight="17.0" prefWidth="350.0" text="OLD PAGE_COUNT" textFill="WHITE">
+                        <Label fx:id="oldPageCountField" layoutX="1058.0" layoutY="414.0" prefHeight="17.0" prefWidth="350.0" text="OLD PAGE_COUNT" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -282,12 +282,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="1058.0" layoutY="490.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="categoriesField" layoutX="1058.0" layoutY="490.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="1058.0" layoutY="564.0" prefHeight="17.0" prefWidth="350.0" text="OLD CATEGORIES" textFill="WHITE">
+                        <Label fx:id="oldCategoriesField" layoutX="1058.0" layoutY="564.0" prefHeight="17.0" prefWidth="350.0" text="OLD CATEGORIES" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -297,12 +297,12 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="1058.0" layoutY="640.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="averageRatingField" layoutX="1058.0" layoutY="640.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="1058.0" layoutY="714.0" prefHeight="17.0" prefWidth="350.0" text="OLD AVERAGE_RATING" textFill="WHITE">
+                        <Label fx:id="oldAverageRatingField" layoutX="1058.0" layoutY="714.0" prefHeight="17.0" prefWidth="350.0" text="OLD AVERAGE_RATING" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -312,18 +312,18 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="1058.0" layoutY="790.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+                        <TextField fx:id="preViewLinkField" layoutX="1058.0" layoutY="790.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="1058.0" layoutY="864.0" prefHeight="17.0" prefWidth="350.0" text="OLD PREVIEW_LINK" textFill="WHITE">
+                        <Label fx:id="oldPreViewLinkField" layoutX="1058.0" layoutY="864.0" prefHeight="17.0" prefWidth="350.0" text="OLD PREVIEW_LINK" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <JFXButton layoutX="677.0" layoutY="900.0" prefHeight="64.0" prefWidth="144.0" styleClass="setting-button" text="Confirm" textFill="WHITE" />
-                        <JFXButton layoutX="927.0" layoutY="127.0" prefHeight="25.0" prefWidth="74.0" styleClass="setting-button" text="OK" textFill="WHITE" />
+                        <JFXButton fx:id="confirmButton" layoutX="677.0" layoutY="900.0" prefHeight="64.0" prefWidth="144.0" styleClass="setting-button" text="Confirm" textFill="WHITE" />
+                        <JFXButton fx:id="okButton" layoutX="927.0" layoutY="127.0" prefHeight="25.0" prefWidth="74.0" styleClass="setting-button" text="OK" textFill="WHITE" />
                      </children>
                   </Pane>
                </children>
