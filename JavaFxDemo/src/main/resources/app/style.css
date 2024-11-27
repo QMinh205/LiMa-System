@@ -136,3 +136,9 @@
 .date-picker .text-field {
     -fx-text-fill: black; /* Màu chữ trong trường nhập liệu */
 }
+.border-black {
+    -fx-border-color: blue; /* Màu viền */
+    -fx-border-width: 5; /* Độ rộng viền */
+    -fx-border-style: solid; /* Kiểu viền */
+    -fx-padding: 1; /* Khoảng cách giữa nội dung và viền */
+}
