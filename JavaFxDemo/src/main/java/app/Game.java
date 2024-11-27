@@ -3,8 +3,10 @@ package app;
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
@@ -153,6 +155,7 @@ class GameBoard {
     private int emptyX, emptyY; // vị trí ô trống
     private Canvas canvas; // canvas để vẽ lưới
     private MediaPlayer backgroundMusic;
+    private String s="file:/D:/oop/LiMa-System/JavaFxDemo/assets/sontung.png";
 
     public GameBoard(String imagePath) {
         this.image = new Image(imagePath);
@@ -180,6 +183,11 @@ class GameBoard {
         // Thêm canvas vào trung tâm BorderPane
         root.setCenter(canvas);
 
+        ImageView sideImage = new ImageView(s);
+        sideImage.setPreserveRatio(true);
+        sideImage.setFitWidth(500); // Đặt chiều rộng cho ảnh bên trái
+        root.setLeft(sideImage); // Thêm ảnh vào bên trái
+
         // Thêm ảnh mẫu (thumbnail) và nút Shuffle vào giao diện
         addRightPanel();
     }
@@ -187,11 +195,11 @@ class GameBoard {
     // Phương thức khởi tạo nhạc nền
     private void initializeMusic() {
         try {
-            String musicPath = "file:/D:/oop/LiMa-System/JavaFxDemo/assets/music1.mp3"; // Thay đường dẫn tới file nhạc
+            String musicPath = "file:/D:/oop/LiMa-System/JavaFxDemo/assets/music1.mp3";
             Media music = new Media(musicPath);
             backgroundMusic = new MediaPlayer(music);
             backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE); // Lặp vô hạn
-            backgroundMusic.setVolume(0.5); // Thiết lập âm lượng (0.0 - 1.0)
+            backgroundMusic.setVolume(0.5);
             backgroundMusic.play(); // Bắt đầu phát nhạc
         } catch (Exception e) {
             System.out.println("Error initializing music: " + e.getMessage());
@@ -219,6 +227,24 @@ class GameBoard {
         thumbnail.setPreserveRatio(true);
         thumbnail.setFitWidth(GRID_SIZE * TILE_SIZE * 0.7); // Kích thước nhỏ hơn 30%
 
+        // Ảnh nút nhạc (bật/tắt nhạc)
+        Image musicOnImage = new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/sound.png");
+        Image musicOffImage = new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/noSound.png");
+        ImageView musicButton = new ImageView(musicOnImage);
+        musicButton.setFitWidth(75);
+        musicButton.setFitHeight(75);
+
+        // Xử lý sự kiện khi click vào ảnh
+        musicButton.setOnMouseClicked(e -> {
+            if (backgroundMusic.getStatus() == MediaPlayer.Status.PLAYING) {
+                backgroundMusic.pause();
+                musicButton.setImage(musicOffImage); // Thay đổi ảnh khi nhạc tắt
+            } else {
+                backgroundMusic.play();
+                musicButton.setImage(musicOnImage); // Thay đổi ảnh khi nhạc bật
+            }
+        });
+
         // nút shuffle
         JFXButton shuffleButton = new JFXButton("Shuffle");
         shuffleButton.getStyleClass().add("button-game");
@@ -231,21 +257,24 @@ class GameBoard {
         ButtonSoundUtil.addClickSound(backButton);
         backButton.setOnAction(e -> backToIntro());
 
-        // sử dụng stackpane để đặt vị trí nút Back và các thành phần khác
-        StackPane leftPanel = new StackPane(backButton);
-        StackPane.setAlignment(backButton, javafx.geometry.Pos.TOP_LEFT); // đặt nút ở góc trên bên trái
+        Label titleLabel = new Label("BOOK RECOMMENDED TODAY");
+        titleLabel.setStyle("-fx-font-size: 40px; -fx-font-weight: bold;-fx-font-family: 'Times New Roman'; -fx-text-fill: #333;");
+        titleLabel.setAlignment(Pos.CENTER);
+
+        // Sử dụng StackPane để căn chỉnh ảnh Back và Music
+        StackPane topPanel = new StackPane(backButton,titleLabel,musicButton);
+        StackPane.setAlignment(backButton, javafx.geometry.Pos.TOP_LEFT);
+        StackPane.setAlignment(titleLabel, javafx.geometry.Pos.TOP_CENTER);
+        StackPane.setAlignment(musicButton, javafx.geometry.Pos.TOP_RIGHT);
 
         // đặt vbox để nhét shuffleButton
         VBox rightPanel = new VBox(10, thumbnail, shuffleButton);
         rightPanel.setStyle("-fx-alignment: center; -fx-padding: 10;");
 
-        // đặt vị trí của các panel
-        /*root.setRight(rightPanel);
-        root.setTop(leftPanel); */// Đặt leftPanel vào vị trí trên cùng
-
+        root.setTop(topPanel); // Đặt leftPanel vào vị trí trên cùng
         BorderPane.setAlignment(rightPanel, javafx.geometry.Pos.CENTER_RIGHT); // Align to the right
         root.setRight(rightPanel); // đặt rightPanel vào BorderPane
-        root.setTop(leftPanel); // Đặt leftPanel vào vị trí trên cùng
+
 
         // If it's still not showing, you can try setting a specific width for the right panel
         rightPanel.setMinWidth(200); // You can adjust this width based on your design
