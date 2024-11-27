@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -105,6 +107,7 @@ public class Game extends Application {
         backButton.getStyleClass().add("button-game");
         backButton.setPrefWidth(127);
         backButton.setPrefHeight(60);
+        ButtonSoundUtil.addClickSound(backButton);
         backButton.setOnAction(event -> loadScene("User-Home.fxml", "Home", backButton));
 
 // enter
@@ -112,6 +115,7 @@ public class Game extends Application {
         enterButton.getStyleClass().add("button-game");
         enterButton.setPrefWidth(127);
         enterButton.setPrefHeight(60);
+        ButtonSoundUtil.addClickSound(enterButton);
         enterButton.setOnAction(e -> primaryStage.setScene(createGameScene()));
 
 // thêm các nút enter back
@@ -148,37 +152,59 @@ class GameBoard {
     private final BorderPane root; // sử dụng borderpane để bố trí
     private int emptyX, emptyY; // vị trí ô trống
     private Canvas canvas; // canvas để vẽ lưới
+    private MediaPlayer backgroundMusic;
 
     public GameBoard(String imagePath) {
         this.image = new Image(imagePath);
         this.tiles = new ImagePiece[GRID_SIZE][GRID_SIZE];
         this.root = new BorderPane();
 
+        initializeMusic();
         initializeTiles();
         shuffleTiles();
 
-        // Tạo hình nền
-        ImageView backgroundImage = new ImageView(new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/backgroundColor.jpeg"));
-        backgroundImage.setFitWidth(1500);
-        backgroundImage.setFitHeight(750);
-        backgroundImage.setPreserveRatio(false); // Đảm bảo phủ toàn bộ
+        // Khởi tạo các mảnh ảnh
+        initializeTiles();
 
-        // Tạo canvas để vẽ lưới
+        // Xáo trộn các mảnh
+        shuffleTiles();
+
+        // Canvas để vẽ lưới
         canvas = new Canvas(GRID_SIZE * TILE_SIZE, GRID_SIZE * TILE_SIZE);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         drawTiles(gc);
 
+        // Sự kiện click chuột để di chuyển các mảnh
         canvas.setOnMousePressed(this::handleMousePress);
 
-        // StackPane chứa hình nền và canvas
-        StackPane gamePane = new StackPane();
-        gamePane.getChildren().addAll(backgroundImage, canvas); // Hình nền bên dưới, canvas bên trên
+        // Thêm canvas vào trung tâm BorderPane
+        root.setCenter(canvas);
 
-        // Đặt gamePane vào trung tâm của BorderPane
-        root.setCenter(gamePane);
+        // Thêm ảnh mẫu (thumbnail) và nút Shuffle vào giao diện
         addRightPanel();
     }
 
+    // Phương thức khởi tạo nhạc nền
+    private void initializeMusic() {
+        try {
+            String musicPath = "file:/D:/oop/LiMa-System/JavaFxDemo/assets/music1.mp3"; // Thay đường dẫn tới file nhạc
+            Media music = new Media(musicPath);
+            backgroundMusic = new MediaPlayer(music);
+            backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE); // Lặp vô hạn
+            backgroundMusic.setVolume(0.5); // Thiết lập âm lượng (0.0 - 1.0)
+            backgroundMusic.play(); // Bắt đầu phát nhạc
+        } catch (Exception e) {
+            System.out.println("Error initializing music: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    // Dừng nhạc khi thoát GameBoard
+    private void stopMusic() {
+        if (backgroundMusic != null) {
+            backgroundMusic.stop();
+        }
+    }
 
     // Trả về scene cho trò chơi
     public Scene getScene() {
@@ -196,11 +222,13 @@ class GameBoard {
         // nút shuffle
         JFXButton shuffleButton = new JFXButton("Shuffle");
         shuffleButton.getStyleClass().add("button-game");
+        ButtonSoundUtil.addClickSound(shuffleButton);
         shuffleButton.setOnAction(e -> shuffleAndRedraw());
 
         // nút back
         JFXButton backButton = new JFXButton("Back");
         backButton.getStyleClass().add("button-game");
+        ButtonSoundUtil.addClickSound(backButton);
         backButton.setOnAction(e -> backToIntro());
 
         // sử dụng stackpane để đặt vị trí nút Back và các thành phần khác
@@ -224,6 +252,7 @@ class GameBoard {
     }
 
     private void backToIntro() {
+        stopMusic();
         Stage stage = (Stage) root.getScene().getWindow(); // Lấy stage hiện tại
         Game game = new Game(stage); // Tạo lại đối tượng Game với stage hiện tại
         stage.setScene(game.createIntroScene()); // Chuyển đến giao diện intro

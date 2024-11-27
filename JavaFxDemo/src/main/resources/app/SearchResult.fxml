@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
 
-<AnchorPane prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SearchResultController">
-    <Button fx:id="backButton" text="Back" onAction="#onBackButtonClicked" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" />
-    <ScrollPane fx:id="resultsScrollPane" layoutX="20.0" layoutY="50.0" prefHeight="700.0" prefWidth="1400.0">
+<AnchorPane prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SearchResultController">
+    <Button fx:id="backButton" onAction="#onBackButtonClicked" styleClass="login2-button" stylesheets="@style.css" text="Back" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <ScrollPane fx:id="resultsScrollPane" layoutX="20.0" layoutY="46.0" prefHeight="653.0" prefWidth="1302.0">
         <!-- The VBox will contain all the search results -->
-        <VBox fx:id="resultsVBox" prefHeight="650.0" prefWidth="1300.0" spacing="10">
+        <VBox fx:id="resultsVBox" prefHeight="650.0" prefWidth="1300.0" spacing="10" styleClass="primary-color">
             <!-- The list of book results will be dynamically populated here -->
         </VBox>
     </ScrollPane>
