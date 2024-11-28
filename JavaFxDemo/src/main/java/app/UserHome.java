@@ -71,7 +71,7 @@ public class UserHome extends BaseController {
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");
         setupButton(informationButton, "Information.fxml", "Information");
-        setupButton(favouriteButton, "IssueBook.fxml", "Issue Book");
+        setupButton(favouriteButton, "IssueBook.fxml", "Issue & Return Book");
         setupButton(settingButton, "Setting.fxml", "Setting");
         setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 

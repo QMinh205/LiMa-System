@@ -8,9 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -22,10 +20,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class IssueBookController extends BaseController {
-    @FXML
-    private JFXButton confirmButton;
 
     @FXML
     private JFXButton homeButton;
@@ -46,6 +43,100 @@ public class IssueBookController extends BaseController {
     private JFXButton settingButton;
 
     @FXML
+    private TextField memberIdField;
+
+    @FXML
+    private TextField bookIdField;
+
+    @FXML
+    private DatePicker borrowedDatePicker;
+
+    @FXML
+    private DatePicker dueDatePicker;
+
+    @FXML
+    private JFXButton confirmButton;
+
+
+    @FXML
+    public void handleConfirmAction() {
+        // Lấy dữ liệu từ giao diện
+        String memberId = memberIdField.getText().trim();
+        String bookId = bookIdField.getText().trim();
+        LocalDate borrowedDate = borrowedDatePicker.getValue();
+        LocalDate dueDate = dueDatePicker.getValue();
+
+        // Kiểm tra các trường nhập liệu
+        if (memberId.isEmpty() || bookId.isEmpty() || borrowedDate == null || dueDate == null) {
+            showAlert(Alert.AlertType.ERROR, "Input Error", "All fields must be filled!");
+            return;
+        }
+
+        // Kiểm tra tính hợp lệ của ngày
+        if (dueDate.isBefore(borrowedDate)) {
+            showAlert(Alert.AlertType.ERROR, "Date Error", "Due date cannot be before borrowed date!");
+            return;
+        }
+
+        try (Connection conn = DatabaseConnection.getConnection()) {
+            // Lấy tiêu đề sách từ bảng books
+            String bookTitle = getBookTitleById(bookId, conn);
+            if (bookTitle == null) {
+                showAlert(Alert.AlertType.ERROR, "Error", "Book ID does not exist in the database!");
+                return;
+            }
+
+            // Chèn dữ liệu vào bảng borrowed_books
+            String query = "INSERT INTO borrowed_books (book_id, member_id, book_title, borrow_date, return_date, overdue) VALUES (?, ?, ?, ?, ?, ?)";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, bookId);
+            preparedStatement.setString(2, memberId);
+            preparedStatement.setString(3, bookTitle); // Thêm tiêu đề sách
+            preparedStatement.setDate(4, java.sql.Date.valueOf(borrowedDate));
+            preparedStatement.setDate(5, java.sql.Date.valueOf(dueDate));
+            preparedStatement.setBoolean(6, false); // Mặc định là chưa quá hạn
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                showAlert(Alert.AlertType.INFORMATION, "Success", "Book issued successfully!");
+                clearFields();
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Failure", "Failed to issue book. Please try again!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Database Error", "An error occurred: " + e.getMessage());
+        }
+    }
+
+    // Hàm để lấy tiêu đề sách từ bảng books
+    private String getBookTitleById(String bookId, Connection conn) throws SQLException {
+        String query = "SELECT title FROM books WHERE book_id = ?";
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+        preparedStatement.setString(1, bookId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            return resultSet.getString("title");
+        }
+        return null; // Trả về null nếu không tìm thấy sách
+    }
+
+    private void clearFields() {
+        memberIdField.clear();
+        bookIdField.clear();
+        borrowedDatePicker.setValue(null);
+        dueDatePicker.setValue(null);
+    }
+
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    @FXML
     public void initialize() {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(homeButton);
@@ -56,11 +147,11 @@ public class IssueBookController extends BaseController {
         ButtonSoundUtil.addClickSound(settingButton);
         ButtonSoundUtil.addClickSound(confirmButton);
 
-        // Use the setupButton method from BaseController
+        // transition
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");
         setupButton(informationButton, "Information.fxml", "Information");
-        setupButton(favouriteButton, "IssueBook.fxml", "Issue Book");
+        setupButton(favouriteButton, "IssueBook.fxml", "Issue & Return Book");
         setupButton(settingButton, "Setting.fxml", "Setting");
 
         setupGameButton(gameButton);
