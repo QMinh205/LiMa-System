@@ -72,67 +72,62 @@
                         <Font name="System Bold" size="29.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="searchButton" layoutX="568.0" layoutY="161.0" prefHeight="35.0" prefWidth="118.0" styleClass="setting-button" text="Search" textFill="WHITE">
+                <JFXButton fx:id="searchButton" layoutX="517.0" layoutY="161.0" onAction="#onSearchButtonClicked" prefHeight="35.0" prefWidth="118.0" styleClass="setting-button" text="Search" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="19.0" />
                     </font>
                 </JFXButton>
-                <ListView layoutX="69.0" layoutY="308.0" prefHeight="199.0" prefWidth="1368.0">
+                <ListView fx:id="memberListView" layoutX="69.0" layoutY="308.0" prefHeight="199.0" prefWidth="1368.0">
                     <styleClass>
                         <String fx:value="gray-color" />
                         <String fx:value="border-black" />
                     </styleClass>
                 </ListView>
-            <TextField alignment="CENTER" layoutX="1285.0" layoutY="269.0" prefHeight="39.0" prefWidth="152.0">
+            <Text fill="WHITE" layoutX="83.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="139.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FULLNAME">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="333.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="531.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="726.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="921.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PHONE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="1110.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SAFE CODE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TextField fx:id="searchTextField" alignment="CENTER" layoutX="662.0" layoutY="162.0" prefHeight="38.0" prefWidth="380.0" promptText="ID/ Username/ FullName/ Email/ PhoneNumber" styleClass="text-field">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <Text fill="WHITE" layoutX="120.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+            <Text fill="WHITE" layoutX="1312.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE OF BIRTH">
                <font>
                   <Font size="17.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="256.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FULLNAME">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="449.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="641.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="840.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="1004.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PHONE">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="1145.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SAFE CODE">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="1303.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE OF BIRTH">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Text>
-            <TextField fx:id="searchTextField" alignment="CENTER" layoutX="743.0" layoutY="162.0" prefHeight="26.0" prefWidth="194.0" promptText="ID" styleClass="text-field">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </TextField>
             </children>
         </Pane>
     </center>
