@@ -39,16 +39,11 @@
                                 <Font name="System Bold" size="20.0" />
                             </font>
                         </Label>
-                        <JFXButton buttonType="RAISED" styleClass="setting-button" text="Edit Profile" textFill="WHITE">
-                            <font>
-                                <Font size="15.0" />
-                            </font>
-                        </JFXButton>
                     </children>
                 </VBox>
                 <VBox prefHeight="396.0" prefWidth="431.0">
                     <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0" styleClass="selected-border">
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="431.0" spacing="15.0" styleClass="selected-border">
                             <children>
                         <Pane prefHeight="75.0" prefWidth="104.0" />
                         <JFXButton alignment="CENTER" text="Profile" textFill="WHITE">
@@ -64,9 +59,9 @@
                            </font>
                         </JFXButton>
                             </children>
-                            <padding>
-                                <Insets bottom="40.0" />
-                            </padding>
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
                         </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0">
                      <children>
@@ -84,9 +79,9 @@
                            </font>
                         </JFXButton>
                      </children>
-                     <padding>
+                     <VBox.margin>
                         <Insets bottom="40.0" />
-                     </padding>
+                     </VBox.margin>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="431.0" spacing="15.0">
                      <children>
@@ -104,9 +99,9 @@
                            </font>
                         </JFXButton>
                      </children>
-                     <padding>
-                        <Insets bottom="40.0" />
-                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
