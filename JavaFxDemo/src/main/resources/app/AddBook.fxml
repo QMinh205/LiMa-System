@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.AddBookController">
+<AnchorPane prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.AddBookController">
     <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" onAction="#handleReturnToRequestAction" style="-fx-font-size: 14px; -fx-font-weight: bold;" styleClass="login2-button" text="Return to Request" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
     <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
         <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;" styleClass="primary-color">

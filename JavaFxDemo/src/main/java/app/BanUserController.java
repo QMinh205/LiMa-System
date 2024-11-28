@@ -40,7 +40,7 @@ public class BanUserController {
     }
 
     @FXML
-    private void onReturnButtonClicked() {
+    public void onReturnButtonClicked() {
         try {
             // Load the UserHome.fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Request.fxml"));
@@ -55,7 +55,7 @@ public class BanUserController {
     }
 
     @FXML
-    private void onConfirmButtonClicked() {
+    public void onConfirmButtonClicked() {
         String memberId = memberIdField.getText();
         String confirmationText = confirmationField.getText();
 
@@ -72,7 +72,7 @@ public class BanUserController {
         deleteMemberFromDatabase(memberId);
     }
 
-    private void deleteMemberFromDatabase(String memberId) {
+    public void deleteMemberFromDatabase(String memberId) {
         String deleteQuery = "DELETE FROM members WHERE member_id = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();

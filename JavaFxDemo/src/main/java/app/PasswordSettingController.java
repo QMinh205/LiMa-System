@@ -47,14 +47,6 @@ public class PasswordSettingController {
         ButtonSoundUtil.addClickSound(settingButton);
         ButtonSoundUtil.addClickSound(PrivacyPolicyButton);
         ButtonSoundUtil.addClickSound(saveButton);
-        // Populate the password fields with the current user information if required
-        populateUserFields();
-    }
-
-    private void populateUserFields() {
-        // Here, we assume the password fields are for updating the password,
-        // so there's no need to populate them initially.
-        // However, if you'd want to display a masked current password, it can be handled here.
     }
 
     @FXML

@@ -75,50 +75,16 @@ public class InformationController extends BaseController {
     }
     @FXML
     private void onUserButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("UserInformation.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) userButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Users Information");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("UserInformation.fxml", "Users Information", userButton);
     }
 
     @FXML
     private void onBooksButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("bookInformation.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) booksButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Books Information");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("BookInformation.fxml", "Books Information", booksButton);
     }
 
     @FXML
     private void onBorrowButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("BorrowBookInformation.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) borrowAndReturnButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Borrowed & Returned Information");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("BorrowBookInformation.fxml", "Borrowed & Returned Information", borrowAndReturnButton);
     }
-
 }

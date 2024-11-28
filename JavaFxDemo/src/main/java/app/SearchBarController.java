@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SearchBarController {
+public class SearchBarController extends BaseController{
 
     //@FXML
     //private ImageView tagImage;  // ImageView for the tag
@@ -37,10 +37,6 @@ public class SearchBarController {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(searchButton);
         ButtonSoundUtil.addClickSound(backButton);
-        //if (tagImage == null) {
-        //    System.out.println("Error: tagImage is null");
-        //    return;
-        //}
 
         // Create CheckBoxes for genres
         CheckBox genre1 = new CheckBox("Fiction");
@@ -66,9 +62,6 @@ public class SearchBarController {
         JFXDialog dialog = new JFXDialog();
         dialog.setDialogContainer(rootPane);
         dialog.setContent(content);
-
-        // Show dialog when tagImage is clicked
-        //tagImage.setOnMouseClicked(event -> dialog.show());
     }
 
     @FXML
@@ -109,17 +102,6 @@ public class SearchBarController {
 
     @FXML
     private void onBackButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("User-Home.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) backButton.getScene().getWindow();
-            stage.setScene(new Scene(root, 1500, 750)); // Adjust the window size here
-            stage.setTitle("User Home");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("User-Home.fxml", "User Home", backButton);
     }
 }

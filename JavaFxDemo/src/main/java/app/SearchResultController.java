@@ -29,7 +29,7 @@ import java.nio.charset.StandardCharsets;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class SearchResultController implements Initializable {
+public class SearchResultController extends BaseController implements Initializable {
 
     @FXML
     private VBox resultsVBox; // VBox to organize results
@@ -324,17 +324,6 @@ public class SearchResultController implements Initializable {
 
     @FXML
     private void onBackButtonClicked() {
-        try {
-            // Load SearchBar.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchBar.fxml"));
-            Parent root = loader.load();
-
-            // Switch the scene back to SearchBar.fxml
-            Stage stage = (Stage) backButton.getScene().getWindow();
-            stage.setScene(new Scene(root, 1500, 750)); // Set preferred size
-            stage.setTitle("Search Bar");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("SearchBar.fxml", "Search Bar", backButton);
     }
 }

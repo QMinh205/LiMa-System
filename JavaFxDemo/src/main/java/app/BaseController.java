@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import user.User;
@@ -12,7 +13,7 @@ import java.io.IOException;
 
 public abstract class BaseController {
 
-    protected void loadScene(String fxmlFile, String title, JFXButton button) {
+    protected void loadScene(String fxmlFile, String title, Button button) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = loader.load();

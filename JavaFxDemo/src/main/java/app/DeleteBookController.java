@@ -14,7 +14,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DeleteBookController {
+public class DeleteBookController extends BaseController{
     @FXML
     private Button returnButton;
 
@@ -39,20 +39,7 @@ public class DeleteBookController {
 
     @FXML
     private void onReturnButtonClicked() {
-        try {
-            // Load request.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Request.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage
-            Stage stage = (Stage) returnButton.getScene().getWindow();
-
-            // Set the new scene
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("Request.fxml", "Request", returnButton);
     }
 
     @FXML

@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.*;
 
-public class UserInformationController {
+public class UserInformationController extends BaseController {
 
     @FXML
     private JFXButton returnButton;
@@ -42,18 +42,7 @@ public class UserInformationController {
 
     @FXML
     private void onReturnButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Information.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) returnButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Books Information");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("Information.fxml", "Information", returnButton);
     }
 
     @FXML

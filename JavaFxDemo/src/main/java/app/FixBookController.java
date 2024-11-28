@@ -16,7 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class FixBookController {
+public class FixBookController extends BaseController{
 
     @FXML
     private Button returnButton;
@@ -145,19 +145,6 @@ public class FixBookController {
 
     @FXML
     private void onReturnButtonClicked() {
-        try {
-            // Load request.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Request.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage
-            Stage stage = (Stage) returnButton.getScene().getWindow();
-
-            // Set the new scene
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("Request.fxml", "Request", returnButton);
     }
 }

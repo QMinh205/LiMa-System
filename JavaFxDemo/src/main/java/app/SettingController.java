@@ -12,7 +12,7 @@ import user.User;
 import java.io.IOException;
 import java.util.Optional;
 
-public class SettingController {
+public class SettingController extends BaseController {
 
     @FXML
     private Button returnButton;
@@ -85,30 +85,12 @@ public class SettingController {
 
     @FXML
     private void onReturnButtonClicked() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("User-Home.fxml"));
-            Parent root = loader.load();
-
-            Stage stage = (Stage) returnButton.getScene().getWindow();
-            stage.setScene(new Scene(root)); // Adjust the window size here
-            stage.setTitle("User Home");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("User-Home.fxml", "User Home", returnButton);
     }
 
     @FXML
     private void onPasswordSettingButtonClicked() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("passwordSetting.fxml"));
-            Parent root = loader.load();
-
-            Stage stage = (Stage) passwordSettingButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Password Setting");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("passwordSetting.fxml","Password Setting", passwordSettingButton);
     }
 
     @FXML
@@ -128,19 +110,8 @@ public class SettingController {
         Optional<ButtonType> result = confirmationDialog.showAndWait();
         if (result.isPresent() && result.get() == okButton) {
             // User confirmed logout, navigate to the login screen
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-                Parent root = loader.load();
-
-                // Get the current stage and set the new scene
-                Stage stage = (Stage) returnButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.setTitle("Login");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            loadScene("login.fxml", "Login", logOutButton);
         }
         // If the user cancels, do nothing
     }
-
 }

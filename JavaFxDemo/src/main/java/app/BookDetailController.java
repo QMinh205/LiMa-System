@@ -18,7 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 
-public class BookDetailController {
+public class BookDetailController extends BaseController{
 
     @FXML
     private Hyperlink previewLink;
@@ -170,13 +170,7 @@ public class BookDetailController {
         } else {
             System.out.println("No cached SearchResult scene found. Loading a new one...");
             // Optional: Load a new SearchResult scene if caching fails
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("SearchResult.fxml"));
-                Scene newScene = new Scene(root, 1500, 750);
-                stage.setScene(newScene);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            loadScene("SearchResult.fxml", "SearchResult", backButton);
         }
     }
 }

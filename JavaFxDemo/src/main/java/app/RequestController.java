@@ -82,64 +82,21 @@ public class RequestController extends BaseController {
 
     @FXML
     private void onFixButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("fixRequest.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) fixButton.getScene().getWindow();
-            stage.setScene(new Scene(root)); // Adjust the window size here
-            stage.setTitle("Fix Request");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("fixRequest.fxml", "Fix Request", fixButton);
     }
 
     @FXML
     private void onDeleteButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("deleteRequest.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) deleteButton.getScene().getWindow();
-            stage.setScene(new Scene(root)); // Adjust the window size here
-            stage.setTitle("Delete Request");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("deleteRequest.fxml", "Delete Request", deleteButton);
     }
 
     @FXML
     private void onAddButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) addButton.getScene().getWindow();
-            stage.setScene(new Scene(root, 1500, 750)); // Adjust the window size here
-            stage.setTitle("Add Book");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("AddBook.fxml", "Add Book", addButton);
     }
 
     @FXML
     private void onBanButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("BanUserRequest.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) addButton.getScene().getWindow();
-            stage.setScene(new Scene(root)); // Adjust the window size here
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("BanUserRequest.fxml", "Ban User Request", banButton);
     }
 }
