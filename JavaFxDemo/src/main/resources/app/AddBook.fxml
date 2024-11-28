@@ -14,6 +14,12 @@
     <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
         <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;" styleClass="primary-color">
             <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Add New Book" textFill="WHITE" />
+         <Label text="Book Id" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font>
+         </Label>
+         <TextField promptText="Enter book id" />
 
             <!-- Title -->
             <Label text="Title" textFill="WHITE">
