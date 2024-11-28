@@ -62,72 +62,82 @@
     <center>
         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="654.0" layoutY="51.0" text="BORROWED BOOK " textFill="WHITE">
+                <Label layoutX="545.0" layoutY="48.0" text="BORROWED &amp; RETURNED BOOK " textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="29.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="searchUserIdButton" layoutX="182.0" layoutY="187.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
+                <JFXButton fx:id="searchUserIdButton" layoutX="182.0" layoutY="187.0" onAction="#onSearchButtonClicked" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="19.0" />
                     </font>
                 </JFXButton>
-                <ListView layoutX="121.0" layoutY="308.0" prefHeight="199.0" prefWidth="1282.0">
+                <ListView fx:id="booksListView" layoutX="215.0" layoutY="308.0" prefHeight="199.0" prefWidth="1082.0">
                     <styleClass>
                         <String fx:value="gray-color" />
                         <String fx:value="border-black" />
                     </styleClass>
                 </ListView>
-                <TextField alignment="CENTER" layoutX="329.0" layoutY="188.0" prefHeight="39.0" prefWidth="155.0" promptText="USER ID">
+                <TextField fx:id="userIdField" alignment="CENTER" layoutX="329.0" layoutY="188.0" prefHeight="39.0" prefWidth="155.0" promptText="USER ID">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </TextField>
-                <Text fill="WHITE" layoutX="132.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER ID">
+                <Text fill="WHITE" layoutX="226.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MEMBER ID">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Text fill="WHITE" layoutX="329.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ID">
+                <Text fill="WHITE" layoutX="335.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ID">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Text fill="WHITE" layoutX="555.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORROW ID">
+                <Text fill="WHITE" layoutX="435.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORROW ID">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Text fill="WHITE" layoutX="832.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORROW DATE">
+                <Text fill="WHITE" layoutX="567.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK TITLE">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Text fill="WHITE" layoutX="1135.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RETURN DATE">
+                <Text fill="WHITE" layoutX="983.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RETURN DATE">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-            <JFXButton fx:id="searchBorowIdButton" layoutX="654.0" layoutY="186.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
+            <JFXButton fx:id="searchBorowIdButton" layoutX="654.0" layoutY="186.0" onAction="#onSearchButtonClicked" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </JFXButton>
-            <TextField alignment="CENTER" layoutX="801.0" layoutY="187.0" prefHeight="39.0" prefWidth="155.0" promptText="BORROW ID">
+            <TextField fx:id="borrowIdField" alignment="CENTER" layoutX="801.0" layoutY="187.0" prefHeight="39.0" prefWidth="155.0" promptText="BORROW ID">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="searchBookIdButton" layoutX="1087.0" layoutY="185.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
+            <JFXButton fx:id="searchBookIdButton" layoutX="1087.0" layoutY="185.0" onAction="#onSearchButtonClicked" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </JFXButton>
-            <TextField alignment="CENTER" layoutX="1234.0" layoutY="186.0" prefHeight="39.0" prefWidth="155.0" promptText="BOOK ID">
+            <TextField fx:id="bookIdField" alignment="CENTER" layoutX="1234.0" layoutY="186.0" prefHeight="39.0" prefWidth="155.0" promptText="BOOK ID">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
+            <Text fill="WHITE" layoutX="1195.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OVERDUE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="773.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORROW DATE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
             </children>
         </Pane>
     </center>
