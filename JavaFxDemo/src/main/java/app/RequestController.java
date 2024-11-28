@@ -131,4 +131,19 @@ public class RequestController extends BaseController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void onBanButtonClicked() {
+        try {
+            // Load the UserHome.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("BanUserRequest.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) addButton.getScene().getWindow();
+            stage.setScene(new Scene(root)); // Adjust the window size here
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

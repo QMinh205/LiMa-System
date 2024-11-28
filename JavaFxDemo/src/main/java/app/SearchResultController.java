@@ -191,12 +191,12 @@ public class SearchResultController implements Initializable {
                         imageView = new ImageView(new Image(imageUrl));
                     } catch (IllegalArgumentException e) {
                         // Fallback to a placeholder if the URL is invalid
-                        imageView = new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop btl/" +
+                        imageView = new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop_btl/" +
                                 "Library-Management-System/JavaFxDemo/assets/unavailable.jpg").toURI().toString()));
                     }
                 } else {
                     // Fallback to a placeholder if the URL is null or empty
-                    imageView = new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop btl/" +
+                    imageView = new ImageView(new Image(new File("E:/Bibi/Code/java/Oop/oop_btl/" +
                             "Library-Management-System/JavaFxDemo/assets/unavailable.jpg").toURI().toString()));
                 }
 

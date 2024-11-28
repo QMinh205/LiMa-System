@@ -21,9 +21,6 @@ import java.io.IOException;
 import java.sql.*;
 
 public class UserInformationController {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/new_dtb";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Phong416ct5x2";
 
     @FXML
     private JFXButton returnButton;
@@ -71,7 +68,7 @@ public class UserInformationController {
         memberListView.getItems().clear(); // xóa các hàng cũ trước khi hiển thị dữ liệu mới
 
         // kết nối và truy vấn cơ sở dữ liệu
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+        try (Connection connection = DatabaseConnection.getConnection();) {
             String query = "SELECT * FROM members WHERE member_id LIKE ? OR userName LIKE ? OR fullName LIKE ? OR email LIKE ? OR phoneNumber LIKE ?";
             PreparedStatement statement = connection.prepareStatement(query);
             String searchPattern = "%" + searchTerm + "%"; // Tìm kiếm chứa chuỗi
