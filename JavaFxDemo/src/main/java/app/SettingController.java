@@ -39,6 +39,9 @@ public class SettingController {
     private TextField phoneField;
 
     @FXML
+    private Label profileLabel;
+
+    @FXML
     private JFXButton logOutButton;
 
     @FXML
@@ -63,6 +66,7 @@ public class SettingController {
 
         // Check if a user is logged in
         if (currentUser != null) {
+            profileLabel.setText(currentUser.getUserName());
             fullnameField.setText(currentUser.getFullName()); // Assuming `getFullname()` exists in your User class
             usernameField.setText(currentUser.getUserName());
             dobField.setText(currentUser.getDateOfBirth()); // Assuming `getDateOfBirth()` exists in your User class
@@ -70,6 +74,7 @@ public class SettingController {
             phoneField.setText(currentUser.getPhoneNumber()); // Assuming `getPhone()` exists in your User class
         } else {
             // Handle case where no user is logged in
+            profileLabel.setText("");
             fullnameField.setText("");
             usernameField.setText("");
             dobField.setText("");

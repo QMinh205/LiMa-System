@@ -34,7 +34,7 @@
                                 <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/avatar.png" />
                             </image>
                         </ImageView>
-                        <Label text="Tùng béo wibu" textFill="WHITE">
+                        <Label fx:id="profileLabel" text="Tùng béo wibu" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>

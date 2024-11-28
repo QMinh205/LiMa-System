@@ -13,6 +13,8 @@ public class Book {
     private String averageRating;
     private String previewLink;
 
+    public Book() {}
+
     // Constructor
     public Book(String bookId, String title, String author, String publisher, String description, String imageUrl,
                 String publishedDate, int pageCount, String categories, String averageRating, String previewLink) {
@@ -41,4 +43,48 @@ public class Book {
     public String getCategories() { return categories; }
     public String getAverageRating() { return averageRating; }
     public String getPreviewLink() { return previewLink; }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    public void setCategories(String categories) {
+        this.categories = categories;
+    }
+
+    public void setAverageRating(String averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public void setPreviewLink(String previewLink) {
+        this.previewLink = previewLink;
+    }
 }

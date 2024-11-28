@@ -80,27 +80,33 @@ public class AddBookController {
     @FXML
     public void handleCancelAction() {
         try {
+            // Check if SearchResult.fxml is open
             Scene searchResultScene = SearchResultController.getSearchResultScene();
             if (searchResultScene != null) {
-                Stage stage = (Stage) searchResultScene.getWindow();
-                if (stage != null && stage.isShowing()) {
-                    stage.close();
+                Stage searchResultStage = (Stage) searchResultScene.getWindow();
+                if (searchResultStage != null && searchResultStage.isShowing()) {
+                    // Close the AddBook.fxml window
+                    Stage addBookStage = (Stage) cancelButton.getScene().getWindow();
+                    addBookStage.close();
+                    return;
                 }
             }
-            // Load the Request.fxml
+
+            // If SearchResult.fxml is not open, return to Request.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Request.fxml"));
             Parent root = loader.load();
 
-            // Get the current stage
-            Stage stage = (Stage) cancelButton.getScene().getWindow();
+            // Get the current stage (AddBook.fxml stage)
+            Stage addBookStage = (Stage) cancelButton.getScene().getWindow();
 
             // Set the new scene
-            stage.setScene(new Scene(root));
-            stage.setTitle("Request");
+            addBookStage.setScene(new Scene(root));
+            addBookStage.setTitle("Request");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     public void saveBookToDatabase(String title, String author, String publisher, String description, String imageUrl,
                                     String publishedDate, String pageCount, String categories, String rating, String previewLink) {

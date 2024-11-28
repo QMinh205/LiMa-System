@@ -251,7 +251,6 @@ public class SearchResultController implements Initializable {
         publisher = (publisher == null || publisher.isEmpty()) ? "" : publisher;
 
         String sql = "SELECT * FROM books WHERE (title LIKE ? OR ? = '') AND (author LIKE ? OR ? = '') AND (publisher LIKE ? OR ? = '')";
-        System.out.println("Executing SQL Query: " + sql);
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -262,10 +261,6 @@ public class SearchResultController implements Initializable {
             pstmt.setString(4, author);
             pstmt.setString(5, "%" + publisher + "%");
             pstmt.setString(6, publisher);
-
-            System.out.println("Parameters: " + title + ", " + author + ", " + publisher);
-
-
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
@@ -289,7 +284,6 @@ public class SearchResultController implements Initializable {
             e.printStackTrace();
         }
 
-        System.out.println("Books retrieved: " + dbBooks.size());
         return dbBooks;
     }
 
