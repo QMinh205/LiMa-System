@@ -57,6 +57,12 @@ public class IssueBookController extends BaseController {
     @FXML
     private JFXButton confirmButton;
 
+    @FXML
+    private TextField borrowIdField;
+
+    @FXML
+    private TextField confirmField;
+
 
     @FXML
     public void handleConfirmAction() {
@@ -124,6 +130,7 @@ public class IssueBookController extends BaseController {
     private void clearFields() {
         memberIdField.clear();
         bookIdField.clear();
+        confirmField.clear();
         borrowedDatePicker.setValue(null);
         dueDatePicker.setValue(null);
     }
@@ -134,6 +141,48 @@ public class IssueBookController extends BaseController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @FXML
+    public void handleReturnBookAction() {
+        // Lấy borrow_id từ trường nhập liệu
+        String borrowId = borrowIdField.getText().trim();
+
+        // Kiểm tra xem borrow_id có hợp lệ không
+        if (borrowId.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Input Error", "Please enter a valid borrow ID!");
+            return;
+        }
+
+        // Tiến hành xóa bản ghi trong borrowed_books tương ứng với borrow_id
+        try (Connection conn = DatabaseConnection.getConnection()) {
+            // Kiểm tra xem borrow_id có tồn tại không
+            String checkQuery = "SELECT * FROM borrowed_books WHERE borrow_id = ?";
+            PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+            checkStmt.setString(1, borrowId);
+            ResultSet rs = checkStmt.executeQuery();
+
+            if (!rs.next()) {
+                showAlert(Alert.AlertType.ERROR, "Not Found", "No record found with the given borrow ID.");
+                return;
+            }
+
+            // Nếu tồn tại, xóa bản ghi
+            String deleteQuery = "DELETE FROM borrowed_books WHERE borrow_id = ?";
+            PreparedStatement deleteStmt = conn.prepareStatement(deleteQuery);
+            deleteStmt.setString(1, borrowId);
+
+            int rowsAffected = deleteStmt.executeUpdate();
+            if (rowsAffected > 0) {
+                showAlert(Alert.AlertType.INFORMATION, "Success", "Book return processed successfully!");
+                borrowIdField.clear(); // Clear the field after successful return
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Failure", "Failed to return the book. Please try again.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Database Error", "An error occurred: " + e.getMessage());
+        }
     }
 
     @FXML
