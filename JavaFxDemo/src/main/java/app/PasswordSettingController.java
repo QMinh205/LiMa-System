@@ -6,7 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import user.User;
 
@@ -35,15 +38,26 @@ public class PasswordSettingController {
     private PasswordField reEnterPasswordField;
     @FXML
     private PasswordField safeCodeField;
+    @FXML
+    private Label profileLabel;
+    @FXML
+    private ImageView profileImageView;
+
 
     User currentUser = UserSession.getInstance().getUser();
 
     @FXML
     public void initialize() {
+        Image sharedImage = SettingController.getProfileImage();
+        if (sharedImage != null) {
+            profileImageView.setImage(sharedImage);
+        }
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(settingButton);
         ButtonSoundUtil.addClickSound(saveButton);
+
+        profileLabel.setText(currentUser.getUserName());
     }
 
     @FXML

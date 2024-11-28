@@ -6,9 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import user.User;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -43,7 +48,27 @@ public class SettingController extends BaseController {
     private JFXButton logOutButton;
 
     @FXML
+    private Button changeImageButton;
+
+    @FXML
+    private ImageView profileImageView;
+
+    private static Image profileImage;
+
+    public static Image getProfileImage() {
+        return profileImage;
+    }
+
+    public static void setProfileImage(Image image) {
+        profileImage = image;
+    }
+
+    @FXML
     public void initialize() {
+        if (profileImage != null) {
+            profileImageView.setImage(profileImage);
+        }
+
         ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(passwordSettingButton);
         ButtonSoundUtil.addClickSound(returnButton);
@@ -56,6 +81,30 @@ public class SettingController extends BaseController {
 
         // Populate fields with user data from UserSession
         populateUserFields();
+    }
+
+    @FXML
+    private void onChangeImageButtonClicked() {
+        // Create a file chooser to select an image file
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.jpeg", "*.png", "*.gif")
+        );
+
+        // Open file chooser and let the user select a file
+        File selectedFile = fileChooser.showOpenDialog(changeImageButton.getScene().getWindow());
+
+        // If a file is selected, update the ImageView with the chosen image
+        if (selectedFile != null) {
+            try {
+                // Create a new Image object with the selected file
+                profileImage = new Image(new FileInputStream(selectedFile));
+                // Set the new image in the ImageView
+                profileImageView.setImage(profileImage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void populateUserFields() {
