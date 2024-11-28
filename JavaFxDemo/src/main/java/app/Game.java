@@ -146,6 +146,7 @@ class GameBoard {
     private Canvas canvas; // canvas để vẽ lưới
     private MediaPlayer backgroundMusic;
     private String s="file:/D:/oop/LiMa-System/JavaFxDemo/assets/sontung.png";
+    private final Image victoryImage = new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/sontung1.png");
 
     public GameBoard(String imagePath) {
         this.image = new Image(imagePath);
@@ -396,7 +397,9 @@ class GameBoard {
 
             // kiểm tra trạng thái thắng
             if (isWin()) {
-                System.out.println("You win!");
+                drawVictoryScreen();
+                //System.out.println("You win!");
+                canvas.setOnMousePressed(null);
             }
         }
     }
@@ -405,6 +408,12 @@ class GameBoard {
     private boolean isAdjacent(int row, int col) {
         return (Math.abs(emptyX - row) == 1 && emptyY == col) ||
                 (Math.abs(emptyY - col) == 1 && emptyX == row);
+    }
+
+    private void drawVictoryScreen() {
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight()); // Xóa toàn bộ canvas
+        gc.drawImage(victoryImage, 0, 0, canvas.getWidth(), canvas.getHeight()); // Vẽ ảnh chiến thắng
     }
 
     // kiểm tra trạng thái thắng

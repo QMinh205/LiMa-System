@@ -63,6 +63,9 @@ public class IssueBookController extends BaseController {
     @FXML
     private TextField confirmField;
 
+    @FXML
+    private JFXButton confirmButton1;
+
 
     @FXML
     public void handleConfirmAction() {
@@ -195,6 +198,7 @@ public class IssueBookController extends BaseController {
         ButtonSoundUtil.addClickSound(gameButton);
         ButtonSoundUtil.addClickSound(settingButton);
         ButtonSoundUtil.addClickSound(confirmButton);
+        ButtonSoundUtil.addClickSound(confirmButton1);
 
         // transition
         setupButton(homeButton, "User-Home.fxml", "Home");
