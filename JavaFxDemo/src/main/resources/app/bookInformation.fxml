@@ -15,7 +15,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.BookInformationController">
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="primary-color" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
             <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="148.0" text="RETURN" textFill="WHITE">
                <graphic>
@@ -65,19 +65,19 @@
       </HBox>
    </top>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="primary-color" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="627.0" layoutY="51.0" text="BOOKS INFORMATION" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>
             </Label>
-            <JFXButton fx:id="searchButton" layoutX="603.0" layoutY="166.0" prefHeight="35.0" prefWidth="118.0" styleClass="setting-button" text="Search" textFill="WHITE">
+            <JFXButton fx:id="searchButton" layoutX="603.0" layoutY="166.0" onAction="#onSearchButtonClicked" prefHeight="35.0" prefWidth="118.0" styleClass="setting-button" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </JFXButton>
-            <ListView layoutX="69.0" layoutY="308.0" prefHeight="199.0" prefWidth="1368.0">
+            <ListView fx:id="booksListView" layoutX="69.0" layoutY="308.0" prefHeight="199.0" prefWidth="1368.0">
                <styleClass>
                   <String fx:value="gray-color" />
                   <String fx:value="border-black" />
@@ -88,37 +88,42 @@
                   <Font size="17.0" />
                </font>
             </TextField>
-            <Text fill="WHITE" layoutX="153.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+            <Text fill="WHITE" layoutX="77.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="298.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE">
+            <Text fill="WHITE" layoutX="159.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="478.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AUTHOR">
+            <Text fill="WHITE" layoutX="357.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AUTHOR">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="694.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PUBLISHER">
+            <Text fill="WHITE" layoutX="552.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PUBLISHER">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="907.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAGE_COUNT">
+            <Text fill="WHITE" layoutX="946.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAGE_COUNT">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="1133.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CATEGORIES">
+            <Text fill="WHITE" layoutX="1124.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CATEGORIES">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="1324.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RATING">
+            <Text fill="WHITE" layoutX="1335.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RATING">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="742.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PUBLISHED DATE">
                <font>
                   <Font size="18.0" />
                </font>

@@ -68,7 +68,7 @@ public class UserInformationController {
         memberListView.getItems().clear(); // xóa các hàng cũ trước khi hiển thị dữ liệu mới
 
         // kết nối và truy vấn cơ sở dữ liệu
-        try (Connection connection = DatabaseConnection.getConnection();) {
+        try (Connection connection = DatabaseConnection.getConnection()) {
             String query = "SELECT * FROM members WHERE member_id LIKE ? OR userName LIKE ? OR fullName LIKE ? OR email LIKE ? OR phoneNumber LIKE ?";
             PreparedStatement statement = connection.prepareStatement(query);
             String searchPattern = "%" + searchTerm + "%"; // Tìm kiếm chứa chuỗi
@@ -96,9 +96,9 @@ public class UserInformationController {
                 Label fullNameLabel = createStyledLabel(fullName, 195);
                 Label userNameLabel = createStyledLabel(userName, 195);
                 Label passwordLabel = createStyledLabel(password, 195);
-                Label emailLabel = createStyledLabel(email, 195);
+                Label emailLabel = createStyledLabel(email, 205);
                 Label phoneLabel = createStyledLabel(phone, 195);
-                Label safeCodeLabel = createStyledLabel(safeCode, 195);
+                Label safeCodeLabel = createStyledLabel(safeCode, 185);
                 Label dobLabel = createStyledLabel(dob, 175);
 
                 // tạo hbox chứa các label

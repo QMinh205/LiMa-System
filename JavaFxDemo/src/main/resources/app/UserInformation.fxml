@@ -108,12 +108,12 @@
                   <Font size="17.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="921.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PHONE">
+            <Text fill="WHITE" layoutX="947.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PHONE">
                <font>
                   <Font size="17.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="1110.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SAFE CODE">
+            <Text fill="WHITE" layoutX="1130.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SAFE CODE">
                <font>
                   <Font size="17.0" />
                </font>

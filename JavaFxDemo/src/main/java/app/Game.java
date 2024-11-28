@@ -185,7 +185,7 @@ class GameBoard {
 
         ImageView sideImage = new ImageView(s);
         sideImage.setPreserveRatio(true);
-        sideImage.setFitWidth(500); // Đặt chiều rộng cho ảnh bên trái
+        sideImage.setFitWidth(550); // Đặt chiều rộng cho ảnh bên trái
         root.setLeft(sideImage); // Thêm ảnh vào bên trái
 
         // Thêm ảnh mẫu (thumbnail) và nút Shuffle vào giao diện
@@ -199,7 +199,7 @@ class GameBoard {
             Media music = new Media(musicPath);
             backgroundMusic = new MediaPlayer(music);
             backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE); // Lặp vô hạn
-            backgroundMusic.setVolume(0.5);
+            backgroundMusic.setVolume(0.3);
             backgroundMusic.play(); // Bắt đầu phát nhạc
         } catch (Exception e) {
             System.out.println("Error initializing music: " + e.getMessage());
