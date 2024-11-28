@@ -53,7 +53,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" text="Favourite" textFill="WHITE">
+                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" text="Issue Book" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -97,19 +97,7 @@
     <center>
         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-            <JFXButton fx:id="returnButton" buttonType="RAISED" layoutX="115.0" layoutY="78.0" prefHeight="182.0" prefWidth="284.0" styleClass="login2-button" text="RETURN" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/return1.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="banButton" buttonType="RAISED" layoutX="608.0" layoutY="78.0" prefHeight="182.0" prefWidth="284.0" styleClass="login2-button" text="BAN" textFill="WHITE" onAction="#onBanButtonClicked">
+            <JFXButton fx:id="banButton" buttonType="RAISED" layoutX="365.0" layoutY="78.0" onAction="#onBanButtonClicked" prefHeight="182.0" prefWidth="284.0" styleClass="login2-button" text="BAN" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -121,7 +109,7 @@
                   <Font name="Berlin Sans FB Demi Bold" size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="fixButton" buttonType="RAISED" layoutX="1086.0" layoutY="78.0" onAction="#onFixButtonClicked" prefHeight="182.0" prefWidth="284.0" styleClass="login2-button" text="FIX BOOKS" textFill="WHITE">
+            <JFXButton fx:id="fixButton" buttonType="RAISED" layoutX="845.0" layoutY="78.0" onAction="#onFixButtonClicked" prefHeight="182.0" prefWidth="284.0" styleClass="login2-button" text="FIX BOOKS" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>

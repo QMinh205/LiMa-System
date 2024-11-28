@@ -51,9 +51,6 @@ public class RequestController extends BaseController {
     private Label userLabel;
 
     @FXML
-    private JFXButton returnButton;
-
-    @FXML
     private JFXButton banButton;
 
     @FXML
@@ -68,7 +65,6 @@ public class RequestController extends BaseController {
         ButtonSoundUtil.addClickSound(deleteButton);
         ButtonSoundUtil.addClickSound(fixButton);
         ButtonSoundUtil.addClickSound(addButton);
-        ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(banButton);
         ButtonSoundUtil.addClickSound(searchButton);
 
@@ -77,7 +73,7 @@ public class RequestController extends BaseController {
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");
         setupButton(informationButton, "Information.fxml", "Information");
-        setupButton(favouriteButton, "Favourite.fxml", "Favourite");
+        setupButton(favouriteButton, "IssueBook.fxml", "Issue Book");
         setupButton(settingButton, "Setting.fxml", "Setting");
         setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 

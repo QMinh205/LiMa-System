@@ -54,7 +54,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" onAction="#initialize" text="Favourite" textFill="WHITE">
+                <JFXButton fx:id="favouriteButton" onAction="#initialize" text="Issue Book" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -135,7 +135,7 @@
                         <Font name="System Bold" size="30.0" />
                     </font>
                 </Label>
-            <JFXButton fx:id="booksButton1" contentDisplay="TOP" layoutX="1047.0" layoutY="136.0" onAction="#onBooksButtonClicked" prefHeight="280.0" prefWidth="320.0" text="BORROWED &amp; RETURNED" textFill="WHITE">
+            <JFXButton fx:id="borrowAndReturnButton" contentDisplay="TOP" layoutX="1047.0" layoutY="136.0" onAction="#onBorrowButtonClicked" prefHeight="280.0" prefWidth="320.0" text="BORROWED &amp; RETURNED" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>

@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.BorrowBookInformationController">
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="148.0" text="RETURN" textFill="WHITE">
+                <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="148.0" text="RETURN" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -67,7 +67,7 @@
                         <Font name="System Bold" size="29.0" />
                     </font>
                 </Label>
-                <JFXButton layoutX="182.0" layoutY="187.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
+                <JFXButton fx:id="searchUserIdButton" layoutX="182.0" layoutY="187.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="19.0" />
                     </font>
@@ -108,7 +108,7 @@
                         <Font size="18.0" />
                     </font>
                 </Text>
-            <JFXButton layoutX="654.0" layoutY="186.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
+            <JFXButton fx:id="searchBorowIdButton" layoutX="654.0" layoutY="186.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
@@ -118,7 +118,7 @@
                   <Font size="17.0" />
                </font>
             </TextField>
-            <JFXButton layoutX="1087.0" layoutY="185.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
+            <JFXButton fx:id="searchBookIdButton" layoutX="1087.0" layoutY="185.0" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>

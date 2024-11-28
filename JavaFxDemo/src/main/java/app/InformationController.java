@@ -46,6 +46,9 @@ public class InformationController extends BaseController {
     private JFXButton booksButton;
 
     @FXML
+    private JFXButton borrowAndReturnButton;
+
+    @FXML
     public void initialize() {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(homeButton);
@@ -57,13 +60,14 @@ public class InformationController extends BaseController {
         ButtonSoundUtil.addClickSound(searchButton);
         ButtonSoundUtil.addClickSound(booksButton);
         ButtonSoundUtil.addClickSound(userButton);
+        ButtonSoundUtil.addClickSound(borrowAndReturnButton);
 
         updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");
         setupButton(informationButton, "Information.fxml", "Information");
-        setupButton(favouriteButton, "Favourite.fxml", "Favourite");
+        setupButton(favouriteButton, "IssueBook.fxml", "Issue Book");
         setupButton(settingButton, "Setting.fxml", "Setting");
         setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 
@@ -100,4 +104,21 @@ public class InformationController extends BaseController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void onBorrowButtonClicked() {
+        try {
+            // Load the UserHome.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("BorrowBookInformation.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) borrowAndReturnButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Borrowed & Returned Information");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
