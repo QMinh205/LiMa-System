@@ -57,6 +57,7 @@ public class BookDetailController {
         if (book.getImageUrl() != null && !book.getImageUrl().isEmpty()) {
             try {
                 bookImageView.setImage(new Image(book.getImageUrl()));
+                //System.out.println(book.getImageUrl());
             } catch (Exception e) {
                 e.printStackTrace();
                 bookImageView.setImage(loadUnavailableImage());
@@ -70,6 +71,7 @@ public class BookDetailController {
             previewLink.setOnAction(e -> {
                 try {
                     java.awt.Desktop.getDesktop().browse(new URI(book.getPreviewLink()));
+                    //System.out.println(book.getPreviewLink());
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }

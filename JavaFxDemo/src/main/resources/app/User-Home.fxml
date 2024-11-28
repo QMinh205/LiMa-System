@@ -94,7 +94,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" text="Favourite" textFill="WHITE">
+                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" text="Issue Book" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -150,7 +150,7 @@
                             <content>
                                 <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color">
                            <children>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" " onAction="#onBookClicked">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -164,7 +164,7 @@
                                     <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" " onAction="#onBookClicked">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -178,7 +178,7 @@
                                     <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" " onAction="#onBookClicked">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -196,7 +196,7 @@
                                  <graphic>
                                     <ImageView fitHeight="166.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic10.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic10.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -318,46 +318,43 @@
                             <content>
                                 <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color">
                            <children>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic5.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/21.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
+                              <Pane prefHeight="200.0" prefWidth="31.0" />
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/recommend2.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/22.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
                               <Pane prefHeight="200.0" prefWidth="29.0">
                                  <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
+                                    <Line endX="16.000036239624023" endY="163.6666717529297" layoutX="-15.0" layoutY="1.0" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/recommend3.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/23.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
                               <Pane prefHeight="200.0" prefWidth="31.0">
                                  <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
+                                    <Line endX="16.000036239624023" endY="163.6666717529297" layoutX="-16.0" layoutY="1.0" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
                               <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
@@ -489,7 +486,7 @@
                            </children></HBox>
                             </content>
                         </ScrollPane>
-                        <Label text="Tiểu Thuyết" textFill="WHITE">
+                        <Label text="Fiction" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -500,11 +497,11 @@
                             <content>
                                 <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color">
                            <children>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/31.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -514,11 +511,11 @@
                                     <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet2.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/32.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -528,11 +525,11 @@
                                     <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet3.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/33.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -657,7 +654,7 @@
                            </children></HBox>
                             </content>
                         </ScrollPane>
-                        <Label text="Tài Liệu" textFill="WHITE">
+                        <Label text="Science" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -668,11 +665,11 @@
                             <content>
                                 <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color">
                            <children>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/41.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -682,11 +679,11 @@
                                     <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu2.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/42.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -696,11 +693,11 @@
                                     <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu3.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/43.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -811,7 +808,7 @@
                            </children></HBox>
                             </content>
                         </ScrollPane>
-                        <Label text="Truyện Tranh" textFill="WHITE">
+                        <Label text="Education" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -822,11 +819,11 @@
                             <content>
                                 <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color">
                            <children>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic3.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/51.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -836,11 +833,11 @@
                                     <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic4.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/52.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -850,11 +847,11 @@
                                     <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
                                  </children>
                               </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
+                              <JFXButton onAction="#onBookClicked" prefHeight="165.0" prefWidth="103.0" text=" ">
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic2.jpg" />
+                                           <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/53.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -967,300 +964,6 @@
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../assets/BOOK/comic11.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                           </children></HBox>
-                            </content>
-                        </ScrollPane>
-                        <Label text="Lãng Mạn" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color">
-                           <children>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance2.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance3.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance4.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance5.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance6.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance7.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance8.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance9.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/romance10.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                           </children></HBox>
-                            </content>
-                        </ScrollPane>
-                        <Label text="Sách Giáo Khoa" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <padding>
-                                <Insets left="20.0" top="5.0" />
-                            </padding></Label>
-                        <ScrollPane styleClass="gray-color">
-                            <content>
-                                <HBox prefHeight="200.0" prefWidth="2000.0" styleClass="gray-color">
-                           <children>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa2.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa3.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa4.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa5.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa6.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa7.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa8.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <Pane prefHeight="200.0" prefWidth="31.0">
-                                 <children>
-                                    <Line endX="16.000036239624023" endY="163.6666717529297" startX="15.666661262512207" startY="1.6490617781528272E-5" />
-                                 </children>
-                              </Pane>
-                              <JFXButton prefHeight="165.0" prefWidth="103.0" text=" ">
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../assets/BOOK/giaokhoa9.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>

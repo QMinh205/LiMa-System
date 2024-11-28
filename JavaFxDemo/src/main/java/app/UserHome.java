@@ -71,7 +71,7 @@ public class UserHome extends BaseController {
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");
         setupButton(informationButton, "Information.fxml", "Information");
-        setupButton(favouriteButton, "Favourite.fxml", "Favourite");
+        setupButton(favouriteButton, "IssueBook.fxml", "Issue Book");
         setupButton(settingButton, "Setting.fxml", "Setting");
         setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 
@@ -80,8 +80,6 @@ public class UserHome extends BaseController {
         BookDAO bookDAO = new BookDAO();
         books = bookDAO.fetchBooks();
     }
-
-
 
     @FXML
     private void onBookClicked(ActionEvent event) {
