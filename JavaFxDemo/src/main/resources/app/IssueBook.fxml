@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.IssueBookController">
+   <center>
+      <Pane prefHeight="574.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="564.0" layoutY="172.0" prefHeight="108.0" prefWidth="373.0" stylesheets="@style.css" text="ISSUE BOOKS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="confirmButton" layoutX="656.0" layoutY="562.0" onAction="#onConfirmButtonClicked" prefHeight="63.0" prefWidth="187.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="443.0" layoutY="271.0" prefHeight="64.0" prefWidth="155.0" text="Enter member's id" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="443.0" layoutY="335.0" prefHeight="64.0" prefWidth="155.0" text="Enter book's id" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField layoutX="628.0" layoutY="271.0" prefHeight="44.0" prefWidth="330.0" />
+            <TextField layoutX="628.0" layoutY="335.0" prefHeight="44.0" prefWidth="330.0" />
+            <DatePicker layoutX="621.0" layoutY="414.0" prefHeight="29.0" prefWidth="336.0" />
+            <DatePicker layoutX="621.0" layoutY="469.0" prefHeight="29.0" prefWidth="336.0" />
+            <Label layoutX="443.0" layoutY="397.0" prefHeight="64.0" prefWidth="155.0" text="Borrowed date" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="443.0" layoutY="452.0" prefHeight="64.0" prefWidth="155.0" text="Due date" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="642.0" layoutY="516.0" prefHeight="33.0" prefWidth="217.0" text="Input all the fields above" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton styleClass="login2-button" stylesheets="@style.css" text="Return" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

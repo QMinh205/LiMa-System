@@ -98,7 +98,7 @@
     <center>
         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton fx:id="booksButton" contentDisplay="TOP" layoutX="323.0" layoutY="136.0" onAction="#onBooksButtonClicked" prefHeight="280.0" prefWidth="320.0" text="BOOK" textFill="WHITE">
+                <JFXButton fx:id="booksButton" contentDisplay="TOP" layoutX="131.0" layoutY="136.0" onAction="#onBooksButtonClicked" prefHeight="280.0" prefWidth="320.0" text="BOOK" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -114,7 +114,7 @@
                         <String fx:value="gray2-color" />
                     </styleClass>
                 </JFXButton>
-                <JFXButton fx:id="userButton" contentDisplay="TOP" layoutX="857.0" layoutY="136.0" onAction="#onUserButtonClicked" prefHeight="280.0" prefWidth="320.0" text="USER" textFill="WHITE">
+                <JFXButton fx:id="userButton" contentDisplay="TOP" layoutX="590.0" layoutY="136.0" onAction="#onUserButtonClicked" prefHeight="280.0" prefWidth="320.0" text="USER" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -135,6 +135,22 @@
                         <Font name="System Bold" size="30.0" />
                     </font>
                 </Label>
+            <JFXButton fx:id="booksButton1" contentDisplay="TOP" layoutX="1047.0" layoutY="136.0" onAction="#onBooksButtonClicked" prefHeight="280.0" prefWidth="320.0" text="BORROWED &amp; RETURNED" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/dadoc.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="login2-button" />
+                  <String fx:value="gray2-color" />
+               </styleClass>
+            </JFXButton>
             </children>
         </Pane>
     </center>

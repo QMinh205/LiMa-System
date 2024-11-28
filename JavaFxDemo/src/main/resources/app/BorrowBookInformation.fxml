@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -31,11 +30,6 @@
                     </font>
                 </JFXButton>
                 <Pane prefWidth="20.0" />
-                <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID" textFill="WHITE">
-                    <font>
-                        <Font name="Trebuchet MS Bold" size="30.0" />
-                    </font>
-                </Label>
                 <Pane prefHeight="150.0" prefWidth="416.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -78,7 +72,7 @@
                         <Font name="System Bold" size="19.0" />
                     </font>
                 </JFXButton>
-                <ListView layoutX="69.0" layoutY="308.0" prefHeight="199.0" prefWidth="1368.0">
+                <ListView layoutX="121.0" layoutY="308.0" prefHeight="199.0" prefWidth="1282.0">
                     <styleClass>
                         <String fx:value="gray-color" />
                         <String fx:value="border-black" />
@@ -89,27 +83,27 @@
                         <Font size="17.0" />
                     </font>
                 </TextField>
-                <Text fill="WHITE" layoutX="170.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER ID">
+                <Text fill="WHITE" layoutX="132.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER ID">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Text fill="WHITE" layoutX="407.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ID">
+                <Text fill="WHITE" layoutX="329.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ID">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Text fill="WHITE" layoutX="625.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORROW ID">
+                <Text fill="WHITE" layoutX="555.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORROW ID">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Text fill="WHITE" layoutX="871.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORROW DATE">
+                <Text fill="WHITE" layoutX="832.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BORROW DATE">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Text fill="WHITE" layoutX="1192.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RETURN DATE">
+                <Text fill="WHITE" layoutX="1135.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RETURN DATE">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -129,13 +123,11 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </JFXButton>
-            <TextField alignment="CENTER" layoutX="1234.0" layoutY="186.0" prefHeight="39.0" prefWidth="155.0" promptText="LOOK ID">
+            <TextField alignment="CENTER" layoutX="1234.0" layoutY="186.0" prefHeight="39.0" prefWidth="155.0" promptText="BOOK ID">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <Line endX="5.66668701171875" endY="103.0" layoutX="553.0" layoutY="205.0" startX="5.66668701171875" startY="-15.666656494140625" stroke="WHITE" />
-            <Line endX="5.66668701171875" endY="103.0" layoutX="1037.0" layoutY="204.0" startX="5.66668701171875" startY="-15.666656494140625" stroke="WHITE" />
             </children>
         </Pane>
     </center>
