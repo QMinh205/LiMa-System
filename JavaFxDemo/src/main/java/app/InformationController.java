@@ -10,6 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,6 +50,13 @@ public class InformationController extends BaseController {
     private JFXButton borrowAndReturnButton;
 
     @FXML
+    private Label storedBooksLabel;
+    @FXML
+    private Label numberOfUsersLabel;
+    @FXML
+    private Label issuedBooksLabel;
+
+    @FXML
     public void initialize() {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(homeButton);
@@ -62,6 +70,8 @@ public class InformationController extends BaseController {
         ButtonSoundUtil.addClickSound(userButton);
         ButtonSoundUtil.addClickSound(borrowAndReturnButton);
 
+        updateStatistics();
+
         updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
         setupButton(homeButton, "User-Home.fxml", "Home");
@@ -72,6 +82,55 @@ public class InformationController extends BaseController {
         setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 
         setupGameButton(gameButton);
+    }
+
+    private void updateStatistics() {
+        // Đây chỉ là ví dụ, thay bằng logic hoặc dữ liệu thực tế của bạn
+        int storedBooks = getStoredBooksCount();
+        int numberOfUsers = getUsersCount();
+        int issuedBooks = getIssuedBooksCount();
+
+        // Cập nhật label
+        storedBooksLabel.setText(String.valueOf(storedBooks));
+        numberOfUsersLabel.setText(String.valueOf(numberOfUsers));
+        issuedBooksLabel.setText(String.valueOf(issuedBooks));
+    }
+    private int getStoredBooksCount() {
+        try (Connection conn = DatabaseConnection.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM books")) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    private int getUsersCount() {
+        try (Connection conn = DatabaseConnection.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM members")) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    private int getIssuedBooksCount() {
+        try (Connection conn = DatabaseConnection.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM borrowed_books")) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
     @FXML
     private void onUserButtonClicked() {
