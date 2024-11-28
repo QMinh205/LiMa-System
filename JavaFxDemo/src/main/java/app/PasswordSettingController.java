@@ -25,8 +25,6 @@ public class PasswordSettingController {
     @FXML
     private Button passwordSettingButton;
     @FXML
-    private Button PrivacyPolicyButton;
-    @FXML
     private Button saveButton;
 
     @FXML
@@ -45,7 +43,6 @@ public class PasswordSettingController {
         // thêm âm thanh click cho các nút
         ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(settingButton);
-        ButtonSoundUtil.addClickSound(PrivacyPolicyButton);
         ButtonSoundUtil.addClickSound(saveButton);
     }
 

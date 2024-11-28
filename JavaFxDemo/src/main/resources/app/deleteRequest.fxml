@@ -14,7 +14,7 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" text="RETURN" textFill="WHITE">
+            <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="120.0" text="RETURN" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -27,158 +27,53 @@
                </font>
             </JFXButton>
             <Pane prefWidth="20.0" />
-            <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID" textFill="WHITE">
-               <font>
-                  <Font name="Trebuchet MS Bold" size="30.0" />
-               </font>
-            </Label>
-            <Pane prefHeight="100.0" prefWidth="470.0" />
+            <Pane prefHeight="150.0" prefWidth="540.0" />
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
                </image>
             </ImageView>
             <Pane prefHeight="150.0" prefWidth="550.0" />
-            <JFXButton text=" ">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/search.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
+            <JFXButton text=" " />
             <Pane prefHeight="150.0" prefWidth="19.0" />
-            <JFXButton text=" ">
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
+            <JFXButton text=" " />
          </children>
       </HBox>
    </top>
-   <bottom>
-      <HBox prefHeight="33.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Pane prefHeight="60.0" prefWidth="150.0" />
-            <JFXButton buttonType="RAISED" text="Home" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/home.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" styleClass="selectedunder-border" text="Request" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/yeucau.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" text="Information" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/thongtin.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" text="Favourite" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" text="Game" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/game.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-            <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton buttonType="RAISED" text="Setting" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/caidat.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="17.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </HBox>
-   </bottom>
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="647.0" layoutY="29.0" text="DELETE BOOKS" textFill="WHITE">
+            <Label layoutX="680.0" layoutY="39.0" text="DELETE BOOKS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>
             </Label>
-            <Label layoutX="494.0" layoutY="259.0" text="ENTER &quot;DELETE&quot;" textFill="WHITE">
+            <Label layoutX="516.0" layoutY="262.0" text="ENTER &quot;DELETE&quot;" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="confirmationField" layoutX="677.0" layoutY="238.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+            <TextField fx:id="confirmationField" layoutX="699.0" layoutY="241.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <Label layoutX="494.0" layoutY="169.0" text="BOOK_ID" textFill="WHITE">
+            <Label layoutX="516.0" layoutY="172.0" text="BOOK_ID" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="bookIdField" layoutX="677.0" layoutY="148.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
+            <TextField fx:id="bookIdField" layoutX="699.0" layoutY="151.0" prefHeight="26.0" prefWidth="350.0" styleClass="text-input">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="confirmButton" layoutX="656.0" layoutY="382.0" onAction="#onConfirmButtonClicked" prefHeight="63.0" prefWidth="187.0" styleClass="login2-button" text="Confirm" textFill="WHITE">
+            <JFXButton fx:id="confirmButton" layoutX="678.0" layoutY="385.0" onAction="#onConfirmButtonClicked" prefHeight="63.0" prefWidth="187.0" styleClass="login2-button" text="Confirm" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
             </JFXButton>
-            <Label fx:id="statusLabel" layoutX="646.0" layoutY="322.0" text="Please input the fields above" textFill="WHITE">
+            <Label fx:id="statusLabel" layoutX="668.0" layoutY="325.0" text="Please input the fields above" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>

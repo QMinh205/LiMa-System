@@ -17,7 +17,7 @@
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="148.0" text="RETURN" textFill="WHITE">
+                <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="120.0" text="RETURN" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -30,37 +30,14 @@
                     </font>
                 </JFXButton>
                 <Pane prefWidth="20.0" />
-                <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID" textFill="WHITE">
-                    <font>
-                        <Font name="Trebuchet MS Bold" size="30.0" />
-                    </font>
-                </Label>
-                <Pane prefHeight="150.0" prefWidth="416.0" />
+                <Pane prefHeight="150.0" prefWidth="540.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
                     </image>
                 </ImageView>
                 <Pane prefHeight="150.0" prefWidth="550.0" />
-                <JFXButton text=" ">
-                    <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/search.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </JFXButton>
                 <Pane prefHeight="150.0" prefWidth="19.0" />
-                <JFXButton text=" ">
-                    <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </JFXButton>
             </children>
         </HBox>
     </top>

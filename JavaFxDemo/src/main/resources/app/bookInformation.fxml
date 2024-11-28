@@ -17,7 +17,7 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" styleClass="primary-color" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="148.0" text="RETURN" textFill="WHITE">
+            <JFXButton fx:id="returnButton" onAction="#onReturnButtonClicked" prefHeight="41.0" prefWidth="120.0" text="RETURN" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -30,49 +30,26 @@
                </font>
             </JFXButton>
             <Pane prefWidth="20.0" />
-            <Label prefHeight="36.0" prefWidth="203.0" text="NAME - ID" textFill="WHITE">
-               <font>
-                  <Font name="Trebuchet MS Bold" size="30.0" />
-               </font>
-            </Label>
-            <Pane prefHeight="150.0" prefWidth="416.0" />
+            <Pane prefHeight="150.0" prefWidth="540.0" />
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
                </image>
             </ImageView>
             <Pane prefHeight="150.0" prefWidth="550.0" />
-            <JFXButton text=" ">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/search.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
             <Pane prefHeight="150.0" prefWidth="19.0" />
-            <JFXButton text=" ">
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
          </children>
       </HBox>
    </top>
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" styleClass="primary-color" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="627.0" layoutY="51.0" text="BOOKS INFORMATION" textFill="WHITE">
+            <Label layoutX="609.0" layoutY="49.0" text="BOOKS INFORMATION" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>
             </Label>
-            <JFXButton fx:id="searchButton" layoutX="603.0" layoutY="166.0" onAction="#onSearchButtonClicked" prefHeight="35.0" prefWidth="118.0" styleClass="setting-button" text="Search" textFill="WHITE">
+            <JFXButton fx:id="searchButton" layoutX="609.0" layoutY="168.0" onAction="#onSearchButtonClicked" prefHeight="35.0" prefWidth="118.0" styleClass="setting-button" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
@@ -83,7 +60,7 @@
                   <String fx:value="border-black" />
                </styleClass>
             </ListView>
-            <TextField fx:id="searchTextField" alignment="CENTER" layoutX="750.0" layoutY="166.0" prefHeight="39.0" prefWidth="196.0" promptText="ID">
+            <TextField fx:id="searchTextField" alignment="CENTER" layoutX="756.0" layoutY="168.0" prefHeight="39.0" prefWidth="196.0" promptText="ID">
                <font>
                   <Font size="17.0" />
                </font>

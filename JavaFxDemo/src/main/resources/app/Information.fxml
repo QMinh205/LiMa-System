@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="primary-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.InformationController">
     <bottom>
@@ -54,7 +56,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" onAction="#initialize" text="Issue Book" textFill="WHITE">
+                <JFXButton fx:id="favouriteButton" onAction="#initialize" text="Issue &amp; Return" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -95,10 +97,31 @@
             </children>
         </HBox>
     </bottom>
-    <center>
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="userLabel" prefHeight="36.0" prefWidth="580.0" text="NAME - ID" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Pane prefHeight="150.0" prefWidth="100.0" />
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
+                    </image>
+                </ImageView>
+                <Pane prefHeight="150.0" prefWidth="550.0" />
+                <JFXButton fx:id="searchButton" onAction="#initialize" text=" " />
+                <Pane prefHeight="150.0" prefWidth="19.0" />
+                <JFXButton text=" " />
+            </children>
+        </HBox>
+    </top>
+   <left>
         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton fx:id="booksButton" contentDisplay="TOP" layoutX="131.0" layoutY="136.0" onAction="#onBooksButtonClicked" prefHeight="280.0" prefWidth="320.0" text="BOOK" textFill="WHITE">
+                <JFXButton fx:id="booksButton" contentDisplay="TOP" layoutX="132.0" layoutY="256.0" onAction="#onBooksButtonClicked" prefHeight="260.0" prefWidth="300.0" text="BOOK" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -114,7 +137,7 @@
                         <String fx:value="gray2-color" />
                     </styleClass>
                 </JFXButton>
-                <JFXButton fx:id="userButton" contentDisplay="TOP" layoutX="590.0" layoutY="136.0" onAction="#onUserButtonClicked" prefHeight="280.0" prefWidth="320.0" text="USER" textFill="WHITE">
+                <JFXButton fx:id="userButton" contentDisplay="TOP" layoutX="600.0" layoutY="256.0" onAction="#onUserButtonClicked" prefHeight="260.0" prefWidth="300.0" text="MEMBERS" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -130,12 +153,12 @@
                         <String fx:value="gray2-color" />
                     </styleClass>
                 </JFXButton>
-                <Label layoutX="643.0" layoutY="33.0" text="INFORMATION" textFill="WHITE">
+                <Label layoutX="648.0" layoutY="1.0" text="INFORMATION" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="30.0" />
                     </font>
                 </Label>
-            <JFXButton fx:id="borrowAndReturnButton" contentDisplay="TOP" layoutX="1047.0" layoutY="136.0" onAction="#onBorrowButtonClicked" prefHeight="280.0" prefWidth="320.0" text="BORROWED &amp; RETURNED" textFill="WHITE">
+            <JFXButton fx:id="borrowAndReturnButton" contentDisplay="TOP" layoutX="1049.0" layoutY="256.0" onAction="#onBorrowButtonClicked" prefHeight="260.0" prefWidth="300.0" text="BORROWED &amp; RETURNED" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -151,44 +174,102 @@
                   <String fx:value="gray2-color" />
                </styleClass>
             </JFXButton>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Stored Books" x="133.0" y="80.0">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <Pane layoutX="110.0" layoutY="90.0" prefHeight="120.0" prefWidth="200.0">
+               <styleClass>
+                  <String fx:value="gray-color" />
+                  <String fx:value="selectedabove-border" />
+               </styleClass>
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="64.0" layoutX="31.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../assets/nbook.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="122.0" layoutY="43.0" prefHeight="32.0" prefWidth="30.0" text="10" textFill="#514d4d">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Online Books" x="480.0" y="80.0">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <Pane layoutX="460.0" layoutY="90.0" prefHeight="120.0" prefWidth="200.0">
+               <styleClass>
+                  <String fx:value="gray-color" />
+                  <String fx:value="selectedabove2-border" />
+               </styleClass>
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="64.0" layoutX="44.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../assets/nbookon.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="130.0" layoutY="43.0" prefHeight="32.0" prefWidth="30.0" text="10" textFill="#514d4d">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of User" x="815.0" y="80.0">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <Pane layoutX="810.0" layoutY="90.0" prefHeight="120.0" prefWidth="200.0">
+               <styleClass>
+                  <String fx:value="gray-color" />
+                  <String fx:value="selectedabove-border" />
+               </styleClass>
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="75.0" layoutX="44.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../assets/nuser.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="117.0" layoutY="43.0" prefHeight="32.0" prefWidth="30.0" text="10" textFill="#514d4d">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Issued Books" x="1185.0" y="80.0">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <Pane layoutX="1160.0" layoutY="90.0" prefHeight="120.0" prefWidth="200.0">
+               <styleClass>
+                  <String fx:value="gray-color" />
+                  <String fx:value="selectedabove2-border" />
+               </styleClass>
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="64.0" layoutX="44.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../assets/nissue.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="124.0" layoutY="43.0" prefHeight="32.0" prefWidth="30.0" text="10" textFill="#514d4d">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
             </children>
         </Pane>
-    </center>
-    <top>
-        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <Label fx:id="userLabel" prefHeight="36.0" prefWidth="500.0" text="NAME - ID" textFill="WHITE">
-                    <font>
-                        <Font name="Trebuchet MS Bold" size="30.0" />
-                    </font>
-                </Label>
-                <Pane prefHeight="100.0" prefWidth="470.0" />
-                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
-                    </image>
-                </ImageView>
-                <Pane prefHeight="150.0" prefWidth="550.0" />
-                <JFXButton fx:id="searchButton" onAction="#initialize" text=" ">
-                    <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/search.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </JFXButton>
-                <Pane prefHeight="150.0" prefWidth="19.0" />
-                <JFXButton text=" ">
-                    <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </JFXButton>
-            </children>
-        </HBox>
-    </top>
+   </left>
 </BorderPane>

@@ -81,6 +81,14 @@
     -fx-border-color: #fff;
     -fx-border-width: 0 0 3 0;
 }
+.selectedabove-border {
+    -fx-border-color: #0000ff;
+    -fx-border-width: 10 0 0 0;
+}
+.selectedabove2-border {
+    -fx-border-color: #ff8c00;
+    -fx-border-width: 10 0 0 0;
+}
 .selected:hover {
 -fx-background-color: #3C3D5B;
 }

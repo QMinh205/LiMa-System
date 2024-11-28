@@ -16,90 +16,101 @@
    <center>
       <Pane prefHeight="574.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="289.0" layoutY="83.0" prefHeight="108.0" prefWidth="373.0" stylesheets="@style.css" text="ISSUE BOOKS" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="261.0" layoutY="44.0" prefHeight="108.0" prefWidth="373.0" stylesheets="@style.css" text="ISSUE BOOKS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <JFXButton fx:id="confirmButton" layoutX="388.0" layoutY="420.0" onAction="#handleConfirmAction" prefHeight="63.0" prefWidth="187.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
+            <JFXButton fx:id="confirmButton" layoutX="360.0" layoutY="381.0" onAction="#handleConfirmAction" prefHeight="63.0" prefWidth="187.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </JFXButton>
-            <Label layoutX="221.0" layoutY="176.0" prefHeight="64.0" prefWidth="155.0" text="Enter member's id" textFill="WHITE">
+            <Label layoutX="193.0" layoutY="137.0" prefHeight="64.0" prefWidth="155.0" text="Enter member's id" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="221.0" layoutY="231.0" prefHeight="39.0" prefWidth="155.0" text="Enter book's id" textFill="WHITE">
+            <Label layoutX="193.0" layoutY="192.0" prefHeight="39.0" prefWidth="155.0" text="Enter book's id" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="memberIdField" layoutX="388.0" layoutY="176.0" prefHeight="44.0" prefWidth="330.0">
+            <TextField fx:id="memberIdField" layoutX="360.0" layoutY="137.0" prefHeight="44.0" prefWidth="330.0">
                <font>
                   <Font size="17.0" />
                </font></TextField>
-            <TextField fx:id="bookIdField" layoutX="388.0" layoutY="218.0" prefHeight="44.0" prefWidth="330.0">
+            <TextField fx:id="bookIdField" layoutX="360.0" layoutY="179.0" prefHeight="44.0" prefWidth="330.0">
                <font>
                   <Font size="17.0" />
                </font></TextField>
-            <DatePicker fx:id="borrowedDatePicker" layoutX="385.0" layoutY="288.0" prefHeight="29.0" prefWidth="336.0" />
-            <DatePicker fx:id="dueDatePicker" layoutX="385.0" layoutY="334.0" prefHeight="29.0" prefWidth="336.0" />
-            <Label layoutX="221.0" layoutY="270.0" prefHeight="64.0" prefWidth="155.0" text="Borrowed date" textFill="WHITE">
+            <DatePicker fx:id="borrowedDatePicker" layoutX="357.0" layoutY="249.0" prefHeight="29.0" prefWidth="336.0" />
+            <DatePicker fx:id="dueDatePicker" layoutX="357.0" layoutY="295.0" prefHeight="29.0" prefWidth="336.0" />
+            <Label layoutX="193.0" layoutY="231.0" prefHeight="64.0" prefWidth="155.0" text="Borrowed date" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="221.0" layoutY="316.0" prefHeight="64.0" prefWidth="155.0" text="Due date" textFill="WHITE">
+            <Label layoutX="193.0" layoutY="277.0" prefHeight="64.0" prefWidth="155.0" text="Due date" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="367.0" layoutY="380.0" prefHeight="33.0" prefWidth="217.0" text="Input all the fields above" textFill="WHITE">
+            <Label layoutX="339.0" layoutY="341.0" prefHeight="33.0" prefWidth="217.0" text="Input all the fields above" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="913.0" layoutY="83.0" prefHeight="108.0" prefWidth="373.0" stylesheets="@style.css" text="RETURN BOOKS" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="885.0" layoutY="44.0" prefHeight="108.0" prefWidth="373.0" stylesheets="@style.css" text="RETURN BOOKS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="820.0" layoutY="208.0" prefHeight="64.0" prefWidth="155.0" text="Enter borrow_id" textFill="WHITE">
+            <Label layoutX="792.0" layoutY="169.0" prefHeight="64.0" prefWidth="155.0" text="Enter borrow_id" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="borrowIdField" layoutX="975.0" layoutY="209.0" prefHeight="44.0" prefWidth="330.0">
+            <TextField fx:id="borrowIdField" layoutX="947.0" layoutY="170.0" prefHeight="44.0" prefWidth="330.0">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <Label layoutX="820.0" layoutY="284.0" prefHeight="64.0" prefWidth="155.0" text="Enter 'Confirm'" textFill="WHITE">
+            <Label layoutX="792.0" layoutY="245.0" prefHeight="64.0" prefWidth="155.0" text="Enter 'Confirm'" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="confirmField" layoutX="975.0" layoutY="281.0" prefHeight="44.0" prefWidth="330.0">
+            <TextField fx:id="confirmField" layoutX="947.0" layoutY="242.0" prefHeight="44.0" prefWidth="330.0">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <JFXButton layoutX="1006.0" layoutY="420.0" onAction="#handleReturnBookAction" prefHeight="63.0" prefWidth="187.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
+            <JFXButton layoutX="978.0" layoutY="381.0" onAction="#handleReturnBookAction" prefHeight="63.0" prefWidth="187.0" styleClass="setting-button" text="Confirm" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </JFXButton>
-            <Line endX="28.39996337890625" endY="452.0" layoutX="757.0" layoutY="108.0" startX="28.39996337890625" startY="-1.60003662109375" stroke="WHITE" />
+            <Line endX="28.39996337890625" endY="452.0" layoutX="729.0" layoutY="69.0" startX="28.39996337890625" startY="-1.60003662109375" stroke="WHITE" />
          </children>
       </Pane>
    </center>
    <top>
-      <HBox prefHeight="100.0" prefWidth="1500.0" BorderPane.alignment="CENTER" />
+      <HBox prefHeight="100.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefWidth="80.0" />
+            <Pane prefHeight="150.0" prefWidth="600.0" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="150.0" prefWidth="550.0" />
+            <Pane prefHeight="150.0" prefWidth="19.0" />
+         </children></HBox>
    </top>
    <bottom>
-      <HBox prefHeight="90.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="33.0" prefWidth="1500.0" BorderPane.alignment="CENTER">
          <children>
             <Pane prefHeight="60.0" prefWidth="150.0" />
             <JFXButton fx:id="homeButton" onAction="#initialize" prefHeight="41.0" prefWidth="120.0" text="Home" textFill="WHITE">
@@ -141,7 +152,7 @@
                </font>
             </JFXButton>
             <Pane prefHeight="100.0" prefWidth="78.0" />
-            <JFXButton fx:id="favouriteButton" onAction="#initialize" styleClass="selectedunder-border" text="Issue Book" textFill="WHITE">
+            <JFXButton fx:id="favouriteButton" onAction="#initialize" styleClass="selectedunder-border" text="Issue &amp; Return" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>

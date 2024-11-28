@@ -19,8 +19,6 @@ public class SettingController extends BaseController {
     @FXML
     private Button passwordSettingButton;
     @FXML
-    private Button PrivacyPolicyButton;
-    @FXML
     private Button saveButton;
 
     @FXML
@@ -49,7 +47,6 @@ public class SettingController extends BaseController {
         ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(passwordSettingButton);
         ButtonSoundUtil.addClickSound(returnButton);
-        ButtonSoundUtil.addClickSound(PrivacyPolicyButton);
         ButtonSoundUtil.addClickSound(saveButton);
 
         //ButtonSoundUtil.addClickSound(PrivacyPolicyButton);

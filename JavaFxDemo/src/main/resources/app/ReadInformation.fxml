@@ -22,7 +22,7 @@
                         <Font name="Trebuchet MS Bold" size="30.0" />
                     </font>
                 </Label>
-                <Pane prefHeight="150.0" prefWidth="470.0" />
+                <Pane prefHeight="150.0" prefWidth="564.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
@@ -39,15 +39,6 @@
                     </graphic>
                 </JFXButton>
                 <Pane prefHeight="150.0" prefWidth="19.0" />
-                <JFXButton text=" ">
-                    <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/notification.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </JFXButton>
             </children>
         </HBox>
     </top>
@@ -94,7 +85,7 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton styleClass="selectedunder-border" text="Favourite" textFill="WHITE">
+                <JFXButton styleClass="selectedunder-border" text="Issue &amp; Return" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -140,7 +131,7 @@
             <children>
                 <Pane prefHeight="92.0" prefWidth="1500.0">
                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="656.0" layoutY="22.0" text="BOOKS READ" textFill="WHITE">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="712.0" layoutY="22.0" text="BOOKS READ" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="30.0" />
                             </font></Label>

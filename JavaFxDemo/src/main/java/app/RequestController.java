@@ -17,8 +17,7 @@ import java.util.Map;
 
 public class RequestController extends BaseController {
 
-    @FXML
-    private JFXButton searchButton;
+
 
     @FXML
     private JFXButton homeButton;
@@ -66,7 +65,6 @@ public class RequestController extends BaseController {
         ButtonSoundUtil.addClickSound(fixButton);
         ButtonSoundUtil.addClickSound(addButton);
         ButtonSoundUtil.addClickSound(banButton);
-        ButtonSoundUtil.addClickSound(searchButton);
 
         updateUserInfo(userLabel);
         // Use the setupButton method from BaseController
@@ -75,7 +73,6 @@ public class RequestController extends BaseController {
         setupButton(informationButton, "Information.fxml", "Information");
         setupButton(favouriteButton, "IssueBook.fxml", "Issue & Return Book");
         setupButton(settingButton, "Setting.fxml", "Setting");
-        setupButton(searchButton, "SearchBar.fxml", "SearchBar");
 
         setupGameButton(gameButton);
     }
