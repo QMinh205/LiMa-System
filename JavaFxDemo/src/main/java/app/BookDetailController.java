@@ -153,7 +153,7 @@ public class BookDetailController {
     private Image loadUnavailableImage() {
         try {
             // Convert the file path to URI and load the image
-            File file = new File("E:/Bibi/Code/java/Oop/oop btl/Library-Management-System/JavaFxDemo/assets/unavailable.jpg");
+            File file = new File("E:/Bibi/Code/java/Oop/oop_btl/Library-Management-System/JavaFxDemo/assets/unavailable.jpg");
             return new Image(file.toURI().toString());  // Convert file path to URI and load as Image
         } catch (Exception e) {
             e.printStackTrace();  // Log any errors loading the fallback image

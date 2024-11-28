@@ -19,6 +19,8 @@ import java.sql.SQLException;
 public class AddBookController {
 
     @FXML
+    private TextField bookIdField;
+    @FXML
     private TextField titleField;
     @FXML
     private TextField authorField;
@@ -55,6 +57,7 @@ public class AddBookController {
     // Method to handle Add Book action
     @FXML
     public void handleAddBookAction() {
+        String bookId = bookIdField.getText();
         String title = titleField.getText();
         String author = authorField.getText();
         String publisher = publisherField.getText();
@@ -67,13 +70,13 @@ public class AddBookController {
         String previewLink = previewLinkField.getText();
 
         // Validate inputs
-        if (title.isEmpty() || author.isEmpty() || publisher.isEmpty()) {
-            showAlert(AlertType.ERROR, "Validation Error", "Title, Author, and Publisher are required.");
+        if (bookId.isEmpty() || title.isEmpty() || author.isEmpty() || publisher.isEmpty()) {
+            showAlert(AlertType.ERROR, "Validation Error", "Please fill in the first 4 fields.");
             return;
         }
 
         // Save to the database
-        saveBookToDatabase(title, author, publisher, description, imageUrl, publishedDate, pageCount, categories, rating, previewLink);
+        saveBookToDatabase(bookId, title, author, publisher, description, imageUrl, publishedDate, pageCount, categories, rating, previewLink);
     }
 
     // Method to handle Cancel action (close the form or go back)
@@ -108,11 +111,11 @@ public class AddBookController {
     }
 
 
-    public void saveBookToDatabase(String title, String author, String publisher, String description, String imageUrl,
+    public void saveBookToDatabase(String bookId, String title, String author, String publisher, String description, String imageUrl,
                                     String publishedDate, String pageCount, String categories, String rating, String previewLink) {
 
-        String insertBookQuery = "INSERT INTO books (title, author, publisher, description, image_url, published_date, " +
-                "page_count, categories, average_rating, preview_link) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertBookQuery = "INSERT INTO books (book_id, title, author, publisher, description, image_url, published_date, " +
+                "page_count, categories, average_rating, preview_link) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(insertBookQuery)) {
@@ -122,16 +125,17 @@ public class AddBookController {
             double ratingValue = rating.isEmpty() ? 0.0 : Double.parseDouble(rating);
 
             // Set parameters
-            statement.setString(1, title);
-            statement.setString(2, author);
-            statement.setString(3, publisher);
-            statement.setString(4, description);
-            statement.setString(5, imageUrl);
-            statement.setString(6, publishedDate);
-            statement.setInt(7, pageCountValue);
-            statement.setString(8, categories);
-            statement.setString(9, String.valueOf(ratingValue)); // Keep rating as string for now
-            statement.setString(10, previewLink);
+            statement.setString(1, bookId);
+            statement.setString(2, title);
+            statement.setString(3, author);
+            statement.setString(4, publisher);
+            statement.setString(5, description);
+            statement.setString(6, imageUrl);
+            statement.setString(7, publishedDate);
+            statement.setInt(8, pageCountValue);
+            statement.setString(9, categories);
+            statement.setString(10, String.valueOf(ratingValue)); // Keep rating as string for now
+            statement.setString(11, previewLink);
 
             // Execute the query
             int rowsInserted = statement.executeUpdate();
