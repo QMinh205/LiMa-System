@@ -170,11 +170,18 @@ public class SearchResultController implements Initializable {
             for (Book book : combinedBooks) {
                 HBox bookInfoBox = new HBox(10);
                 VBox textBox = new VBox();
-                textBox.getChildren().addAll(
-                        new Label("Title: " + book.getTitle()),
-                        new Label("Author: " + book.getAuthor()),
-                        new Label("Publisher: " + book.getPublisher())
-                );
+
+                // Tạo các label với màu trắng và in đậm
+                Label titleLabel = new Label("Title: " + book.getTitle());
+                titleLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+
+                Label authorLabel = new Label("Author: " + book.getAuthor());
+                authorLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+
+                Label publisherLabel = new Label("Publisher: " + book.getPublisher());
+                publisherLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+
+                textBox.getChildren().addAll(titleLabel, authorLabel, publisherLabel);
 
                 // Check if the image URL is valid
                 String imageUrl = book.getImageUrl();
@@ -209,6 +216,7 @@ public class SearchResultController implements Initializable {
             resultsVBox.getChildren().add(addBookButton);
         });
     }
+
 
     private Book parseBookFromJson(JsonObject bookJson) {
         try {

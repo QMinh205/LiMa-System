@@ -49,7 +49,9 @@ public class BookDetailController {
         bookPageCountLabel.setText("Pages: " + book.getPageCount());
         bookCategoriesLabel.setText("Categories: " + book.getCategories());
         bookAverageRatingLabel.setText("Rating: " + book.getAverageRating());
-        //bookDescriptionLabel.setText(book.getDescription());
+
+        // Đặt màu trắng cho các nhãn
+        setLabelsTextColor(Color.WHITE);
 
         // Handle book image
         if (book.getImageUrl() != null && !book.getImageUrl().isEmpty()) {
@@ -80,6 +82,28 @@ public class BookDetailController {
         setBookDescriptionWithPreview(book.getDescription());
     }
 
+    // Đặt màu chữ trắng cho tất cả các nhãn
+    private void setLabelsTextColor(Color color) {
+        String colorStyle = "-fx-text-fill: " + toRgbString(color) + ";";
+        bookIdLabel.setStyle(colorStyle);
+        bookTitleLabel.setStyle(colorStyle);
+        bookAuthorLabel.setStyle(colorStyle);
+        bookPublisherLabel.setStyle(colorStyle);
+        bookPublishedDateLabel.setStyle(colorStyle);
+        bookPageCountLabel.setStyle(colorStyle);
+        bookCategoriesLabel.setStyle(colorStyle);
+        bookAverageRatingLabel.setStyle(colorStyle);
+    }
+
+    // Chuyển đổi Color sang định dạng RGB cho CSS
+    private String toRgbString(Color color) {
+        int r = (int) (color.getRed() * 255);
+        int g = (int) (color.getGreen() * 255);
+        int b = (int) (color.getBlue() * 255);
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
+
+
 
     private void setBookDescriptionWithPreview(String description) {
         bookDescriptionFlow.getChildren().clear(); // Clear any previous content
@@ -92,8 +116,9 @@ public class BookDetailController {
             Text preview = new Text(previewText);
             Text seeMore = new Text("See more");
 
-            // Style "See more" as a hyperlink
-            seeMore.setFill(Color.BLUE);
+            // Đặt màu trắng cho các đoạn text
+            preview.setFill(Color.WHITE);
+            seeMore.setFill(Color.BLUE); // See more là hyperlink, vẫn giữ màu xanh
             seeMore.setUnderline(true);
 
             // Add click event to "See more"
@@ -103,17 +128,22 @@ public class BookDetailController {
             bookDescriptionFlow.getChildren().addAll(preview, seeMore);
         } else {
             // Description is short enough to display fully
-            bookDescriptionFlow.getChildren().add(new Text(description));
+            Text fullText = new Text(description);
+            fullText.setFill(Color.WHITE); // Đặt màu trắng
+            bookDescriptionFlow.getChildren().add(fullText);
         }
     }
 
     private void showFullDescription(String description) {
         bookDescriptionFlow.getChildren().clear(); // Clear preview
+
         Text fullDescription = new Text(description);
+        fullDescription.setFill(Color.WHITE); // Đặt màu trắng
 
         // Add the full description to TextFlow
         bookDescriptionFlow.getChildren().add(fullDescription);
     }
+
 
 
 
