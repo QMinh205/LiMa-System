@@ -12,7 +12,8 @@ This Library Management Application is built using Java and JavaFX for the user 
 
 We follows Object-Oriented Programming (OOP) principles, making the code easy to manage and extend. It connects to a database to store and retrieve information about books, users, and transactions. In addition, An API is used to communicate between the frontend and the database, allowing users to see details of both online & offline books.
 # UML Diagram
-![image](https://github.com/user-attachments/assets/1d85c6be-def6-497f-bc51-8f7d887e0e55)
+![image](https://github.com/user-attachments/assets/aa62d701-7a7f-4b87-9125-cf9ef7912604)
+
 
 # Installation
 1. Clone the project from the repository.
