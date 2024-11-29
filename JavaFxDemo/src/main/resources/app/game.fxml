@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="750.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/game.jpeg" />
+            <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/game.jpeg" />
          </image>
       </ImageView>
       <JFXButton layoutX="1226.0" layoutY="615.0" prefHeight="60.0" prefWidth="127.0" styleClass="button-game" text="Exit" />

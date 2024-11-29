@@ -64,6 +64,11 @@ public class BanUserController {
             return;
         }
 
+        if (memberId.matches("[a-zA-Z]+")) {
+            statusLabel.setText("Member ID must contain only numbers.");
+            return;
+        }
+
         if (!confirmationText.equalsIgnoreCase("DELETE")) {
             statusLabel.setText("Confirmation text must be 'DELETE'.");
             return;

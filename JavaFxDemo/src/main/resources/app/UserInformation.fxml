@@ -21,7 +21,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/return1.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/return1.png" />
                             </image>
                         </ImageView>
                     </graphic>

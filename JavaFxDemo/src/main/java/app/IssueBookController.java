@@ -87,6 +87,11 @@ public class IssueBookController extends BaseController {
             return;
         }
 
+        if(dueDate.isBefore(LocalDate.now())) {
+            showAlert(Alert.AlertType.ERROR, "Date Error", "Due date cannot be before current date!");
+            return;
+        }
+
         try (Connection conn = DatabaseConnection.getConnection()) {
             // Lấy tiêu đề sách từ bảng books
             String bookTitle = getBookTitleById(bookId, conn);

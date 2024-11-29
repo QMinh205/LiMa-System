@@ -62,7 +62,7 @@
                            <graphic>
                                       <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                           <image>
-                                              <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/user.png" />
+                                              <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/user.png" />
                                           </image>
                                       </ImageView>
                            </graphic>
@@ -82,7 +82,7 @@
                            <graphic>
                               <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/password.png" />
+                                    <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/password.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -136,7 +136,7 @@
                                     </font>
                                 </Label>
                                 <Pane prefHeight="46.0" prefWidth="290.0" />
-                                <TextField fx:id="fullnameField" prefHeight="27.0" prefWidth="309.0">
+                                <TextField fx:id="fullNameField" prefHeight="27.0" prefWidth="309.0">
                            <font>
                               <Font size="17.0" />
                            </font></TextField>
@@ -222,14 +222,6 @@
                 <HBox prefHeight="49.0" prefWidth="969.0">
                     <children>
                         <Pane prefHeight="32.0" prefWidth="463.0" />
-                        <JFXButton fx:id="saveButton" alignment="CENTER" buttonType="RAISED" prefHeight="50.0" prefWidth="150.0" styleClass="login2-button" text="Save change" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                        </JFXButton>
                     </children>
                     <padding>
                         <Insets top="35.0" />

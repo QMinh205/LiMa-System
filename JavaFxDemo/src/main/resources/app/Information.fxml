@@ -21,7 +21,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/Library-Management-System-main/JavaFxDemo/assets/home.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/home.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -34,7 +34,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/yeucau.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/yeucau.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -47,7 +47,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/thongtin.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/thongtin.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -60,7 +60,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -73,7 +73,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets//game.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/game.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -86,7 +86,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/caidat.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/caidat.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -108,7 +108,7 @@
                 <Pane prefHeight="150.0" prefWidth="100.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/logo.png" />
                     </image>
                 </ImageView>
                 <Pane prefHeight="150.0" prefWidth="550.0" />
@@ -125,7 +125,7 @@
                     <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/dadoc.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/dadoc.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -141,7 +141,7 @@
                     <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/dangdoc.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/dangdoc.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -162,7 +162,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/dadoc.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/infor3.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -187,7 +187,7 @@
                <children>
                   <ImageView fitHeight="56.0" fitWidth="64.0" layoutX="31.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../assets/nbook.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/nbook.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="storedBooksLabel" alignment="CENTER" layoutX="100.0" layoutY="43.0" prefHeight="34.0" prefWidth="67.0" textFill="#514d4d">
@@ -213,7 +213,7 @@
                <children>
                   <ImageView fitHeight="56.0" fitWidth="64.0" layoutX="30.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../assets/nbookon.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/nbookon.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="100.0" layoutY="43.0" prefHeight="34.0" prefWidth="68.0" text="40M+">
@@ -236,7 +236,7 @@
                <children>
                   <ImageView fitHeight="56.0" fitWidth="75.0" layoutX="30.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../assets/nuser.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/nuser.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="numberOfUsersLabel" alignment="CENTER" layoutX="100.0" layoutY="43.0" prefHeight="34.0" prefWidth="69.0" textFill="#514d4d">
@@ -259,7 +259,7 @@
                <children>
                   <ImageView fitHeight="56.0" fitWidth="64.0" layoutX="33.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../assets/nissue.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/nissue.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="issuedBooksLabel" alignment="CENTER" layoutX="110.0" layoutY="43.0" prefHeight="34.0" prefWidth="63.0" textFill="#514d4d">

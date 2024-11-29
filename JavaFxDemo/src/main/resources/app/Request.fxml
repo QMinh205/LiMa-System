@@ -18,7 +18,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/home.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/home.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -31,7 +31,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/yeucau.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/yeucau.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -44,7 +44,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/thongtin.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/thongtin.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -53,11 +53,11 @@
                     </font>
                 </JFXButton>
                 <Pane prefHeight="100.0" prefWidth="78.0" />
-                <JFXButton fx:id="favouriteButton" buttonType="RAISED" onAction="#initialize" text="Issue &amp; Return" textFill="WHITE">
+                <JFXButton fx:id="issueButton" buttonType="RAISED" onAction="#initialize" text="Issue &amp; Return" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -70,7 +70,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/game.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/game.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -83,7 +83,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/caidat.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/caidat.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -101,7 +101,7 @@
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/ban.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/ban.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -113,7 +113,7 @@
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/fix.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/fix.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -125,7 +125,7 @@
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/DELETE.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/DELETE.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -137,7 +137,7 @@
                <graphic>
                   <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/ADD.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/ADD.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -159,7 +159,7 @@
                 <Pane prefHeight="150.0" prefWidth="180.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/logo.png" />
                     </image>
                 </ImageView>
                 <Pane prefHeight="150.0" prefWidth="550.0" />

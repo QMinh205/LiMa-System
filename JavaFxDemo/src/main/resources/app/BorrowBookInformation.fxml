@@ -21,7 +21,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/return1.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/return1.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -33,7 +33,7 @@
                 <Pane prefHeight="150.0" prefWidth="540.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/logo.png" />
                     </image>
                 </ImageView>
                 <Pane prefHeight="150.0" prefWidth="550.0" />
@@ -91,7 +91,7 @@
                         <Font size="18.0" />
                     </font>
                 </Text>
-            <JFXButton fx:id="searchBorowIdButton" layoutX="654.0" layoutY="186.0" onAction="#onSearchButtonClicked" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
+            <JFXButton fx:id="searchBorrowIdButton" layoutX="654.0" layoutY="186.0" onAction="#onSearchButtonClicked" prefHeight="40.0" prefWidth="105.0" styleClass="setting-button" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>

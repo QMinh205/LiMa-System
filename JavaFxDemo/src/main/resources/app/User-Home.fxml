@@ -25,7 +25,7 @@
                 <Pane prefHeight="150.0" prefWidth="200.0" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/logo.png" />
+                        <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/logo.png" />
                     </image>
                 </ImageView>
                 <Pane prefHeight="150.0" prefWidth="606.0" />
@@ -33,7 +33,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/search.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/search.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -50,7 +50,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/home.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/home.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -63,7 +63,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/yeucau.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/yeucau.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -76,7 +76,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/thongtin.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/thongtin.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -89,7 +89,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/favouritebook.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -102,7 +102,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/game.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/game.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -115,7 +115,7 @@
                     <graphic>
                         <ImageView fitHeight="76.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="file:/D:/LIMA/LiMa-System/JavaFxDemo/assets/caidat.png" />
+                                <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/caidat.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -201,7 +201,7 @@
                                  <graphic>
                                     <ImageView fitHeight="166.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -215,7 +215,7 @@
                                  <graphic>
                                     <ImageView fitHeight="166.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic2.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic2.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -229,7 +229,7 @@
                                  <graphic>
                                     <ImageView fitHeight="166.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic3.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic3.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -243,7 +243,7 @@
                                  <graphic>
                                     <ImageView fitHeight="166.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic11.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic11.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -257,7 +257,7 @@
                                  <graphic>
                                     <ImageView fitHeight="166.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/recommend4.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/recommend4.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -271,7 +271,7 @@
                                  <graphic>
                                     <ImageView fitHeight="166.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/recommend3.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/recommend3.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -285,7 +285,7 @@
                                  <graphic>
                                     <ImageView fitHeight="166.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/romance4.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/romance4.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -352,7 +352,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic4.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic4.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -366,7 +366,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/recommend4.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/recommend4.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -380,7 +380,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic8.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic8.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -394,7 +394,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic7.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic7.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -408,7 +408,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic6.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic6.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -422,7 +422,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu2.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu2.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -436,7 +436,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu3.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu3.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -450,7 +450,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/recommend4.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/recommend4.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -464,7 +464,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/romance.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/romance.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -534,7 +534,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/hot4.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/hot4.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -548,7 +548,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet4.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tieuthuyet4.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -562,7 +562,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet5.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tieuthuyet5.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -576,7 +576,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet6.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tieuthuyet6.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -590,7 +590,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet7.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tieuthuyet7.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -604,7 +604,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet8.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tieuthuyet8.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -618,7 +618,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet9.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tieuthuyet9.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -632,7 +632,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tieuthuyet10.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tieuthuyet10.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -702,7 +702,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu4.png" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu4.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -716,7 +716,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu5.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu5.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -730,7 +730,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu6.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu6.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -744,7 +744,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu7.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu7.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -758,7 +758,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu8.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu8.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -772,7 +772,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu9.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu9.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -786,7 +786,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/tailieu10.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/tailieu10.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -856,7 +856,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -870,7 +870,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic5.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic5.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -884,7 +884,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic6.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic6.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -898,7 +898,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic7.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic7.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -912,7 +912,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic8.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic8.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -926,7 +926,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic9.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic9.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -940,7 +940,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic10.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic10.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -954,7 +954,7 @@
                                  <graphic>
                                     <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../assets/BOOK/comic11.jpg" />
+                                          <Image url="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/BOOK/comic11.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>

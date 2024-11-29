@@ -23,11 +23,9 @@ public class SettingController extends BaseController {
     private Button returnButton;
     @FXML
     private Button passwordSettingButton;
-    @FXML
-    private Button saveButton;
 
     @FXML
-    private TextField fullnameField;
+    private TextField fullNameField;
 
     @FXML
     private TextField usernameField;
@@ -72,12 +70,6 @@ public class SettingController extends BaseController {
         ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(passwordSettingButton);
         ButtonSoundUtil.addClickSound(returnButton);
-        ButtonSoundUtil.addClickSound(saveButton);
-
-        //ButtonSoundUtil.addClickSound(PrivacyPolicyButton);
-        //ButtonSoundUtil.addClickSound(logOutButton);
-        // Update the label at the top using the BaseController's method
-        //updateUserInfo(userLabel);
 
         // Populate fields with user data from UserSession
         populateUserFields();
@@ -113,7 +105,7 @@ public class SettingController extends BaseController {
         // Check if a user is logged in
         if (currentUser != null) {
             profileLabel.setText(currentUser.getUserName());
-            fullnameField.setText(currentUser.getFullName()); // Assuming `getFullname()` exists in your User class
+            fullNameField.setText(currentUser.getFullName()); // Assuming `getFullname()` exists in your User class
             usernameField.setText(currentUser.getUserName());
             dobField.setText(currentUser.getDateOfBirth()); // Assuming `getDateOfBirth()` exists in your User class
             emailField.setText(currentUser.getEmail()); // Assuming `getEmail()` exists in your User class
@@ -121,7 +113,7 @@ public class SettingController extends BaseController {
         } else {
             // Handle case where no user is logged in
             profileLabel.setText("");
-            fullnameField.setText("");
+            fullNameField.setText("");
             usernameField.setText("");
             dobField.setText("");
             emailField.setText("");

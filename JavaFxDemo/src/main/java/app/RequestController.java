@@ -29,7 +29,7 @@ public class RequestController extends BaseController {
     private JFXButton informationButton;
 
     @FXML
-    private JFXButton favouriteButton;
+    private JFXButton issueButton;
 
     @FXML
     private JFXButton gameButton;
@@ -58,7 +58,7 @@ public class RequestController extends BaseController {
         ButtonSoundUtil.addClickSound(homeButton);
         ButtonSoundUtil.addClickSound(requestButton);
         ButtonSoundUtil.addClickSound(informationButton);
-        ButtonSoundUtil.addClickSound(favouriteButton);
+        ButtonSoundUtil.addClickSound(issueButton);
         ButtonSoundUtil.addClickSound(gameButton);
         ButtonSoundUtil.addClickSound(settingButton);
         ButtonSoundUtil.addClickSound(deleteButton);
@@ -71,7 +71,7 @@ public class RequestController extends BaseController {
         setupButton(homeButton, "User-Home.fxml", "Home");
         setupButton(requestButton, "Request.fxml", "Request");
         setupButton(informationButton, "Information.fxml", "Information");
-        setupButton(favouriteButton, "IssueBook.fxml", "Issue & Return Book");
+        setupButton(issueButton, "IssueBook.fxml", "Issue & Return Book");
         setupButton(settingButton, "Setting.fxml", "Setting");
 
         setupGameButton(gameButton);

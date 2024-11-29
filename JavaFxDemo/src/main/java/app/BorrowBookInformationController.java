@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -20,8 +21,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
-public class BorrowBookInformationController {
+public class BorrowBookInformationController extends BaseController {
     @FXML
     private JFXButton returnButton;
 
@@ -32,7 +35,7 @@ public class BorrowBookInformationController {
     private JFXButton searchBookIdButton;
 
     @FXML
-    private JFXButton searchBorowIdButton;
+    private JFXButton searchBorrowIdButton;
 
     @FXML
     private TextField bookIdField;
@@ -80,7 +83,14 @@ public class BorrowBookInformationController {
                 String bookTitle = resultSet.getString("book_title");
                 String borrowDate = resultSet.getString("borrow_date");
                 String returnDate = resultSet.getString("return_date");
-                boolean overdue = resultSet.getBoolean("overdue");
+
+                boolean overdue = false;
+                try {
+                    LocalDate returnDateParsed = LocalDate.parse(returnDate); // Assuming `return_date` is stored in ISO format (YYYY-MM-DD)
+                    overdue = returnDateParsed.isBefore(LocalDate.now()); // Compare with today's date
+                } catch (DateTimeParseException e) {
+                    System.err.println("Invalid date format in database: " + returnDate);
+                }
 
                 // Tạo các Label đã định dạng
                 Label borrowIdLabel = createStyledLabel(borrowId, 100);
@@ -118,21 +128,10 @@ public class BorrowBookInformationController {
         ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(searchUserIdButton);
         ButtonSoundUtil.addClickSound(searchBookIdButton);
-        ButtonSoundUtil.addClickSound(searchBorowIdButton);
+        ButtonSoundUtil.addClickSound(searchBorrowIdButton);
     }
     @FXML
     private void onReturnButtonClicked() {
-        try {
-            // Load the UserHome.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Information.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) returnButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Information");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadScene("Information.fxml", "Information", returnButton);
     }
 }

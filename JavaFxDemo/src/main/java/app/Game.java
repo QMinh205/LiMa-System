@@ -25,26 +25,26 @@ import java.util.*;
 public class Game extends Application {
 
     private final String[] imageUrls = {
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image1.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image2.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image3.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image4.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image5.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image6.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image7.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image8.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image9.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image10.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image11.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image12.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image13.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image14.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image15.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image16.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image17.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image18.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image19.jpg",
-            "file:/D:/oop/LiMa-System/JavaFxDemo/assets/image20.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image1.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image2.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image3.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image4.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image5.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image6.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image7.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image8.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image9.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image10.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image11.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image12.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image13.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image14.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image15.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image16.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image17.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image18.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image19.jpg",
+            "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/image20.jpg",
     };
 
     private String getRandomImageUrl() {
@@ -90,7 +90,7 @@ public class Game extends Application {
         StackPane root = new StackPane();
 
         // ảnh nền
-        ImageView introImage = new ImageView(new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/game.jpeg")); // Replace with your image path
+        ImageView introImage = new ImageView(new Image("file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/game.jpeg")); // Replace with your image path
         introImage.setFitWidth(1500);
         introImage.setFitHeight(750);
 
@@ -118,7 +118,7 @@ public class Game extends Application {
         Scene scene = new Scene(root, 1500, 750);
 
         // Liên kết file CSS
-        scene.getStylesheets().add("file:/D:/oop/LiMa-System/JavaFxDemo/src/main/resources/app/style.css");
+        scene.getStylesheets().add("file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/src/main/resources/app/style.css");
         return scene;
 
     }
@@ -145,8 +145,8 @@ class GameBoard {
     private int emptyX, emptyY; // vị trí ô trống
     private Canvas canvas; // canvas để vẽ lưới
     private MediaPlayer backgroundMusic;
-    private String s="file:/D:/oop/LiMa-System/JavaFxDemo/assets/sontung.png";
-    private final Image victoryImage = new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/sontung1.png");
+    private String s="file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/sontung.png";
+    private final Image victoryImage = new Image("file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/sontung1.png");
 
     public GameBoard(String imagePath) {
         this.image = new Image(imagePath);
@@ -186,7 +186,7 @@ class GameBoard {
     // Phương thức khởi tạo nhạc nền
     private void initializeMusic() {
         try {
-            String musicPath = "file:/D:/oop/LiMa-System/JavaFxDemo/assets/music1.mp3";
+            String musicPath = "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/music1.mp3";
             Media music = new Media(musicPath);
             backgroundMusic = new MediaPlayer(music);
             backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE); // Lặp vô hạn
@@ -208,7 +208,7 @@ class GameBoard {
     // Trả về scene cho trò chơi
     public Scene getScene() {
         Scene scene = new Scene(root, GRID_SIZE * TILE_SIZE, GRID_SIZE * TILE_SIZE);
-        scene.getStylesheets().add("file:/D:/oop/LiMa-System/JavaFxDemo/src/main/resources/app/style.css");
+        scene.getStylesheets().add("file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/src/main/resources/app/style.css");
         return scene;
     }
 
@@ -219,8 +219,8 @@ class GameBoard {
         thumbnail.setFitWidth(GRID_SIZE * TILE_SIZE * 0.7); // Kích thước nhỏ hơn 30%
 
         // Ảnh nút nhạc (bật/tắt nhạc)
-        Image musicOnImage = new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/sound.png");
-        Image musicOffImage = new Image("file:/D:/oop/LiMa-System/JavaFxDemo/assets/noSound.png");
+        Image musicOnImage = new Image("file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/sound.png");
+        Image musicOffImage = new Image("file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/noSound.png");
         ImageView musicButton = new ImageView(musicOnImage);
         musicButton.setFitWidth(75);
         musicButton.setFitHeight(75);
