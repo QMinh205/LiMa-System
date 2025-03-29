@@ -100,6 +100,11 @@
                   <Font size="18.0" />
                </font>
             </Text>
+            <JFXButton fx:id="sortByRatingButton" layoutX="1321.0" layoutY="233.0" onAction="#onSortByRatingButtonClicked" prefHeight="25.0" prefWidth="90.0" styleClass="setting-button" text="Sort" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
             <Text fill="WHITE" layoutX="742.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PUBLISHED DATE">
                <font>
                   <Font size="18.0" />

@@ -158,7 +158,7 @@
                         <Font name="System Bold" size="30.0" />
                     </font>
                 </Label>
-            <JFXButton fx:id="borrowAndReturnButton" contentDisplay="TOP" layoutX="1049.0" layoutY="256.0" onAction="#onBorrowButtonClicked" prefHeight="260.0" prefWidth="300.0" text="BORROWED &amp; RETURNED" textFill="WHITE">
+            <JFXButton fx:id="borrowAndReturnButton" contentDisplay="TOP" layoutX="1049.0" layoutY="256.0" onAction="#onBorrowButtonClicked" prefHeight="260.0" prefWidth="300.0" text="ISSUED BOOKS" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>

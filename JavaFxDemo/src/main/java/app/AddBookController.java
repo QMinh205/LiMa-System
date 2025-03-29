@@ -134,7 +134,7 @@ public class AddBookController {
             statement.setString(7, publishedDate);
             statement.setInt(8, pageCountValue);
             statement.setString(9, categories);
-            statement.setString(10, String.valueOf(ratingValue)); // Keep rating as string for now
+            statement.setString(10, String.valueOf(ratingValue));
             statement.setString(11, previewLink);
 
             // Execute the query
@@ -177,8 +177,6 @@ public class AddBookController {
         }
     }
 
-
-    // Helper method to show alert dialog
     public void showAlert(AlertType type, String title, String message) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

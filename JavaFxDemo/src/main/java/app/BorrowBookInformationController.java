@@ -23,6 +23,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BorrowBookInformationController extends BaseController {
     @FXML
@@ -36,6 +38,9 @@ public class BorrowBookInformationController extends BaseController {
 
     @FXML
     private JFXButton searchBorrowIdButton;
+
+    @FXML
+    private JFXButton sortByOverdueButton;
 
     @FXML
     private TextField bookIdField;
@@ -52,34 +57,49 @@ public class BorrowBookInformationController extends BaseController {
         String userId = userIdField.getText().trim();
         String borrowId = borrowIdField.getText().trim();
 
-        if (!bookId.isEmpty()) {
-            searchBorrowedBooksBy("book_id", bookId);
-        } else if (!userId.isEmpty()) {
-            searchBorrowedBooksBy("member_id", userId);
-        } else if (!borrowId.isEmpty()) {
-            searchBorrowedBooksBy("borrow_id", borrowId);
-        } else {
-            // Hiển thị thông báo nếu không có trường nào được điền
+        if (bookId.isEmpty() && userId.isEmpty() && borrowId.isEmpty()) {
             System.out.println("Vui lòng nhập ít nhất một trường tìm kiếm!");
+            return;
         }
+
+        // Tìm kiếm với tất cả các trường đã được nhập
+        searchBorrowedBooksBy(bookId, userId, borrowId);
     }
 
-    private void searchBorrowedBooksBy(String fieldName, String searchValue) {
+    private void searchBorrowedBooksBy(String bookId, String userId, String borrowId) {
         booksListView.getItems().clear(); // Xóa danh sách cũ
 
         try (Connection connection = DatabaseConnection.getConnection()) {
             // Tạo câu truy vấn động dựa trên trường tìm kiếm
-            String query = "SELECT * FROM borrowed_books WHERE " + fieldName + " LIKE ?";
+            StringBuilder queryBuilder = new StringBuilder("SELECT * FROM borrowed_books WHERE 1=1"); //dễ xây
+            List<String> parameters = new ArrayList<>();
+
+            if (!bookId.isEmpty()) {
+                queryBuilder.append(" AND book_id LIKE ?");
+                parameters.add("%" + bookId + "%");
+            }
+            if (!userId.isEmpty()) {
+                queryBuilder.append(" AND member_id LIKE ?");
+                parameters.add("%" + userId + "%");
+            }
+            if (!borrowId.isEmpty()) {
+                queryBuilder.append(" AND borrow_id LIKE ?");
+                parameters.add("%" + borrowId + "%");
+            }
+
+            String query = queryBuilder.toString();
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, "%" + searchValue + "%");
+            for (int i = 0; i < parameters.size(); i++) {
+                statement.setString(i + 1, parameters.get(i));
+            }
 
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 // Lấy dữ liệu từ ResultSet
-                String borrowId = resultSet.getString("member_id");
-                String bookId = resultSet.getString("book_id");
-                String userId = resultSet.getString("borrow_id");
+                String memberId = resultSet.getString("member_id");
+                String retrievedBookId = resultSet.getString("book_id");
+                String retrievedBorrowId = resultSet.getString("borrow_id");
                 String bookTitle = resultSet.getString("book_title");
                 String borrowDate = resultSet.getString("borrow_date");
                 String returnDate = resultSet.getString("return_date");
@@ -93,9 +113,9 @@ public class BorrowBookInformationController extends BaseController {
                 }
 
                 // Tạo các Label đã định dạng
-                Label borrowIdLabel = createStyledLabel(borrowId, 100);
-                Label bookIdLabel = createStyledLabel(bookId, 100);
-                Label userIdLabel = createStyledLabel(userId, 100);
+                Label borrowIdLabel = createStyledLabel(retrievedBorrowId, 100);
+                Label bookIdLabel = createStyledLabel(retrievedBookId, 100);
+                Label userIdLabel = createStyledLabel(memberId, 100);
                 Label bookTitleLabel = createStyledLabel(bookTitle, 240);
                 Label borrowDateLabel = createStyledLabel(borrowDate, 210);
                 Label returnDateLabel = createStyledLabel(returnDate, 210);
@@ -127,11 +147,34 @@ public class BorrowBookInformationController extends BaseController {
     public void initialize() {
         ButtonSoundUtil.addClickSound(returnButton);
         ButtonSoundUtil.addClickSound(searchUserIdButton);
-        ButtonSoundUtil.addClickSound(searchBookIdButton);
-        ButtonSoundUtil.addClickSound(searchBorrowIdButton);
+        //ButtonSoundUtil.addClickSound(searchBookIdButton);
+        //ButtonSoundUtil.addClickSound(searchBorrowIdButton);
     }
     @FXML
     private void onReturnButtonClicked() {
         loadScene("Information.fxml", "Information", returnButton);
     }
+
+    private boolean overdueSortAsc = true; // Track toggle state (true = overdue first)
+
+    @FXML
+    private void onSortByOverdueClicked() {
+        booksListView.getItems().sort((hbox1, hbox2) -> {
+            Label overdueLabel1 = (Label) hbox1.getChildren().get(6); // Assuming overdue status is the 7th column
+            Label overdueLabel2 = (Label) hbox2.getChildren().get(6);
+
+            // Get the overdue status ("Yes" or "No")
+            boolean isOverdue1 = "Yes".equals(overdueLabel1.getText());
+            boolean isOverdue2 = "Yes".equals(overdueLabel2.getText());
+
+            // Compare based on toggle state
+            if (overdueSortAsc) {
+                return Boolean.compare(isOverdue2, isOverdue1); // Overdue first
+            } else {
+                return Boolean.compare(isOverdue1, isOverdue2); // Non-overdue first
+            }
+        });
+        overdueSortAsc = !overdueSortAsc;
+    }
+
 }

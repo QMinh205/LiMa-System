@@ -32,6 +32,9 @@ public class UserInformationController extends BaseController {
     private TextField searchTextField;
 
     @FXML
+    private JFXButton sortByDobButton;
+
+    @FXML
     private ListView<HBox> memberListView;
 
     public void initialize() {
@@ -56,6 +59,8 @@ public class UserInformationController extends BaseController {
     private void searchMemberById(String searchTerm) {
         memberListView.getItems().clear(); // xóa các hàng cũ trước khi hiển thị dữ liệu mới
 
+        boolean noMembers = true;
+
         // kết nối và truy vấn cơ sở dữ liệu
         try (Connection connection = DatabaseConnection.getConnection()) {
             String query = "SELECT * FROM members WHERE member_id LIKE ? OR userName LIKE ? OR fullName LIKE ? OR email LIKE ? OR phoneNumber LIKE ?";
@@ -70,6 +75,7 @@ public class UserInformationController extends BaseController {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
+                noMembers = false;
                 // lấy dữ liệu từ ResultSet
                 String id = String.valueOf(resultSet.getInt("member_id"));
                 String fullName = resultSet.getString("fullName");
@@ -101,9 +107,41 @@ public class UserInformationController extends BaseController {
                 memberListView.getItems().add(row);
             }
 
+            if (noMembers) {
+                showNoResultsAlert();
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean isAscendingOrder = true;
+
+    @FXML
+    private void onSortByDobButtonClicked() {
+        ObservableList<HBox> rows = memberListView.getItems();
+
+        FXCollections.sort(rows, (row1, row2) -> {
+            Label dobLabel1 = (Label) row1.getChildren().get(7);
+            Label dobLabel2 = (Label) row2.getChildren().get(7);
+
+            String dob1 = dobLabel1.getText();
+            String dob2 = dobLabel2.getText();
+
+            return isAscendingOrder ? dob1.compareTo(dob2) : dob2.compareTo(dob1);
+        });
+
+        memberListView.setItems(rows);
+        isAscendingOrder = !isAscendingOrder; // Toggle order
+    }
+
+    private void showNoResultsAlert() {
+        javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+        alert.setTitle("No Results");
+        alert.setHeaderText(null);
+        alert.setContentText("No members found matching the search criteria.");
+        alert.showAndWait();
     }
 
     // phương thức tạo label đã định dạng

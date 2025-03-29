@@ -1,14 +1,14 @@
 package user;
 
 public class User {
-    private int userId;          // Corresponds to user_id in the database
-    private String fullName;     // Corresponds to fullName in the database
-    private String userName;     // Corresponds to userName in the database
-    private String password;     // Corresponds to password in the database
-    private String email;        // Corresponds to email in the database
-    private String phoneNumber;  // Corresponds to phoneNumber in the database
-    private String safeCode;     // Corresponds to safeCode in the database
-    private String dateOfBirth;  // Corresponds to dateOfBirth in the database (using String for flexibility, can be converted to LocalDate)
+    private int userId;
+    private String fullName;
+    private String userName;
+    private String password;
+    private String email;
+    private String phoneNumber;
+    private String safeCode;
+    private String dateOfBirth;
 
     // Default constructor
     public User() {}

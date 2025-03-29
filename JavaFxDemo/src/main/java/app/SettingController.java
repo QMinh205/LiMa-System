@@ -105,11 +105,11 @@ public class SettingController extends BaseController {
         // Check if a user is logged in
         if (currentUser != null) {
             profileLabel.setText(currentUser.getUserName());
-            fullNameField.setText(currentUser.getFullName()); // Assuming `getFullname()` exists in your User class
+            fullNameField.setText(currentUser.getFullName());
             usernameField.setText(currentUser.getUserName());
-            dobField.setText(currentUser.getDateOfBirth()); // Assuming `getDateOfBirth()` exists in your User class
-            emailField.setText(currentUser.getEmail()); // Assuming `getEmail()` exists in your User class
-            phoneField.setText(currentUser.getPhoneNumber()); // Assuming `getPhone()` exists in your User class
+            dobField.setText(currentUser.getDateOfBirth());
+            emailField.setText(currentUser.getEmail());
+            phoneField.setText(currentUser.getPhoneNumber());
         } else {
             // Handle case where no user is logged in
             profileLabel.setText("");

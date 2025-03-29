@@ -95,12 +95,9 @@ public class forgotPasswordController {
     }
 
     private boolean validateSafecode(String username, String email, String safecode) {
-        String url = "jdbc:mysql://localhost:3306/new_dtb";
-        String dbUser = "root";
-        String dbPassword = "Phong416ct5x2";
         String query = "SELECT COUNT(*) FROM users WHERE userName = ? AND email = ? AND safeCode = ?";
 
-        try (Connection connection = DriverManager.getConnection(url, dbUser, dbPassword);
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
             statement.setString(2, email);

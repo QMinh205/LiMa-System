@@ -19,77 +19,110 @@
                <Font name="System Bold" size="15.0" />
             </font>
          </Label>
-         <TextField fx:id="bookIdField" promptText="Enter book id" />
+         <TextField fx:id="bookIdField" promptText="Enter book id">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Title -->
             <Label text="Title" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="titleField" promptText="Enter the title of the book" />
+            <TextField fx:id="titleField" promptText="Enter the title of the book">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Author -->
             <Label text="Author" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="authorField" promptText="Enter the author of the book" />
+            <TextField fx:id="authorField" promptText="Enter the author of the book">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Publisher -->
             <Label text="Publisher" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="publisherField" promptText="Enter the publisher of the book" />
+            <TextField fx:id="publisherField" promptText="Enter the publisher of the book">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Description -->
             <Label text="Description" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="descriptionField" promptText="Enter the description of the book" />
+            <TextField fx:id="descriptionField" promptText="Enter the description of the book">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Image URL -->
             <Label text="Image URL" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="imageUrlField" promptText="Enter the URL for the book cover image" />
+            <TextField fx:id="imageUrlField" promptText="Enter the URL for the book cover image">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Published Date -->
             <Label text="Published Date" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="publishedDateField" promptText="Enter the published date" />
+            <TextField fx:id="publishedDateField" promptText="Enter the published date">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Page Count -->
             <Label text="Page Count" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="pageCountField" promptText="Enter the page count" />
+            <TextField fx:id="pageCountField" promptText="Enter the page count">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Categories -->
             <Label text="Categories" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="categoriesField" promptText="Enter the categories (e.g., Fiction, Thriller)" />
+            <TextField fx:id="categoriesField" promptText="Enter the categories (e.g., Fiction, Thriller)">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Average Rating -->
             <Label text="Average Rating" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="ratingField" promptText="Enter the average rating (e.g., 4.5)" />
+            <TextField fx:id="ratingField" promptText="Enter the average rating (e.g., 4.5)">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Preview Link -->
             <Label text="Preview Link" textFill="WHITE">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-            <TextField fx:id="previewLinkField" promptText="Enter the preview link for the book" />
+            <TextField fx:id="previewLinkField" promptText="Enter the preview link for the book">
+            <font>
+               <Font size="16.0" />
+            </font></TextField>
 
             <!-- Buttons -->
             <HBox alignment="CENTER" spacing="10">

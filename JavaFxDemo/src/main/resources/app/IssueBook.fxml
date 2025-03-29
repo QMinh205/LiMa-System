@@ -58,7 +58,7 @@
             </Label>
             <Label layoutX="339.0" layoutY="341.0" prefHeight="33.0" prefWidth="217.0" text="Input all the fields above" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="885.0" layoutY="44.0" prefHeight="108.0" prefWidth="373.0" stylesheets="@style.css" text="RETURN BOOKS" textFill="WHITE">
@@ -92,6 +92,11 @@
                </font>
             </JFXButton>
             <Line endX="28.39996337890625" endY="452.0" layoutX="729.0" layoutY="69.0" startX="28.39996337890625" startY="-1.60003662109375" stroke="WHITE" />
+            <Label fx:id="statusLabel" alignment="CENTER" layoutX="865.0" layoutY="320.0" prefHeight="41.0" prefWidth="418.0" text="Please fill in all fields." textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>

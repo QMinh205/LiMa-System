@@ -31,6 +31,9 @@ public class BookInformationController {
     private TextField searchTextField;
 
     @FXML
+    private JFXButton sortByRatingButton;
+
+    @FXML
     private ListView<HBox> booksListView;
 
     public void initialize() {
@@ -66,6 +69,8 @@ public class BookInformationController {
     private void searchBookById(String searchTerm) {
         booksListView.getItems().clear(); // xóa các hàng cũ trước khi hiển thị dữ liệu mới
 
+        boolean noResults = true;
+
         // kết nối và truy vấn cơ sở dữ liệu
         try (Connection connection = DatabaseConnection.getConnection()) {
             String query = "SELECT * FROM books WHERE book_id LIKE ? OR title LIKE ? OR author LIKE ? OR publisher LIKE ? OR categories LIKE ?";
@@ -80,6 +85,7 @@ public class BookInformationController {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
+                noResults = false;
                 // lấy dữ liệu từ ResultSet
                 String id = resultSet.getString("book_id");
                 String title = resultSet.getString("title");
@@ -111,9 +117,21 @@ public class BookInformationController {
                 booksListView.getItems().add(row);
             }
 
+            if (noResults) {
+                showNoResultsAlert();
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private void showNoResultsAlert() {
+        javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+        alert.setTitle("No Results");
+        alert.setHeaderText(null);
+        alert.setContentText("No books found matching the search criteria.");
+        alert.showAndWait();
     }
 
     // phương thức tạo label đã định dạng
@@ -124,5 +142,37 @@ public class BookInformationController {
         label.setPrefWidth(width); // đặt chiều rộng cho label
         label.setAlignment(Pos.CENTER_LEFT); // căn lề trái
         return label;
+    }
+
+    private boolean isDescendingOrder = true;
+
+    @FXML
+    private void onSortByRatingButtonClicked() {
+        // Check if there are items in the ListView
+        if (booksListView.getItems().isEmpty()) {
+            System.out.println("No books to sort.");
+            return;
+        }
+
+        // Sort the books by rating
+        booksListView.getItems().sort((hbox1, hbox2) -> {
+            Label ratingLabel1 = (Label) hbox1.getChildren().get(7);
+            Label ratingLabel2 = (Label) hbox2.getChildren().get(7);
+
+            String ratingText1 = ratingLabel1.getText();
+            String ratingText2 = ratingLabel2.getText();
+
+            try {
+                double rating1 = ratingText1.isEmpty() ? 0 : Double.parseDouble(ratingText1);
+                double rating2 = ratingText2.isEmpty() ? 0 : Double.parseDouble(ratingText2);
+
+                // Sort in descending order
+                return isDescendingOrder ? Double.compare(rating2, rating1) : Double.compare(rating1, rating2);
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                return 0;
+            }
+        });
+        isDescendingOrder = !isDescendingOrder;
     }
 }

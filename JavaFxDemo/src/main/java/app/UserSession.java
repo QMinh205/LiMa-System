@@ -6,9 +6,7 @@ public class UserSession {
     private static UserSession instance;
     private User user;
 
-    private UserSession() {
-        // Private constructor to enforce singleton
-    }
+    private UserSession() {}
 
     public static UserSession getInstance() {
         if (instance == null) {

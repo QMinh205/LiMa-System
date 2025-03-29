@@ -71,7 +71,7 @@ public class RequestControllerTest extends ApplicationTest {
         assertNotNull(banButton, "Ban button should be initialized.");
     }
 
-    /*@Test
+    @Test
     void testOnFixButtonClicked() {
         // Simulate clicking the Delete button
         clickOn(fixButton);
@@ -118,8 +118,6 @@ public class RequestControllerTest extends ApplicationTest {
         assertEquals("Ban User Request", stage.getTitle(), "The title should change to 'Ban User Request'");
     }
 
-     */
-
     @Test
     void testUserLabelIsUpdated() {
         // Verify user label is correctly initialized
@@ -127,7 +125,6 @@ public class RequestControllerTest extends ApplicationTest {
         assertFalse(userLabel.getText().isEmpty(), "User label should not be empty.");
     }
 
-    /*
     @Test
     void testGameButtonClicked() {
         // Simulate clicking the Game button
@@ -138,6 +135,4 @@ public class RequestControllerTest extends ApplicationTest {
         assertNotNull(stage, "Stage should not be null after clicking the Game button");
         assertTrue(stage.getTitle().contains("Game"), "The title should indicate game navigation.");
     }
-
-     */
 }

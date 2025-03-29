@@ -146,9 +146,6 @@ public class BookDetailController extends BaseController{
         bookDescriptionFlow.getChildren().add(fullDescription);
     }
 
-
-
-
     // Load the unavailable image
     private Image loadUnavailableImage() {
         try {
@@ -170,7 +167,8 @@ public class BookDetailController extends BaseController{
         } else {
             System.out.println("No cached SearchResult scene found. Loading a new one...");
             // Optional: Load a new SearchResult scene if caching fails
-            loadScene("SearchResult.fxml", "SearchResult", backButton);
+            // loadScene("SearchResult.fxml", "SearchResult", backButton);
+            stage.close();
         }
     }
 }

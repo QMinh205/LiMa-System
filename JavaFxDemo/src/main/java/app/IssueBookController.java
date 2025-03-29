@@ -66,6 +66,9 @@ public class IssueBookController extends BaseController {
     @FXML
     private JFXButton confirmButton1;
 
+    @FXML
+    private Label statusLabel;
+
 
     @FXML
     public void handleConfirmAction() {
@@ -95,8 +98,14 @@ public class IssueBookController extends BaseController {
         try (Connection conn = DatabaseConnection.getConnection()) {
             // Lấy tiêu đề sách từ bảng books
             String bookTitle = getBookTitleById(bookId, conn);
+            int memberTitle = Integer.parseInt(memberId);
+            String memberID = getMemberById(memberTitle, conn);
             if (bookTitle == null) {
                 showAlert(Alert.AlertType.ERROR, "Error", "Book ID does not exist in the database!");
+                return;
+            }
+            if (memberID == null) {
+                showAlert(Alert.AlertType.ERROR, "Error", "Member ID does not exist in the database!");
                 return;
             }
 
@@ -135,6 +144,17 @@ public class IssueBookController extends BaseController {
         return null; // Trả về null nếu không tìm thấy sách
     }
 
+    private String getMemberById(int memberId, Connection conn) throws SQLException {
+        String query = "SELECT member_id FROM members WHERE member_id = ?";
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+        preparedStatement.setInt(1, memberId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            return resultSet.getString("member_id");
+        }
+        return null; // Trả về null nếu không tìm thấy member
+    }
+
     private void clearFields() {
         memberIdField.clear();
         bookIdField.clear();
@@ -159,6 +179,18 @@ public class IssueBookController extends BaseController {
         // Kiểm tra xem borrow_id có hợp lệ không
         if (borrowId.isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Input Error", "Please enter a valid borrow ID!");
+            return;
+        }
+
+        String confirmText = confirmField.getText();
+
+        if (borrowId.isEmpty() || confirmText.isEmpty()) {
+            statusLabel.setText("Please fill in all fields.");
+            return;
+        }
+
+        if (!confirmText.equalsIgnoreCase("CONFIRM")) {
+            statusLabel.setText("Confirmation text must be 'CONFIRM'.");
             return;
         }
 

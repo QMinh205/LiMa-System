@@ -11,7 +11,7 @@ public class ButtonSoundUtil {
 
     static {
         // Chỉ tạo một lần MediaPlayer cho âm thanh
-        String soundPath = "file:/";
+        String soundPath = "file:/E:/Bibi/Code/java/Oop/oop_btl/LiMa-System/JavaFxDemo/assets/mouseClick.wav";
         Media sound = new Media(soundPath);
         CLICK_SOUND = new MediaPlayer(sound);
     }

@@ -55,6 +55,16 @@ public class UserHome extends BaseController {
 
     private List<Book> books;
 
+    private static Stage userHomeStage;
+
+    public static void setUserHomeStage(Stage stage) {
+        userHomeStage = stage;
+    }
+
+    public static Stage getUserHomeStage() {
+        return userHomeStage;
+    }
+
     @FXML
     public void initialize() {
         updateUserInfo(userLabel);
@@ -181,7 +191,6 @@ public class UserHome extends BaseController {
         return bufferedImage;
     }
 
-    // Compare two BufferedImages by checking pixel equality
     private boolean areImagesEqual(BufferedImage img1, BufferedImage img2) {
         if (img1 == null || img2 == null) {
             System.out.println("One or both images are null. Cannot compare.");

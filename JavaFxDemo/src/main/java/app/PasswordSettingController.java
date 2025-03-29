@@ -79,7 +79,6 @@ public class PasswordSettingController {
         String correctCurrentPassword = userData[0]; // Retrieved from DB
         String correctSafeCode = userData[1]; // Retrieved from DB
 
-        // Check if current password matches
         if (!currentPassword.equals(correctCurrentPassword)) {
             showAlert("Error", "The current password is incorrect.");
             return;
@@ -95,13 +94,11 @@ public class PasswordSettingController {
             return;
         }
 
-        // Check if the new password and re-entered password match
         if (!newPassword.equals(reEnteredPassword)) {
             showAlert("Error", "The new password and re-entered password do not match.");
             return;
         }
 
-        // If all checks pass, change the password in the database
         if (updatePassword(loggedInUserId, newPassword)) {
             showAlert("Success", "Your password has been changed successfully.");
             clearFields(); // Clear the fields after successful change

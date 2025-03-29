@@ -99,5 +99,4 @@ public class BanUserController {
             statusLabel.setStyle("-fx-text-fill: red;");
         }
     }
-
 }

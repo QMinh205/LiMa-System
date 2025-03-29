@@ -170,7 +170,7 @@ public class LoginController {
                 passwordTxt.setText(passwordField.getText());
                 passwordField.setVisible(false);
                 passwordTxt.setVisible(true);
-                passwordTxt.getStyleClass().addAll(passwordField.getStyleClass());
+                passwordTxt.setFont(passwordField.getFont());
                 passwordTxt.setStyle(passwordField.getStyle());
             } else {
                 // khi bỏ chọn, ẩn txt
