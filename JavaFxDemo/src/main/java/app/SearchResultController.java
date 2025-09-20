@@ -36,7 +36,7 @@ public class SearchResultController extends BaseController implements Initializa
     @FXML
     private Button backButton;
 
-    private static final String API_KEY = "AIzaSyB5k130KmLYxiVXscKGpiBaBNV-v1FSQWs"; // Replace with your actual API key
+    private static final String API_KEY = ""; // Replace with your actual API key
     private static Scene searchResultScene;
 
     public static void setSearchResultScene(Scene scene) {
